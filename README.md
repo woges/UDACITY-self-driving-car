@@ -10,7 +10,7 @@ Amazing technology, fascinating technology,
 
 [//]: # (Image References)
 ![car](./car.jpg)
-
+![car3](./car3.jpg)
 In this repository I will share the **source code** of all the projects of **[Udacity Self-Driving Car Engineer Nanodegree](https://www.udacity.com/course/self-driving-car-engineer-nanodegree--nd013)**.
 
 
@@ -22,9 +22,9 @@ In this repository I will share the **source code** of all the projects of **[Ud
   <tr>
     <th>
       <p align="center">
-           <a href="https://www.youtube.com/watch?v=KlQ-8iD1EFM"><img src="./project_1_lane_finding_basic/img/overview.gif" alt="Overview" width="60%" height="60%"></a>
+           <a href="./term1_project1_lane_finding/term1_project1_lane_finding.ipynb"><img src="./term1_project1_lane_finding/img/white.mp4" alt="Overview" width="60%" height="60%"></a>
            <br>P1: Basic Lane Finding
-           <br><a href="./project_1_lane_finding_basic" name="p1_code">(code)</a>
+           <br><a href="./term1_project1_lane_finding" name="p1_code">(code)</a>
       </p>
     </th>
         <th><p align="center">
@@ -171,7 +171,7 @@ In this repository I will share the **source code** of all the projects of **[Ud
 - **Summary:** Implement the road segmentation using a fully-convolutional network.
 - **Keywords:** Python, TensorFlow, Semantic Segmentation
 
-
+![car2](./car2.jpg)
  
 <p align="center">
   <img src="https://cdn-images-1.medium.com/max/800/1*dRJ1tz6N3MqO1iCFzlhxZg.jpeg" width="400">
