@@ -6,6 +6,8 @@ Self-driving cars are set to change the way we live with technology. In this pro
 
 Self-driving cars represent one of the most significant advances in modern history. Their impact will go beyond technology, beyond transportation, beyond urban planning to change our daily lives in ways we have yet to imagine.
 
+Amazing technology, fascinating technology, 
+
 [//]: # (Image References)
 ![car](./car.jpg)
 
@@ -105,14 +107,18 @@ In this repository I will share the **source code** of all the projects of **[Ud
 --- 
 ## Table of Contents
 
-## Term 1: Computer Vision and Deep Learning
-
+### Term 1: Computer Vision and Deep Learning
+Roses are <span style="color:red">red</span>, violets are <span style="color:blue">blue</span>.
 ![term1](./term1.jpg)
 
+#### Introduction
+
 #### [P1 - Detecting Lane Lines (basic)](project_1_lane_finding_basic)
- - **Summary:** Detected highway lane lines on a video stream. Used OpencV image analysis techniques to identify lines, including Hough Transforms and Canny edge detection.
+ - **Summary:** Detect lane lines on a highway within a video stream. Use OpencV image analysis techniques to identify lines, including Hough Transforms and Canny edge detection.
  - **Keywords:** Computer Vision
  
+
+
 #### [P2 - Traffic Sign Classification](term1_project2_traffic_sign_classifier)
  - **Summary:** Built and trained a deep neural network to classify traffic signs, using TensorFlow. Experimented with different network architectures. Performed image pre-processing and validation to guard against overfitting.
  - **Keywords:** Deep Learning, TensorFlow, Computer Vision
@@ -129,7 +135,7 @@ In this repository I will share the **source code** of all the projects of **[Ud
  - **Summary:** Created a vehicle detection and tracking pipeline with OpenCV, histogram of oriented gradients (HOG), and support vector machines (SVM). Implemented the same pipeline using a deep network to perform detection. Optimized and evaluated the model on video data from a automotive camera taken during highway driving.
  - **Keywords:** Computer Vision, Deep Learning, OpenCV
  
-## Term 2: Sensor fusion and localization control
+### Term 2: Sensor fusion and localization control
 
 ![term2](./term2.jpg)
 
@@ -153,7 +159,7 @@ In this repository I will share the **source code** of all the projects of **[Ud
 - **Summary:** Implement an MPC controller for keeping the car on track by appropriately adjusting the steering angle. Differently from previously implemented PID controller, MPC controller has the ability to anticipate future events and can take control actions accordingly. Indeed, future time steps are taking into account while optimizing current time slot.
 - **Keywords:** C++, MPC Controller
 
-## Term 3: Path Planning Concentration
+### Term 3: Path Planning Concentration
 
 ![term3](./term3.jpg)
 
@@ -170,3 +176,11 @@ In this repository I will share the **source code** of all the projects of **[Ud
 <p align="center">
   <img src="https://cdn-images-1.medium.com/max/800/1*dRJ1tz6N3MqO1iCFzlhxZg.jpeg" width="400">
 </p>
+
+## Contributing
+
+No further updates nor contributions are requested.  This project is static.
+
+## License
+
+UDACITY-self-driving-car results are released under the [MIT License](./LICENSE)
