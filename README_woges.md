@@ -107,8 +107,7 @@ In this repository I will share the **source code** of all the projects of **[Ud
 
 ## Term 1: Computer Vision and Deep Learning
 
-![term1](./term4.jpg)
-![car](./car.jpg)
+![term1](./term1.jpg)
 
 #### [P1 - Detecting Lane Lines (basic)](project_1_lane_finding_basic)
  - **Summary:** Detected highway lane lines on a video stream. Used OpencV image analysis techniques to identify lines, including Hough Transforms and Canny edge detection.
@@ -132,7 +131,7 @@ In this repository I will share the **source code** of all the projects of **[Ud
  
 ## Term 2: Sensor fusion and localization control
 
-![term2](./term5.jpg)
+![term2](./term2.jpg)
 
  #### [P6 - Extended Kalman Filter](project_6_extended_kalman_filter)
  - **Summary:** Implement the extended Kalman filter in C++. Simulated lidar and radar measurements are used to detect a bicycle that travels around your vehicle. Kalman filter, lidar measurements and radar measurements are used to track the bicycle's position and velocity.
@@ -156,7 +155,7 @@ In this repository I will share the **source code** of all the projects of **[Ud
 
 ## Term 3: Path Planning Concentration
 
-![term3](./term6.jpg)
+![term3](./term3.jpg)
 
 #### [P11 - Path Planning](project_11_path_planning)
 - **Summary:** The goal in this project is to build a path planner that is able to create smooth, safe trajectories for the car to follow. The highway track has other vehicles, all going different speeds, but approximately obeying the 50 MPH speed limit. The car transmits its location, along with its sensor fusion data, which estimates the location of all the vehicles on the same side of the road.
