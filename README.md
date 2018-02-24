@@ -1,23 +1,33 @@
 # Udacity Self-Driving Car Engineer Nanodegree 
 
-Learning to build the future, today!
+![car2](./car2.jpg)  
 
-Self-driving cars are set to change the way we live with technology. In this program you can learn the skills and techniques used by self-driving car teams at the most innovative companies in the world including robotics, machine learning, computer vision and mechanical engineering. 
+Learning to build the future, today!  
 
-Self-driving cars represent one of the most significant advances in modern history. Their impact will go beyond technology, beyond transportation, beyond urban planning to change our daily lives in ways we have yet to imagine.
+Self-driving cars represent one of the most significant advances in modern history. Their impact will go beyond technology, beyond transportation, beyond urban planning to change our daily lives in ways we have yet to imagine. Here are some considerations:
 
-Amazing technology, fascinating technology, 
+  - self-driving vehicles will save a lot of lives
+  - they will make our lives also more comfortable (e.g. mobility for seniors) 
+  - transport will be delivered as a service from companies who own fleets of self-driving vehicles 
+  - transportation will become more tightly integrated and packaged into many services  
+  - premium vehicle services will be available
+  - beeing able to avoid crashes will change the vehicle body construction radically 
+  - interior equipment will focus even more on comfort
+  - emotion (max. speed, acceleration, handling, exterior design ..) might almost entirely leave transportation  
+  - are parking lots or parking spaces in town centers necessary anymore?  
+  - traffic flow will be better regulated
+  - infrastructure utilization will be optimized
+  - hugh amount of data will be collected and used
+  - hacking of vehicles will be a serious issue
+  - ...  
+
+In this program you could learn the skills and techniques used by self-driving car teams at the most innovative companies in the world like NVIDIA, Mercedes-Benz, Uber ATG, Elektrobut. This amazing technology is practiced through interactive projects in computer vision, robotic controls, localization, path planning, machine learning and more.  
+
 
 [//]: # (Image References)
-![car](./car.jpg)
-![car3](./car3.jpg)
+![car3](./car3.jpg)  
+
 In this repository I will share the **source code** of all the projects of **[Udacity Self-Driving Car Engineer Nanodegree](https://www.udacity.com/course/self-driving-car-engineer-nanodegree--nd013)**.  
-#### Video
-<p align="center">
-  <video src="https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H" poster="./term1_project1_lane_finding/img/lines_solidWhiteCurve.jpg" width="320" height="200" controls preload></video> 
-</p>
-#### Image  
-![lines_solidWhiteCurve](./term1_project1_lane_finding/img/lines_solidWhiteCurve.jpg)
 
 ## Overview
 
@@ -27,13 +37,13 @@ In this repository I will share the **source code** of all the projects of **[Ud
   <tr>
     <th>
       <p align="center">
-           <a href="./term1_project1_lane_finding/term1_project1_lane_finding.ipynb"><img src="./term1_project1_lane_finding/img/white_giphy.gif" alt="Overview" width="60%" height="60%"></a>
-           <br>P1: Basic Lane Finding
+           <a href="https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H"><img src="./term1_project1_lane_finding/img/white_giphy.gif" alt="Overview" width="60%" height="60%"></a>
+           <br>P1: Finding Lane Lines on the road
            <br><a href="./term1_project1_lane_finding" name="p1_code">(code)</a>
       </p>
     </th>
         <th><p align="center">
-           <a href="./term1_project2_traffic_sign_classifier/Traffic_Sign_Classifier_woges_original.ipynb"><img src="./term1_project1_lane_finding/img/white_movie2gif_256.gif" alt="Overview" width="60%" height="60%"></a>
+           <a href="./term1_project2_traffic_sign_classifier/Traffic_Sign_Classifier_woges_original.ipynb"><img src="./term1_project2_traffic_sign_classifier/img/traffic_sign.png" alt="Overview" width="60%" height="60%"></a>
            <br>P2: Traffic Signs
            <br><a href="./term1_project2_traffic_sign_classifier" name="p2_code">(code)</a>
         </p>
@@ -116,29 +126,37 @@ In this repository I will share the **source code** of all the projects of **[Ud
 
 ![term1](./term1.jpg)
 
-#### Introduction
+#### Introduction  
+The program starts with a survey of how self-driving cars work and an immediately set out to the very first autonomous vehicle project - finding lane lines on the road!   
 
-#### [P1 - Detecting Lane Lines (basic)](project_1_lane_finding_basic)
- - **Summary:** Detect lane lines on a highway within a video stream. Use OpencV image analysis techniques to identify lines, including Hough Transforms and Canny edge detection.
- - **Keywords:** Computer Vision
+
+#### [P1 - Finding Lane Lines on the road](term1_project1_lane_finding)
+ - **Summary:** Detect lane lines on a highway within a video stream. Use OpencV image analysis techniques to identify lines of different colors.
+ - **Keywords:** Computer Vision, Hough Transforms, Canny edge detection
  
+#### Deep Learning    
+Deep learning has become the most important frontier in both machine learning and autonomous vehicle development. Experts from NVIDIA and Uber ATG teach to build deep neural networks and train them with data from the real world and from the Udacity simulator.  
 
 
 #### [P2 - Traffic Sign Classification](term1_project2_traffic_sign_classifier)
- - **Summary:** Built and trained a deep neural network to classify traffic signs, using TensorFlow. Experimented with different network architectures. Performed image pre-processing and validation to guard against overfitting.
- - **Keywords:** Deep Learning, TensorFlow, Computer Vision
+ - **Summary:** Build and train a deep neural network to classify traffic signs, using TensorFlow. Experiment with different network architectures. Performe image pre-processing and validation to guard against overfitting.
+ - **Keywords:** Deep Learning, Convolutional Neural Networks, TensorFlow
  
 #### [P3 - Behavioral Cloning](project_3_behavioral_cloning)
- - **Summary:** Built and trained a convolutional neural network for end-to-end driving in a simulator, using TensorFlow and Keras. Used optimization techniques such as regularization and dropout to generalize the network for driving on multiple tracks.
+ - **Summary:** Build and train a convolutional neural network for end-to-end driving in a simulator, using TensorFlow and Keras. Use optimization techniques such as , data augmentation and dropout to generalize the network for driving on multiple tracks.
  - **Keywords:** Deep Learning, Keras, Convolutional Neural Networks
+ 
+#### Computer Vision    
+Use a combination of cameras, software, and machine learning to find lane lines on difficult roads and to track vehicles. Start with calibrating cameras and manipulating images, and end by applying support vector machines and decision trees to extract information from video.  
+
 
 #### [P4 - Advanced Lane Finding](project_4_advanced_lane_finding)
- - **Summary:** Built an advanced lane-finding algorithm using distortion correction, image rectification, color transforms, and gradient thresholding. Identified lane curvature and vehicle displacement. Overcame environmental challenges such as shadows and pavement changes.
- - **Keywords:** Computer Vision, OpenCV
+ - **Summary:** Write a software pipeline to identify the lane boundaries in a video from a front-facing camera on a car. Use distortion correction, image rectification, color transforms, and gradient thresholding. Identify lane curvature and vehicle displacement with means of perspective transform and polynomial fit. Overcame environmental challenges such as shadows and pavement changes.
+ - **Keywords:** OpenCV, Sobel Operator, Color Spaces  
  
 #### [P5 - Vehicle Detection and Tracking](project_5_vehicle_detection)
- - **Summary:** Created a vehicle detection and tracking pipeline with OpenCV, histogram of oriented gradients (HOG), and support vector machines (SVM). Implemented the same pipeline using a deep network to perform detection. Optimized and evaluated the model on video data from a automotive camera taken during highway driving.
- - **Keywords:** Computer Vision, Deep Learning, OpenCV
+ - **Summary:** Create a vehicle detection and tracking pipeline with OpenCV. Use techniques like 'histogram of oriented gradients' (HOG) and train a classifier (e.g. support vector machines (SVM)) to identify cars. Implement the model in a pipeline. Use sliding windows to detect cars on video data from an automotive camera taken during highway driving. Use heat-map technique to combine overlapping detections and remove false positives.
+ - **Keywords:** Object Detection and Tracking, SVM, HOG, Sliding Window, Heatmap  
  
 ### Term 2: Sensor fusion and localization control
 
@@ -176,7 +194,6 @@ In this repository I will share the **source code** of all the projects of **[Ud
 - **Summary:** Implement the road segmentation using a fully-convolutional network.
 - **Keywords:** Python, TensorFlow, Semantic Segmentation
 
-![car2](./car2.jpg)
  
 <p align="center">
   <img src="https://cdn-images-1.medium.com/max/800/1*dRJ1tz6N3MqO1iCFzlhxZg.jpeg" width="400">
