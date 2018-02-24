@@ -21,7 +21,7 @@ Self-driving cars represent one of the most significant advances in modern histo
   - hacking of vehicles will be a serious issue
   - ...  
 
-In this program you could learn the skills and techniques used by self-driving car teams at the most innovative companies in the world like NVIDIA, Mercedes-Benz, Uber ATG, Elektrobut. This amazing technology is practiced through interactive projects in computer vision, robotic controls, localization, path planning, machine learning and more.  
+In this program you could learn the skills and techniques used by self-driving car teams at the most innovative companies in the world like NVIDIA, Mercedes-Benz, Uber ATG, Elektrobit. This amazing technology is practiced through interactive projects in computer vision, robotic controls, localization, path planning, machine learning and more.  
 
 
 [//]: # (Image References)
@@ -126,7 +126,7 @@ In this repository I will share the **source code** of all the projects of **[Ud
 
 ![term1](./term1.jpg)
 
-#### Introduction  
+#### **Introduction**  
 The program starts with a survey of how self-driving cars work and an immediately set out to the very first autonomous vehicle project - finding lane lines on the road!   
 
 
@@ -134,7 +134,7 @@ The program starts with a survey of how self-driving cars work and an immediatel
  - **Summary:** Detect lane lines on a highway within a video stream. Use OpencV image analysis techniques to identify lines of different colors.
  - **Keywords:** Computer Vision, Hough Transforms, Canny edge detection
  
-#### Deep Learning    
+#### **Deep Learning**      
 Deep learning has become the most important frontier in both machine learning and autonomous vehicle development. Experts from NVIDIA and Uber ATG teach to build deep neural networks and train them with data from the real world and from the Udacity simulator.  
 
 
@@ -146,7 +146,7 @@ Deep learning has become the most important frontier in both machine learning an
  - **Summary:** Build and train a convolutional neural network for end-to-end driving in a simulator, using TensorFlow and Keras. Use optimization techniques such as , data augmentation and dropout to generalize the network for driving on multiple tracks.
  - **Keywords:** Deep Learning, Keras, Convolutional Neural Networks
  
-#### Computer Vision    
+#### **Computer Vision**  
 Use a combination of cameras, software, and machine learning to find lane lines on difficult roads and to track vehicles. Start with calibrating cameras and manipulating images, and end by applying support vector machines and decision trees to extract information from video.  
 
 
@@ -157,7 +157,11 @@ Use a combination of cameras, software, and machine learning to find lane lines 
 #### [P5 - Vehicle Detection and Tracking](project_5_vehicle_detection)
  - **Summary:** Create a vehicle detection and tracking pipeline with OpenCV. Use techniques like 'histogram of oriented gradients' (HOG) and train a classifier (e.g. support vector machines (SVM)) to identify cars. Implement the model in a pipeline. Use sliding windows to detect cars on video data from an automotive camera taken during highway driving. Use heat-map technique to combine overlapping detections and remove false positives.
  - **Keywords:** Object Detection and Tracking, SVM, HOG, Sliding Window, Heatmap  
- 
+
+
+
+ ---  
+
 ### Term 2: Sensor fusion and localization control
 
 ![term2](./term2.jpg)
@@ -181,6 +185,9 @@ Use a combination of cameras, software, and machine learning to find lane lines 
 #### [P10 - MPC Control](project_10_MPC_control)
 - **Summary:** Implement an MPC controller for keeping the car on track by appropriately adjusting the steering angle. Differently from previously implemented PID controller, MPC controller has the ability to anticipate future events and can take control actions accordingly. Indeed, future time steps are taking into account while optimizing current time slot.
 - **Keywords:** C++, MPC Controller
+
+
+---  
 
 ### Term 3: Path Planning Concentration
 
