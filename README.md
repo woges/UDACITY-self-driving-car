@@ -12,11 +12,12 @@ Amazing technology, fascinating technology,
 ![car](./car.jpg)
 ![car3](./car3.jpg)
 In this repository I will share the **source code** of all the projects of **[Udacity Self-Driving Car Engineer Nanodegree](https://www.udacity.com/course/self-driving-car-engineer-nanodegree--nd013)**.  
-
+#### Video
 <p align="center">
-  <video src="./term1_project1_lane_finding/img/white.webm" poster="./term1_project1_lane_finding/img/lines_solidWhiteCurve.jpg" width="320" height="200" controls preload></video>
-  <img src="./term1_project1_lane_finding/img/lines_solidWhiteCurve.jpg" width="400">
+  <video src="https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H" poster="./term1_project1_lane_finding/img/lines_solidWhiteCurve.jpg" width="320" height="200" controls preload></video> 
 </p>
+#### Image
+![lines_solidWhiteCurve](./term1_project1_lane_finding/img/lines_solidWhiteCurve.jpg)
 
 ## Overview
 
@@ -26,13 +27,13 @@ In this repository I will share the **source code** of all the projects of **[Ud
   <tr>
     <th>
       <p align="center">
-           <a href="./term1_project1_lane_finding/term1_project1_lane_finding.ipynb"><img src="./term1_project1_lane_finding/img/white.gif" alt="Overview" width="60%" height="60%"></a>
+           <a href="./term1_project1_lane_finding/term1_project1_lane_finding.ipynb"><img src="./term1_project1_lane_finding/img/white_giphy.gif" alt="Overview" width="60%" height="60%"></a>
            <br>P1: Basic Lane Finding
            <br><a href="./term1_project1_lane_finding" name="p1_code">(code)</a>
       </p>
     </th>
         <th><p align="center">
-           <a href="./term1_project2_traffic_sign_classifier/Traffic_Sign_Classifier_woges_original.ipynb"><img src="./term1_project2_traffic_sign_classifier/img/traffic_sign.png" alt="Overview" width="60%" height="60%"></a>
+           <a href="./term1_project2_traffic_sign_classifier/Traffic_Sign_Classifier_woges_original.ipynb"><img src="./term1_project2_traffic_sign_classifier/img/white_movie2gif_256.gif" alt="Overview" width="60%" height="60%"></a>
            <br>P2: Traffic Signs
            <br><a href="./term1_project2_traffic_sign_classifier" name="p2_code">(code)</a>
         </p>
