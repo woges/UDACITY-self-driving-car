@@ -126,7 +126,9 @@ In this repository I will share the **source code** of all the projects of **[Ud
 
 ![term1](./term1.jpg)
 
-#### **Introduction**  
+----  
+
+### Introduction  
 The program starts with a survey of how self-driving cars work and an immediately set out to the very first autonomous vehicle project - finding lane lines on the road!   
 
 
