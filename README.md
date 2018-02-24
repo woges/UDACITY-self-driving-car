@@ -39,7 +39,7 @@ In this repository I will share the **source code** of all the projects of **[Ud
         </p>
     </th>
        <th><p align="center">
-           <a href="https://www.youtube.com/watch?v=gXkMELjZmCc"><img src="./project_3_behavioral_cloning/img/overview.gif" alt="Overview" width="60%" height="60%"></a>
+           <a href="https://www.youtube.com/watch?v=gXkMELjZmCc"><img src="./term1_project1_lane_finding/img/white_movie2gif_1to2_256.gif" alt="Overview" width="60%" height="60%"></a>
            <br>P3: Behavioral Cloning
            <br><a href="./project_3_behavioral_cloning" name="p3_code">(code)</a>
         </p>
