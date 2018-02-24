@@ -22,7 +22,7 @@ In this repository I will share the **source code** of all the projects of **[Ud
   <tr>
     <th>
       <p align="center">
-           <a href="./term1_project1_lane_finding/term1_project1_lane_finding.ipynb"><img src="./term1_project1_lane_finding/img/white.webm" alt="Overview" width="60%" height="60%"></a>
+           <a href="./term1_project1_lane_finding/term1_project1_lane_finding.ipynb"><img src="./term1_project1_lane_finding/img/white.gif" alt="Overview" width="60%" height="60%"></a>
            <br>P1: Basic Lane Finding
            <br><a href="./term1_project1_lane_finding" name="p1_code">(code)</a>
       </p>
