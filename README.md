@@ -11,10 +11,11 @@ Amazing technology, fascinating technology,
 [//]: # (Image References)
 ![car](./car.jpg)
 ![car3](./car3.jpg)
-In this repository I will share the **source code** of all the projects of **[Udacity Self-Driving Car Engineer Nanodegree](https://www.udacity.com/course/self-driving-car-engineer-nanodegree--nd013)**.
+In this repository I will share the **source code** of all the projects of **[Udacity Self-Driving Car Engineer Nanodegree](https://www.udacity.com/course/self-driving-car-engineer-nanodegree--nd013)**.  
 
 <p align="center">
   <video src="./term1_project1_lane_finding/img/white.webm" poster="./term1_project1_lane_finding/img/lines_solidWhiteCurve.jpg" width="320" height="200" controls preload></video>
+  <img src="./term1_project1_lane_finding/img/lines_solidWhiteCurve.jpg" width="400">
 </p>
 
 ## Overview
