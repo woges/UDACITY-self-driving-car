@@ -64,8 +64,35 @@ In this repository I will share the **source code** of all the projects of **[Ud
       </p>
     </th>
   </tr>
+  <tr>
+    <td>
+      <p align="center">
+           <a href="https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H"><img src="./term1_project1_lane_finding/img/white_giphy.gif" alt="Overview" width="60%" height="60%"></a>
+           <br>P1: Finding Lane Lines on the road
+           <br><a href="./term1_project1_lane_finding" name="p1_code">(code)</a>
+           <key>background</key>
+          <string>#F3F2FF</string>
+      </p>
+    </td>
+    <td>
+      <p align="center">
+           <a href="./term1_project2_traffic_sign_classifier/Traffic_Sign_Classifier_woges_original.ipynb"><img src="./term1_project2_traffic_sign_classifier/img/traffic_sign.png" alt="Overview" width="60%" height="60%"></a>
+           <br>P2: Traffic Signs
+           <br><a href="./term1_project2_traffic_sign_classifier" name="p2_code">(code)</a>
+      </p>
+    </td>
+    <td>
+      <p align="center">
+           <a href="https://www.youtube.com/watch?v=gXkMELjZmCc"><img src="./term1_project1_lane_finding/img/white_movie2gif_1to2_256.gif" alt="Overview" width="60%" height="60%"></a>
+           <br>P3: Behavioral Cloning
+           <br><a href="./project_3_behavioral_cloning" name="p3_code">(code)</a>
+      </p>
+    </td>
+  </tr>
 </table>
+
 <table style="width:100%">
+  <tr>
     <th>
       <p align="center">
            <a href="https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H"><img src="./term1_project1_lane_finding/img/white_giphy.gif" alt="Overview" width="60%" height="60%"></a>
