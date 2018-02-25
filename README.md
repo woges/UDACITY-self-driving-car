@@ -33,8 +33,7 @@ In this repository I will share the **source code** of all the projects of **[Ud
 
 ### Projects  
 
-| **Term 1<br>Computer Vision and Deep Learning**  <key>background</key>
-<string>#F3F2FF</string>| Term 2<br>Sensor fusion and localization control  | Term3 <br> Path Planning Concentration  |
+| **Term 1<br>Computer Vision and Deep Learning** | **Term 2<br>Sensor fusion and localization control**  | **Term3 <br> Path Planning Concentration**  |
 | :---:         |     :---:      |          :---: |
 | [![T1P1](./term1_project1_lane_finding/img/white_giphy.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 1:<br>Finding Lane Lines on the road**<br>[Code](./term1_project1_lane_finding)       |[![T2P6](./term1_project1_lane_finding/img/white_giphy.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 6:<br>Extended Kalman Filters**<br>[Code](./term1_project1_lane_finding)       |[![T3P11](./term1_project1_lane_finding/img/white_giphy.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 11:<br>Path Planning Project**<br>[Code](./term1_project1_lane_finding)       |
 | [![T1P2](./term1_project1_lane_finding/img/white_giphy.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 2:<br>Traffic Sign Classifier**<br>[Code](./term1_project1_lane_finding)       |[![T2P7](./term1_project1_lane_finding/img/white_giphy.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 7:<br>Unscented Kalman Filters**<br>[Code](./term1_project1_lane_finding)       |[![T3P12](./term1_project1_lane_finding/img/white_giphy.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 12:<br>Advanced Deep Learning**<br>[Code](./term1_project1_lane_finding)       |
@@ -48,19 +47,21 @@ In this repository I will share the **source code** of all the projects of **[Ud
 
 <table style="width:100%">
   <tr>
+    <th  style="background-color:LightGrey;">Test</th>
+    <th>
+      <p align="center" font size="5" color="Black">
+        <><b>Term 1<br>Computer Vision and Deep Learning</b>
+      </p>      
+    </th>
+
     <th>
       <p align="center">
-        <font size="14" color="red"><b>Term 1<br>Computer Vision and Deep Learning</b></font>
+        <font size="5" color="red"><b>Term 2<br>Sensor fusion and localization control</b></font>
       </p>
     </th>
     <th>
       <p align="center">
-        <font size="14" color="red"><b>Term 2<br>Sensor fusion and localization control</b></font>
-      </p>
-    </th>
-    <th>
-      <p align="center">
-        <font size="14" color="red"><b>Term 3<br>Path Planning Concentration</b></font>
+        <font size="5" color="red"><b>Term 3<br>Path Planning Concentration</b></font>
       </p>
     </th>
   </tr>
