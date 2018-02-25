@@ -33,11 +33,15 @@ In this repository I will share the **source code** of all the projects of **[Ud
 
 ### Projects  
 
-term 1   
-Computer Vision and Deep Learning | term 2   
-Sensor fusion and localization control | term3   
-Path Planning Concentration
+term 1   Computer Vision and Deep Learning | term 2   Sensor fusion and localization control | term3   Path Planning Concentration
 ------------ | ------------- | ------------
+
+
+| Fruit         | Price                   | Advantages              |
+| ------------- | ----------------------- | ----------------------- |
+| Bananas       | first line<br>next line | first line<br>next line |
+| Bananas       | first line<br>next line | first line<br>next line |
+
 
 
 Content cell 1.1 | Content cell 1.2 | Content cell 1.3  
