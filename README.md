@@ -33,7 +33,7 @@ In this repository I will share the **source code** of all the projects of **[Ud
 
 ### Projects
 
-First Header | Second Header | Third Header
+term 1  Computer Vision and Deep Learning | term 2  Sensor fusion and localization control | term3  Path Planning Concentration
 ------------ | ------------- | ------------
 Content cell 1.1 | Content cell 1.2 | Content cell 1.3
 Content cell 2.1 | Content cell 2.2 | Content cell 2.3
