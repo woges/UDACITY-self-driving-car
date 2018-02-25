@@ -37,7 +37,7 @@ term 1   Computer Vision and Deep Learning | term 2   Sensor fusion and localiza
 ------------ | ------------- | ------------
 
 
-| Fruit         | Price                   | Advantages              |
+| term 1<br>Computer Vision and Deep Learning  | term 2<br>Sensor fusion and localization control                   | term3<br>Path Planning Concentration              |
 | ------------- | ----------------------- | ----------------------- |
 | Bananas       | first line<br>next line | first line<br>next line |
 | Bananas       | first line<br>next line | first line<br>next line |
