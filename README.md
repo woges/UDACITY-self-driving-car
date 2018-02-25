@@ -33,9 +33,9 @@ In this repository I will share the **source code** of all the projects of **[Ud
 
 ### Projects  
 
-----
+---
 
-### Term1 Computer Vision and Deep Learning
+### Term 1: Computer Vision and Deep Learning
 
 | [![T1P1](./term1_project1_lane_finding/img/white_giphy.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 1:<br>Finding Lane Lines on the road**<br>[Code](./term1_project1_lane_finding)       | [![T1P2](./term1_project1_lane_finding/img/white_giphy.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 2:<br>Traffic Sign Classifier**<br>[Code](./term1_project1_lane_finding)       | [![T1P3](./term1_project1_lane_finding/img/white_giphy.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 3:<br>Behavioral Cloning**<br>[Code](./term1_project1_lane_finding)       |
 | :---:         |     :---:      |          :---: |
@@ -43,16 +43,18 @@ In this repository I will share the **source code** of all the projects of **[Ud
 
 ---  
 
-|**Term 2<br>**|**Sensor fusion and localization control<br>**|<br><br><br>|
-| :---:         |     :---:      |          :---: |
+### Term 2: Sensor fusion and localization control
+
 | [![T2P6](./term1_project1_lane_finding/img/white_giphy.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 6:<br>Extended Kalman Filters**<br>[Code](./term1_project1_lane_finding)| [![T2P7](./term1_project1_lane_finding/img/white_giphy.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 7:<br>Unscented Kalman Filters**<br>[Code](./term1_project1_lane_finding)|[![T2P8](./term1_project1_lane_finding/img/white_giphy.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 8:<br>Kidnapped Vehicle**<br>[Code](./term1_project1_lane_finding)|
+| :---:         |     :---:      |          :---: |
 |[![T2P9](./term1_project1_lane_finding/img/white_giphy.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 9:<br>PID Controller** <br>[Code](./term1_project1_lane_finding)|[![T2P10](./term1_project1_lane_finding/img/white_giphy.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 10:<br>Model Predictive Control** <br>[Code](./term1_project1_lane_finding)||
 
 ---  
 
-|**Term 3<br>**|**Path Planning Concentration<br>**|<br><br><br>|
-| :---:         |     :---:      |          :---: |
+### Term 3: Path Planning Concentration
+
 |[![T3P11](./term1_project1_lane_finding/img/white_giphy.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 11:<br>Path Planning Project**<br>[Code](./term1_project1_lane_finding)|[![T3P12](./term1_project1_lane_finding/img/white_giphy.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 12:<br>Advanced Deep Learning**<br>[Code](./term1_project1_lane_finding)|[![T3P13](./term1_project1_lane_finding/img/white_giphy.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 13:<br>Functional Safety**<br>[Code](./term1_project1_lane_finding)|
+| :---:         |     :---:      |          :---: |
 |<br>**CAPSTONE PROJECT**<br>**System Integration**|[![T3P14](./term1_project1_lane_finding/img/white_giphy.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 14:<br>Programming a Real Self-Driving Car**<br>[Code](./term1_project1_lane_finding)||
 
 ---  
