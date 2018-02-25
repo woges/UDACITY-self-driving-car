@@ -33,6 +33,17 @@ In this repository I will share the **source code** of all the projects of **[Ud
 
 ### Projects
 
+First Header | Second Header | Third Header
+------------ | ------------- | ------------
+Content cell 1.1 | Content cell 1.2 | Content cell 1.3
+Content cell 2.1 | Content cell 2.2 | Content cell 2.3
+Content cell 3.1 | Content cell 3.2 | Content cell 3.3
+Content cell 4.1 | Content cell 4.2 | Content cell 4.3
+
+
+
+
+
 <table style="width:100%">
   <tr>
     <th>
@@ -126,9 +137,9 @@ In this repository I will share the **source code** of all the projects of **[Ud
 
 ![term1](./term1.jpg)
 
----  
+----  
 
-### Introduction  
+### _Introduction_  
 The program starts with a survey of how self-driving cars work and an immediately set out to the very first autonomous vehicle project - finding lane lines on the road!   
 
 
