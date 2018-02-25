@@ -47,13 +47,11 @@ In this repository I will share the **source code** of all the projects of **[Ud
 
 <table style="width:100%">
   <tr>
-    <th  style="background-color:LightGrey;">Test</th>
-    <th>
+    <th  style="background-color:LightGrey;">
       <p align="center" font size="5" color="Black">
         <><b>Term 1<br>Computer Vision and Deep Learning</b>
       </p>      
     </th>
-
     <th>
       <p align="center">
         <font size="5" color="red"><b>Term 2<br>Sensor fusion and localization control</b></font>
