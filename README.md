@@ -33,39 +33,13 @@ In this repository I will share the **source code** of all the projects of **[Ud
 
 ### Projects  
 
-term 1   Computer Vision and Deep Learning | term 2   Sensor fusion and localization control | term3   Path Planning Concentration
------------- | ------------- | ------------
-
-
 | **Term 1<br>Computer Vision and Deep Learning**  | **Term 2<br>Sensor fusion and localization control**                   | **Term3<br>Path Planning Concentration**                              |
 | :---:         |     :---:      |          :---: |
+| [(./term1_project1_lane_finding/img/white_giphy.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)       | first line<br>next line | first line<br>next line |
 | Bananas       | first line<br>next line | first line<br>next line |
 | Bananas       | first line<br>next line | first line<br>next line |
 | Bananas       | first line<br>next line | first line<br>next line |
 | Bananas       | first line<br>next line | first line<br>next line |
-| Bananas       | first line<br>next line | first line<br>next line |
-
-
-{table-plus:columnStyles=width:170px,width:170px}
-|| A || B ||
- | 1 | 2 |
- | 3 | 4 |
-{table-plus}
-
-
-Content cell 1.1 | Content cell 1.2 | Content cell 1.3  
----------------- | ---------------- | ----------------  
-Content cell 1.1 | Content cell 1.2 | Content cell 1.3  
-Content cell 2.1 | Content cell 2.2 | Content cell 2.3  
-Content cell 3.1 | Content cell 3.2 | Content cell 3.3  
-Content cell 4.1 | Content cell 4.2 | Content cell 4.3  
-
-
-first header | second header  
--------------|-------------  
-first header | second header  
-
-
 
 <table style="width:100%">
   <tr>
