@@ -64,7 +64,8 @@ In this repository I will share the **source code** of all the projects of **[Ud
       </p>
     </th>
   </tr>
-
+</table>
+<table style="width:100%">
     <th>
       <p align="center">
            <a href="https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H"><img src="./term1_project1_lane_finding/img/white_giphy.gif" alt="Overview" width="60%" height="60%"></a>
