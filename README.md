@@ -33,8 +33,9 @@ In this repository I will share the **source code** of all the projects of **[Ud
 
 ### Projects  
 
-| **Term 1<br>Computer Vision and Deep Learning**  |
- **Term 2<br>Sensor fusion and localization control**                   | **Term3<br>Path Planning Concentration**                              |
+| ###**Term 1<br>Computer Vision and Deep Learning**  |
+ ###**Term 2<br>Sensor fusion and localization control**                   | 
+ ###**Term3<br>Path Planning Concentration**                              |
 | :---:         |     :---:      |          :---: |
 | [![T1P1](./term1_project1_lane_finding/img/white_giphy.gif)]
 (https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>Project 1:<br> 
