@@ -50,6 +50,23 @@ In this repository I will share the **source code** of all the projects of **[Ud
   <tr>
     <th>
       <p align="center">
+        <font size="14" color="red"><b>Term 1<br>Computer Vision and Deep Learning</b></font>
+      </p>
+    </th>
+    <th>
+      <p align="center">
+        <font size="14" color="red"><b>Term 2<br>Sensor fusion and localization control</b></font>
+      </p>
+    </th>
+    <th>
+      <p align="center">
+        <font size="14" color="red"><b>Term 3<br>Path Planning Concentration</b></font>
+      </p>
+    </th>
+  </tr>
+
+    <th>
+      <p align="center">
            <a href="https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H"><img src="./term1_project1_lane_finding/img/white_giphy.gif" alt="Overview" width="60%" height="60%"></a>
            <br>P1: Finding Lane Lines on the road
            <br><a href="./term1_project1_lane_finding" name="p1_code">(code)</a>
