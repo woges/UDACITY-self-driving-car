@@ -28,10 +28,12 @@ The first goal of this project was to **detect road lines** in an image taken fr
 The process used in this project roughly the following steps:
 
 * First the color is filtered to eliminate non-line components. A very easy way to do so, is to performe a simple color selection for white and yellow.  
-![line_color](./img/color_selection.jpg)
+
+<img src="./img/color_selection.jpg" width="720" alt="Combined Image" />
+
 * However, it would still be tricky to extract the exact lines automatically, because we still have some other objects detected around the periphery that aren't lane lines. As we could assume that the front facing camera that took the image, is mounted in a fixed position on the car, such that the lane lines will always appear in the same general region of the image. So we take advantage of this by adding a criterion to only consider pixels for color selection in the region where we expect to find the lane lines and apply a region filter.  
 
-<img src="./img/color_selection_region.jpg" width="720" alt="Combined Image" />
+<img src="./img/color_selection_region.jpg" width="980" alt="Combined Image" />
 
 * As it happens, lane lines are not always the same color, and even lines of the same color under different lighting conditions (day, night, etc) may fail to be detected by our simple color selection. So we need a more robust algorithm to detect lines of any color using sophisticated computer vision methods.
 
@@ -43,11 +45,11 @@ The process used in this project roughly the following steps:
  
  * To find lines out of the dots of all the edges processed with Canny function, we should use a model of a line (y = mx + b). Then we can fit that model to the assortment of dots in the edge detection image. For that purpose we use the Hough Transform, which represents a line in the image space as a dot after transformation and a point in image space as a line. So we are looking for intersecting lines in Hough space to identify lines in image space.  
  
- <img src="./img/hough_space.jpg" width="720" alt="Combined Image" />
+ <img src="./img/hough_space.jpg" width="980" alt="Combined Image" />
   
  * With this tools we can identify the lane lines. But to get to an working pipeline for a video we should use a moving average filter to perform smoothing. 
  
-<img src="./results/lines_solidYellowCurve.jpg" width="720" alt="Combined Image" />
+<img src="./results/lines_solidYellowCurve.jpg" width="980" alt="Combined Image" />
 
 ## Results
 
