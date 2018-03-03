@@ -96,7 +96,7 @@ Use a combination of cameras, software, and machine learning to find lane lines 
 
  ---  
 
-### Term 2: Sensor fusion and localization control!
+### Term 2: Sensor fusion and localization control
 
  ---  
 
