@@ -96,13 +96,13 @@ Use a combination of cameras, software, and machine learning to find lane lines 
 
  ---  
 
-### Term 2: Sensor fusion and localization control
+### Term 2: Sensor fusion and localization control!
 
  ---  
 
 ![term2](./term2.jpg)
 
-|[Getting Started for Term 2](./term2_How_to_get_started)        |[![T2P6](./term2_project6_extended_kalman_filters/results/Extended_Kalman_Filters_V01.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 6:<br>Extended Kalman Filters**<br>[Code](./term2_project6_extended_kalman_filters)| [![T2P7](./term1_project1_lane_finding/img/white_giphy.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 7:<br>Unscented Kalman Filters**<br>[Code](./term1_project1_lane_finding)|
+|[Getting Started for Term 2](./term2_How_to_get_started)        |[![T2P6](./term2_project6_extended_kalman_filters/results/Extended_Kalman_Filters_V01.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 6:<br>Extended Kalman Filters**<br>[Code](./term2_project6_extended_kalman_filters)| [![T2P7](./term2_project7_unscented_kalman_filters/results/Unscented_Kalman_Filter.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 7:<br>Unscented Kalman Filters**<br>[Code](./term2_project7_unscented_kalman_filters)|
 | :---:         |     :---:      |          :---: |
 |[![T2P8](./term1_project1_lane_finding/img/white_giphy.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 8:<br>Kidnapped Vehicle**<br>[Code](./term1_project1_lane_finding)|[![T2P9](./term1_project1_lane_finding/img/white_giphy.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 9:<br>PID Controller** <br>[Code](./term1_project1_lane_finding)|[![T2P10](./term1_project1_lane_finding/img/white_giphy.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 10:<br>Model Predictive Control** <br>[Code](./term1_project1_lane_finding)|
 
