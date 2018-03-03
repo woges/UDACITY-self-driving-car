@@ -91,3 +91,15 @@ cd CarND-Capstone/ros
 roslaunch launch/site.launch
 ```
 5. Confirm that traffic light detection works on real life images
+
+## Results
+
+The resulting videos are in the repo, if you are interested.  
+
+## Contributing
+
+No further updates nor contributions are requested.  This project is static.
+
+## License
+
+Term1_project1_lane_finding results are released under the [MIT License](./LICENSE)

@@ -24,7 +24,7 @@ Once you launched the executable, simply run the simulator app and select the EK
 
 ## Goal of this project
 
-In this project we implement the Extended Kalman Filter (EKF) in C++ to combine data from RADAR and LIDAR. Noisy lidar and radar measurements detecting a bicycle that travels around your vehicleto are provided. Using the Kalman filter and the measurements you are able to track the bicycle's position and velocity. 
+In this project we implement the Extended Kalman Filter (EKF) in C++ to combine data from RADAR and LIDAR. Noisy LIDAR and RADAR measurements detecting a bicycle that travels around your vehicle are provided. Using the Kalman filter and the measurements you are able to track the bicycle's position and velocity. 
 
 ## General Process
 
@@ -103,3 +103,15 @@ using the following settings:
 ## Code Style
 
 Please (do your best to) stick to [Google's C++ style guide](https://google.github.io/styleguide/cppguide.html).
+
+## Results
+
+The resulting videos are in the repo, if you are interested.  
+
+## Contributing
+
+No further updates nor contributions are requested.  This project is static.
+
+## License
+
+Term1_project1_lane_finding results are released under the [MIT License](./LICENSE)
