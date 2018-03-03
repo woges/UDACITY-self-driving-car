@@ -65,7 +65,7 @@ Files in the Github src Folder:
 
 Lidar measurements are red circles, radar measurements are blue circles with an arrow pointing in the direction of the observed angle, and estimation markers are green triangles. The video below shows what the simulator looks like when a c++ script is using its Kalman filter to track the object. The simulator provides the script the measured data (either lidar or radar), and the script feeds back the measured estimation marker, and RMSE values from its Kalman filter. 
 
-![Visualization_Extended_Kalman_Filters_overview](.results/Extended_Kalman_Filters_V02.jpg.jpg)
+![Visualization_Extended_Kalman_Filters_overview](.results/Extended_Kalman_Filters_V02.jpg)
 
 
 Using this submitted code for the first data set you will get the following vaules for RMSE:
@@ -79,11 +79,11 @@ Using this submitted code for the first data set you will get the following vaul
 
 Plotting the lissajous figure using the visualization toolkit generates the following image.  This is specifically for the first data set:
 
-![Visualization_Extended_Kalman_Filters](./results/Extended_Kalman_Filters_V01.jpg.jpg)
+![Visualization_Extended_Kalman_Filters](./results/Extended_Kalman_Filters_V01.jpg)
 
 As you can see in the visualization, you can barely see the estimate since the ground truth nearly always covers it. The most variation is at the areas where the lissajous figure curves most rapidly. This is not surprising given the nature of the Extended Kalman Filter with the linear nature of its prediction.
 
-![T2P6](./results/Extended_Kalman_Filters_V01.gif)
+<img src="./results/Extended_Kalman_Filters_V01.gif" width="980" alt="Combined Image" />
 
 ## Visualisation Tools
 
