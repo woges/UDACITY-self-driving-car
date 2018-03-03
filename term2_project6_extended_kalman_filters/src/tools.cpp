@@ -60,7 +60,6 @@ MatrixXd Tools::CalculateJacobian(const VectorXd& x_state) {
   double denom3=pow((pow(px,2.)+pow(py,2.)),3./2.);
 	//check division by zero
   if(denom1<brd or denom2<brd or denom3 <brd){
-//      cout<<"CalculateJacobian () - Error - Division by Zero"<<denom1<<" "<<denom2<<" "<<denom3<<"\n";
      Hj<<10000, 10000, 0, 0,
          10000, 10000, 0, 0,
          10000, 10000, 10000, 10000;
