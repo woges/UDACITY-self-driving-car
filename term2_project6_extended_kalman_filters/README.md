@@ -6,13 +6,13 @@ Kalman Filter is a mathematical approach of determining the state of the system.
   
 Sensor fusion - is a process of combining measurements from different sensors to get one accurate picture. Sensor Fusion for object tracking using RADAR and LIDAR sensors is an actual task for the self-driving car. 
 
-![alt tag](./term2_project6_extended_kalman_filters/img/Kalman_Filters_process_flow.jpg)
+![Kalman_Filters_process_flow](./img/Kalman_Filters_process_flow.jpg)
 Image: Udacity Self-Driving Car Nanodegree  
 
 
 ## Use Instructions
 
-If you have already installed all the necessary dependencies for the projects in term 2 you should be good to go! If not, you should install them to get started on this project => [Getting Started for Term 2](./term2_How_to_get_started). 
+If you have already installed all the necessary dependencies for the projects in term 2 you should be good to go! If not, you should install them to get started on this project => [Getting Started for Term 2](../term2_How_to_get_started). 
 
 1. Clone this repo.
 2. Make a build directory: `mkdir build && cd build`
@@ -36,7 +36,7 @@ There are three main steps for programming a Kalman filter:
 
 Then the prediction and update steps repeat themselves in a loop.
 
-![Kalman_Filters_process_loop](./term2_project6_extended_kalman_filters/img/Kalman_Filters_process_loop.jpg)
+![Kalman_Filters_process_loop](./img/Kalman_Filters_process_loop.jpg)
 
 To measure how well the Kalman filter performs, the root mean squared error comparing the Kalman filter results with the provided ground truth will  be calculated afterwards. The simulator provides the ground truth state of the object to be tracked and displays the calculated root mean squared error (RMSE).
 
@@ -65,7 +65,7 @@ Files in the Github src Folder:
 
 Lidar measurements are red circles, radar measurements are blue circles with an arrow pointing in the direction of the observed angle, and estimation markers are green triangles. The video below shows what the simulator looks like when a c++ script is using its Kalman filter to track the object. The simulator provides the script the measured data (either lidar or radar), and the script feeds back the measured estimation marker, and RMSE values from its Kalman filter. 
 
-![Visualization_Extended_Kalman_Filters_overview](./term2_project6_extended_kalman_filters/results/Extended_Kalman_Filters_V02.jpg.jpg)
+![Visualization_Extended_Kalman_Filters_overview](.results/Extended_Kalman_Filters_V02.jpg.jpg)
 
 
 Using this submitted code for the first data set you will get the following vaules for RMSE:
@@ -79,11 +79,11 @@ Using this submitted code for the first data set you will get the following vaul
 
 Plotting the lissajous figure using the visualization toolkit generates the following image.  This is specifically for the first data set:
 
-![Visualization_Extended_Kalman_Filters](./term2_project6_extended_kalman_filters/results/Extended_Kalman_Filters_V01.jpg.jpg)
+![Visualization_Extended_Kalman_Filters](./results/Extended_Kalman_Filters_V01.jpg.jpg)
 
 As you can see in the visualization, you can barely see the estimate since the ground truth nearly always covers it. The most variation is at the areas where the lissajous figure curves most rapidly. This is not surprising given the nature of the Extended Kalman Filter with the linear nature of its prediction.
 
-![T2P6](./term2_project6_extended_kalman_filters/results/Extended_Kalman_Filters_V01.gif)
+![T2P6](./results/Extended_Kalman_Filters_V01.gif)
 
 ## Visualisation Tools
 
