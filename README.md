@@ -112,7 +112,7 @@ Use a combination of cameras, software, and machine learning to find lane lines 
  
 #### [P10 - MPC Control](project_10_MPC_control)
 - **Summary:** Implement an MPC controller for keeping the car on track by appropriately adjusting the steering angle. Differently from previously implemented PID controller, MPC controller has the ability to anticipate future events and can take control actions accordingly. Indeed, future time steps are taking into account while optimizing current time slot.
-- **Keywords:** C++, Model Preditive Controller (MPC)
+- **Keywords:** C++, Model Predictive Controller (MPC)
 
 
 ---  
