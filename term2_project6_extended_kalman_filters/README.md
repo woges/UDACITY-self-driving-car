@@ -2,7 +2,7 @@
 
 ## Overview
 
-Kalman Filter is a mathematical approach of determining the state of the system. It calculates the system's state using a mathematical model of the process and clarifies the state using the measurement information. For an introduction to Extended Kalman Filters (EKFs), see [here](https://en.wikipedia.org/wiki/Extended_Kalman_filter). 
+Kalman Filter is a mathematical approach of determining the state of the system. It calculates the system's state using a mathematical model of the motion and clarifies the state using the measurement information. For an introduction to Extended Kalman Filters (EKFs), see [here](https://en.wikipedia.org/wiki/Extended_Kalman_filter). 
   
 Sensor fusion - is a process of combining measurements from different sensors to get one accurate picture. Sensor Fusion for object tracking using RADAR and LIDAR sensors is an actual task for the self-driving car. 
 
@@ -24,7 +24,7 @@ Once you launched the executable, simply run the simulator app and select the EK
 
 ## Goal of this project
 
-In this project we implement the Extended Kalman Filter (EKF) in C++ to combine data from RADAR and LIDAR. Noisy LIDAR and RADAR measurements detecting a bicycle that travels around your vehicle are provided. Using the Kalman filter and the measurements you are able to track the bicycle's position and velocity. 
+In this project we implement the Extended Kalman Filter (EKF) using the **constant velocity** model (CV) in C++ to combine data from RADAR and LIDAR. Noisy LIDAR and RADAR measurements detecting a bicycle that travels around your vehicle are provided. Using the Kalman filter and the measurements you are able to track the bicycle's position and velocity. 
 
 ## General Process
 

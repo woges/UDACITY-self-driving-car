@@ -2,7 +2,7 @@
 
 ## Overview
 
-Kalman Filter is a mathematical approach of determining the state of the system. It calculates the system's state using a mathematical model of the process and clarifies the state using the measurement information. For an introduction to UKFs, please refer to the paper ["The Unscented Kalman Filter for Nonlinear Estimation"](https://www.seas.harvard.edu/courses/cs281/papers/unscented.pdf).
+Kalman Filter is a mathematical approach of determining the state of the system. It calculates the system's state using a mathematical model of the motion and clarifies the state using the measurement information. For an introduction to UKFs, please refer to the paper ["The Unscented Kalman Filter for Nonlinear Estimation"](https://www.seas.harvard.edu/courses/cs281/papers/unscented.pdf).
   
 Sensor fusion - is a process of combining measurements from different sensors to get one accurate picture. Sensor Fusion for object tracking using RADAR and LIDAR sensors is an actual task for the self-driving car. 
 
@@ -36,7 +36,7 @@ All Kalmen filters have the same three main steps:
 
 Then the prediction and update steps repeat themselves in a loop.
 
-A standard Kalman filter can only handle linear equations. Both the extended Kalman filter and the unscented Kalman filter allow you to use non-linear equations; the difference between EKF and UKF is how they handle non-linear equations. But the basics are the same: initialize, predict, update.
+A standard Kalman filter can only handle linear equations. Both the extended Kalman filter and the unscented Kalman filter allow you to use non-linear equations. The difference between EKF and UKF is how they handle non-linear equations. But the basics are the same: initialize, predict, update.
 
 To measure how well the Unscented Kalman filter performs, the root mean squared error comparing the Kalman filter results with the provided ground truth will  be calculated afterwards. The simulator provides the ground truth state of the object to be tracked and displays the calculated root mean squared error (RMSE).
 
@@ -59,6 +59,7 @@ Files in the Github src Folder:
 
 **Process Noise**
 For the CTRV model, two parameters define the process noise:
+  * \ddot{\sigma}^2
   * σa2 representing longitudinal acceleration noise (you might see this referred to as linear acceleration) 
   * σψ¨2 representing yaw acceleration noise (this is also called angular acceleration)
 
@@ -84,7 +85,7 @@ The uncertainty of the estimation result is very important for self driving cars
 ###############
 
 You have seen a similar plot before in the EKF project. We see here a bicycle that is first driving straight and then turning into a circle. The path of the bicycle 
-is shown in blue. The green line is the sequence of all measurements we receive both from LiDAR and radar. As before, these measurements are quite noisy. The orange dots are the estimation
+is shown in blue. The green line is the sequence of all measurements we receive both from LIDAR and RADAR. As before, these measurements are quite noisy. The orange dots are the estimation
 resource of the UKF fusing laser and radar measurements. Remember, the linear process model in the last project had problems following the turn. The CTR model we're using this time
 follows the turn quite nicely, and still provides a smooth position estimate. You can play around with the process noise values, and make the estimation even smoother. Or force it to follow
 the measurements quicker. When you change the process noise values, also make sure to check the consistency of your filter. This is how the consistency check of my filter looks like.
