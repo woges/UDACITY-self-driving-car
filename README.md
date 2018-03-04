@@ -29,22 +29,7 @@ Image: Udacity Self-Driving Car Nanodegree
 
 In this repository I will share the **source code** of all the projects of **[Udacity Self-Driving Car Engineer Nanodegree](https://www.udacity.com/course/self-driving-car-engineer-nanodegree--nd013)**.  
 
-## Overview
-
 ### Projects  
-
----
-
-### Term 1: Computer Vision and Deep Learning
-
-
-### Term 2: Sensor fusion and localization control
-
-
-
-### Term 3: Path Planning Concentration
-
-
 
 --- 
 ## Table of Contents
@@ -111,11 +96,11 @@ Use a combination of cameras, software, and machine learning to find lane lines 
 
 #### [P6 - Extended Kalman Filter](project_6_extended_kalman_filter)
  - **Summary:** Implement the extended Kalman filter in C++. Simulated lidar and radar measurements are used to detect a bicycle that travels around your vehicle. Use Kalman filter, lidar measurements and radar measurements  to track the bicycle's position and velocity.
- - **Keywords:** C++, Kalman Filter, Sensor fusion, Lidar, Radar
+ - **Keywords:** C++, Kalman Filter, CV motion model, Sensor fusion, Lidar, Radar
 
 #### [P7 - Unscented Kalman Filter](project_7_unscented_kalman_filter)
  - **Summary:**  Utilize an Unscented Kalman Filter to estimate the state of a moving object of interest with noisy lidar and radar measurements. Kalman filter, lidar measurements and radar measurements are used to track the bicycle's position and velocity.
- - **Keywords:** C++, Unscented Kalman Filter, Sensor fusion, Lidar, Radar
+ - **Keywords:** C++, Unscented Kalman Filter, CTRV motion model, Sigma Points, Consistency Check, NIS
  
 #### [P8 - Kidnapped Vehicle](project_8_kidnapped_vehicle)
  - **Summary:** Your robot has been kidnapped and transported to a new location! Luckily it has a map of this location, a (noisy) GPS estimate of its initial location, and lots of (noisy) sensor and control data. In this project you will implement a 2 dimensional particle filter in C++. Your particle filter will be given a map and some initial localization information (analogous to what a GPS would provide). At each time step your filter will also get observation and control data.
