@@ -59,7 +59,7 @@ Files in the Github src Folder:
 
 **Process Noise**
 For the CTRV model, two parameters define the process noise:
-  * `\ddot{\sigma}^2`
+  * \ddot{\sigma}^2\
   * σa2 representing longitudinal acceleration noise (you might see this referred to as linear acceleration) 
   * σψ¨2 representing yaw acceleration noise (this is also called angular acceleration)
 
