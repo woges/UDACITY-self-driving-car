@@ -167,9 +167,9 @@ What you see here in orange are the NIS values of the three dimensional radar me
 <img src="./results/NIS_Laser_060.png" width="980" alt="Combined Image" />
 
 This is how the NIS values of the laser measurements look like. Be aware that the 95% line is at a different level in this case because the laser measurement is a two dimensional vector. 
-Both diagrams show that the UKF is consistent,it means it provides a realistic covariance metrics. 
+Both diagrams show that the UKF is consistent, it means it provides a realistic covariance metrics. 
 
-What really impressive is how precise the UKF can estimate the orientation of the bicycle. None of our sensors is able to directly observe the orientation, but we still get a precise estimate. 
+What really impressive is, how precise the UKF can estimate the orientation of the bicycle. None of our sensors is able to directly observe the orientation, but we still get a precise estimate. 
 
 <img src="./results/yaw_060.png" width="980" alt="Combined Image" />
 
