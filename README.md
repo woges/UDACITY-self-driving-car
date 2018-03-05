@@ -50,7 +50,7 @@ In this repository I will share the **source code** of all the projects of **[Ud
 The program starts with a survey of how self-driving cars work and an immediately set out to the very first autonomous vehicle project - finding lane lines on the road!   
 
 
-#### [P1 - Finding Lane Lines on the road](term1_project1_lane_finding)
+#### [P1 - Finding Lane Lines on the road](./term1_project1_lane_finding)
  - **Summary:** Detect lane lines on a highway within a video stream. Use OpencV image analysis techniques to identify lines of different colors.
  - **Keywords:** Python, Computer Vision, Hough Transforms, Canny edge detection
  
@@ -94,19 +94,19 @@ Use a combination of cameras, software, and machine learning to find lane lines 
 ---  
 
 
-#### [P6 - Extended Kalman Filter](project_6_extended_kalman_filter)
+#### [P6 - Extended Kalman Filter](./term2_project6_extended_kalman_filters)
  - **Summary:** Implement the extended Kalman filter in C++. Simulated lidar and radar measurements are used to detect a bicycle that travels around your vehicle. Use Kalman filter, lidar measurements and radar measurements  to track the bicycle's position and velocity.
  - **Keywords:** C++, Kalman Filter, CV motion model, Sensor fusion, Lidar, Radar
 
-#### [P7 - Unscented Kalman Filter](project_7_unscented_kalman_filter)
+#### [P7 - Unscented Kalman Filter](./term2_project7_unscented_kalman_filters)
  - **Summary:**  Utilize an Unscented Kalman Filter to estimate the state of a moving object of interest with noisy lidar and radar measurements. Kalman filter, lidar measurements and radar measurements are used to track the bicycle's position and velocity.
  - **Keywords:** C++, Unscented Kalman Filter, CTRV motion model, Sigma Points, Consistency Check, NIS
  
-#### [P8 - Kidnapped Vehicle](project_8_kidnapped_vehicle)
+#### [P8 - Kidnapped Vehicle](./term2_project8_particle_filter_kidnapped_vehicle)
  - **Summary:** Your robot has been kidnapped and transported to a new location! Luckily it has a map of this location, a (noisy) GPS estimate of its initial location, and lots of (noisy) sensor and control data. In this project you will implement a 2 dimensional particle filter in C++. Your particle filter will be given a map and some initial localization information (analogous to what a GPS would provide). At each time step your filter will also get observation and control data.
  - **Keywords:** C++, Particle Filter
  
-#### [P9 - PID Control](project_9_PID_control)
+#### [P9 - PID Control](./term2_project9_PID_controller)
  - **Summary:** Implement a PID controller for keeping the car on track by appropriately adjusting the steering angle and try to get as near to 100mph by controlling the throttle at the same time.
  - **Keywords:** C++, PID Controller
  
@@ -138,7 +138,7 @@ Use a combination of cameras, software, and machine learning to find lane lines 
 - **Keywords:** Python, TensorFlow, Semantic Segmentation
 
 
-#### [CAPSTONE PROJECT - Programming a Real Self-Driving Car](project_12_road_segmentation)
+#### [CAPSTONE PROJECT - Programming a Real Self-Driving Car](./term3_capstone_project)
 - **Summary:** Programm a real driving car.
 - **Keywords:** C++, ROS, Semantic Segmentation, Path, Simulator & Real Car
  

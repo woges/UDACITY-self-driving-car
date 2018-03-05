@@ -83,13 +83,13 @@ Here the final gain settings are: Kp = 18.0 Kd = 20 Ki = 0.002.
 
 ![PID_controller_simulator_01](./results/PID_controller_simulator_01.gif)
 
-## Literature
-
-[PID theory explained](http://www.ni.com/white-paper/3782/en/)
-
 ## Results
 
 The resulting videos are in the repo, if you are interested. 
+
+## Literature
+
+[PID theory explained](http://www.ni.com/white-paper/3782/en/)
 
 ## Editor Settings
 
