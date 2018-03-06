@@ -81,14 +81,11 @@ But the performance of the speed controller depends very much on the performance
 
 Here the final gain settings are: Kp = 18.0 Kd = 20 Ki = 0.002.
 
-<p align="center">
-  <img src="./results/PID_controller_simulator_01.gif" width="600">
-</p>
-
+![PID_controller_simulator_01](./results/PID_controller_simulator_01.gif)
 
 ## Results
 
-The resulting [videos](./results/PID_controller_simulator.webm) are in the repo, if you are interested. 
+The resulting videos are in the repo, if you are interested. 
 
 ## Literature
 
