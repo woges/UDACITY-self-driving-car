@@ -89,7 +89,7 @@ Use a combination of cameras, software, and machine learning to find lane lines 
 
 |[Getting Started for Term 2](./term2_How_to_get_started)        |[![T2P6](./term2_project6_extended_kalman_filters/results/Extended_Kalman_Filters_V01.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 6:<br>Extended Kalman Filters**<br>[Code](./term2_project6_extended_kalman_filters)| [![T2P7](./term2_project7_unscented_kalman_filters/results/Unscented_Kalman_Filter.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 7:<br>Unscented Kalman Filters**<br>[Code](./term2_project7_unscented_kalman_filters)|
 | :---:         |     :---:      |          :---: |
-|[![T2P8](./term2_project8_particle_filter_kidnapped_vehicle/results/particle_filter_kidnapped_vehicle.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 8:<br>Particle Filer - Kidnapped Vehicle**<br>[Code](./term2_project8_particle_filter_kidnapped_vehicle)|[![T2P9](./term2_project9_PID_controller/results/PID_controller_simulator_01.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 9:<br>PID Controller** <br>[Code](./term2_project9_PID_controller)|[![T2P10](./term2_project10_Model_Predictive_Control/results/white_giphy.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 10:<br>Model Predictive Control** <br>[Code](./term2_project10_Model_Predictive_Control)|
+|[![T2P8](./term2_project8_particle_filter_kidnapped_vehicle/results/particle_filter_kidnapped_vehicle.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 8:<br>Particle Filer - Kidnapped Vehicle**<br>[Code](./term2_project8_particle_filter_kidnapped_vehicle)|[![T2P9](./term2_project9_PID_controller/results/PID_controller_simulator_01.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 9:<br>PID Controller** <br>[Code](./term2_project9_PID_controller)|[![T2P10](./term2_project10_Model_Predictive_Control/results/Model_Predictive_Control.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 10:<br>Model Predictive Control** <br>[Code](./term2_project10_Model_Predictive_Control)|
 
 ---  
 
@@ -99,7 +99,7 @@ Use a combination of cameras, software, and machine learning to find lane lines 
  - **Keywords:** C++, Kalman Filter, CV motion model, Sensor fusion, Lidar, Radar
 
 #### [P7 - Unscented Kalman Filter](./term2_project7_unscented_kalman_filters)
- - **Summary:**  Utilize an Unscented Kalman Filter to estimate the state of a moving object of interest with noisy lidar and radar measurements. Kalman filter, lidar measurements and radar measurements are used to track the bicycle's position and velocity.
+ - **Summary:**  Utilize an Unscented Kalman Filter to estimate the state of a moving object of interest with noisy lidar and radar measurements. A CTRV motion model, lidar measurements and radar measurements are used to track the bicycle's position and velocity. A consistency check with Normalized Innovation Squared (NIS) values is done. 
  - **Keywords:** C++, Unscented Kalman Filter, CTRV motion model, Sigma Points, Consistency Check, NIS
  
 #### [P8 - Kidnapped Vehicle](./term2_project8_particle_filter_kidnapped_vehicle)
@@ -112,7 +112,7 @@ Use a combination of cameras, software, and machine learning to find lane lines 
  
 #### [P10 - Model Predictive Control](./term2_project10_Model_Predictive_Control)
 - **Summary:** Implement an MPC controller for keeping the car on track by appropriately adjusting the steering angle. Differently from previously implemented PID controller, MPC controller has the ability to anticipate future events and can take control actions accordingly. Indeed, future time steps are taking into account while optimizing current time slot.
-- **Keywords:** C++, Model Predictive Controller (MPC)
+- **Keywords:** C++, Model Predictive Control (MPC)
 
 
 ---  
