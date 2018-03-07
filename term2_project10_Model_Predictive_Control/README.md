@@ -60,23 +60,22 @@ There are four main components in the MPC controller framework:
    - **acceleration**: bounded in range [-1, 1] from full brake to full throttle
    
  - **Cost Function** on whose optimization is based the whole control process. Usually cost function is made of the sum of different terms. Besides the main terms that depends on reference values (*e.g.* cross-track or heading error), other regularization terms are present to enforce the smoothness in the controller response. The implemented cost function takes the following components into account:
+    1. The cross-track error, which is the orthogonal distance between the reference trajectory curve and the vehicle.
+    2. The orientation error, which is the difference between the vehicle's actual orientation and the orientation the vehicle should have if it followed the reference trajectory.
+    3. The velocity error, which is the difference between the desired velocity and the vehicle's actual velocity.
+    4. The steering actuation value.
+    5. The throttle actuation value.
+    6. The steering actuation change rate.
+    7. The throttle actuation change rate.
 
-  1. The cross-track error, which is the orthogonal distance between the reference trajectory curve and the vehicle.
-  2. The orientation error, which is the difference between the vehicle's actual orientation and the orientation the vehicle should have if it followed the reference trajectory.
-  3. The velocity error, which is the difference between the desired velocity and the vehicle's actual velocity.
-  4. The steering actuation value.
-  5. The throttle actuation value.
-  6. The steering actuation change rate.
-  7. The throttle actuation change rate.
+   The optimizer seeks to minimize all of the above. Minimization of the last four components serves to yield smooth driving behavior. By minimizing the use of the actuators and minimizing the change of actuation over time, the optimizer avoids extreme actuation values or abrupt changes in steering angles or throttle.
 
-  The optimizer seeks to minimize all of the above. Minimization of the last four components serves to yield smooth driving behavior. By minimizing the use of the actuators and minimizing the change of actuation over time, the optimizer avoids extreme actuation values or abrupt changes in steering angles or throttle.
+   _Cost function weights_
 
-  _Cost function weights_
+   The individual cost function components could be weighted individually.
+   While it might seem intuitive to assign a large weight to the cross-track error, the orientation error is actually a lot more important for a smooth driving experience if we can afford to deviate slightly from the reference trajectory, which, in this race track scenario, we can. If the weight of the cross-track error is very large, the controller will aggressively try to steer back exactly to the reference trajectory. In this scenario though, we care more about the car heading in the **direction** of the reference trajectory rather than the car being precisely **on** the reference trajectory. In a regular street traffic scenario, following the reference trajectory extremely closely will usually be critical, so that a higher CTE weight would be appropriate in this case.
 
-  The individual cost function components could be weighted individually.
-  While it might seem intuitive to assign a large weight to the cross-track error, the orientation error is actually a lot more important for a smooth driving experience if we can afford to deviate slightly from the reference trajectory, which, in this race track scenario, we can. If the weight of the cross-track error is very large, the controller will aggressively try to steer back exactly to the reference trajectory. In this scenario though, we care more about the car heading in the **direction** of the reference trajectory rather than the car being precisely **on** the reference trajectory. In a regular street traffic scenario, following the reference trajectory extremely closely will usually be critical, so that a higher CTE weight would be appropriate in this case.
-
-  With high values for the steering value and the steering change rate we could force the controller to follow a smooth trajectory. Keeping the steering values minimal means the optimizer will prefer a sequence of many small steering actuations over few large steering actuations. Keeping the steering angle change rate minimal means the optimizer will prefer smooth turns over abrupt turns. These two weights are the single most important weights in this cost function. But keep in mind that the controller must be able to react fast in sharp turns. So the weights need to be tuned very careful.
+   With high values for the steering value and the steering change rate we could force the controller to follow a smooth trajectory. Keeping the steering values minimal means the optimizer will prefer a sequence of many small steering actuations over few large steering actuations. Keeping the steering angle change rate minimal means the optimizer will prefer smooth turns over abrupt turns. These two weights are the single most important weights in this cost function. But keep in mind that the controller must be able to react fast in sharp turns. So the weights need to be tuned very careful.
 
 ### Optimization of the time horizon
 
@@ -85,7 +84,7 @@ Both ***N*** and ***dt*** are fundamental parameters in the optimization process
   - despite the fact that having a large *T* could benefit the control process, consider that predicting too far in the future does not make sense in real-world scenarios. The inaccuracy of any given motion model will make computations too far into the future pointless. Beyond that at most normal driving speeds the next one or two seconds will take into account enough of the reference path ahead to make good actuation decisions.
   - large *T* and small *dt* lead to large *N*. On the one hand this allows the optimizer to take a longer stretch of the future reference trajectory into account when computing the optimal actuation values for the present. But on the other hand it also increases the computation time for the optimizer, a critical factor for a controller that needs to run in real time.
 
-In the current project the model computes the vehicle state at ***N = 6*** time steps in the future, where each time step has a length of ***dt = 0.275*** seconds, i.e the model takes into account the next***T=1.65s*** for which to compute the optimal sequence of actuations.
+In the current project the model computes the vehicle state at ***N = 6*** time steps in the future, where each time step has a length of ***dt = 0.275*** seconds, i.e the model takes into account the next ***T=1.65s*** for which to compute the optimal sequence of actuations.
 
 ### Coordinate transformations
 
@@ -126,15 +125,14 @@ The resulting [videos](./results/Model_Predictive_Control.webm) are in the repo,
 ## Literature
 
 MPC:
-For a general explanation of model predictive control, see [here](https://en.wikipedia.org/wiki/Model_predictive_control).
-or more application oriented: 
+For a general explanation of model predictive control, see [here](https://en.wikipedia.org/wiki/Model_predictive_control).  
+or more application oriented:   
 [Study of Model Predictive Control for Path-Following Autonomous Ground Vehicle Control under Crosswind Effect](https://www.hindawi.com/journals/jcse/2016/6752671/)
 
-You can find an introduction to IPOPT here:
-[Introduction to IPOPT](./resources/Intro2IPOPT.pdf)
-Or a short tutorial for IPOPT here:
+You can find an introduction to IPOPT here:  
+[Introduction to IPOPT](./resources/Intro2IPOPT.pdf)  
+Or a short tutorial for IPOPT here:  
 [Short tutorial IPOPT](./resources/Short_tutorial_IPOPT.pdf)
-
 
 
 ## Editor Settings
