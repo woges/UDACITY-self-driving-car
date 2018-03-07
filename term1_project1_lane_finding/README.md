@@ -11,7 +11,7 @@ When we drive, we use our eyes to decide where to go.  The lines on the road tha
 
 In this project you will detect lane lines in images using Python and OpenCV.  OpenCV means "Open-Source Computer Vision", which is a package that has many useful tools for analyzing images.  
 
-## Use Instructions
+## Basic Build Instructions
 
 1. Clone or fork this repository.
 2. Launch the Jupyter notebook: `jupyter notebook term1_project1_lane_finding.ipynb`

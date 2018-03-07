@@ -5,7 +5,7 @@
 This projects implements a PID controller in C++for keeping the car on the lake race track by appropriately adjusting the steering angle to maneuver the vehicle around the track! The simulator provides you with the cross track error (CTE) and the velocity (mph) in order to compute the appropriate steering angle.
 One more thing. Try to drive SAFELY as fast as possible! Get as near to 100mph by controlling the throttle. 
 
-## Use Instructions
+## Basic Build Instructions
 
 If you have already installed all the necessary dependencies for the projects in term 2 you should be good to go! If not, you should install them to get started on this project => [Getting Started for Term 2](../term2_How_to_get_started). 
 
