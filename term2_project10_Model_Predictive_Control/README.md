@@ -37,8 +37,9 @@ There are four main components in the MPC controller framework:
 
 - **Trajectory** taken in consideration during optimization. This is parametrized by a number of time steps ***N*** spaced out by a time ***dt***. Clearly, the number of variables optimized is directly proportional to *N*, so this must be considered in case there are computational constraints.
  
- - **Vehicle Model**, which is the set of equations that describes system behavior and updates across time steps. In our case, we used a simplified kinematic model (so called *bycicle model*) described by a state of six parameters:    
-  _State_
+ - **Vehicle Model**, which is the set of equations that describes system behavior and updates across time steps. In our case, we used a simplified kinematic model (so called *bycicle model*) described by a state of six parameters: 
+   
+  _State:_
    - **x** car position (*x-axis*)
    - **y** car position (*y-axis*)
    - **ψ** car's heading direction
@@ -46,6 +47,7 @@ There are four main components in the MPC controller framework:
    - **cte** cross-track error
    - **epsi** orientation error  
 The variables x, y, ψ and v are received from the simulator. The x, y position are in the map coordinates and are converted into the vehicle coordinate system.  
+
 _Actuators_  
 There are two actuators here: 
    - **δ** - steering angle 
