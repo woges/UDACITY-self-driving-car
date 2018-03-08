@@ -52,9 +52,11 @@ There are four main components in the MPC controller framework:
    - **a** - throttle (which also includes negative acceleration - braking) These are obtained from the result of the solver and passed to the simulator.
  _Update equations_
  The new state is obtained from the previous state by applying the kinematic model equations:
+ 
+<p align="center">
+  <img src="./img/motion_model_updatestep.png" width="480">
+</p>
 
-  ![motion_model_updatestep](./img/motion_model_updatestep.png) 
-   
  - **Contraints** necessary to model contrants in actuators' respose. For instance, a vehicle will never be able to steer 90 deegrees in a single time step. In this project we set these constraints as follows:
    - **steering**: bounded in range [-25°, 25°]
    - **acceleration**: bounded in range [-1, 1] from full brake to full throttle
@@ -126,7 +128,7 @@ The resulting [videos](./results/Model_Predictive_Control.webm) are in the repo,
 
 MPC:
 For a general explanation of model predictive control, see [here](https://en.wikipedia.org/wiki/Model_predictive_control).  
-or more application oriented:   
+Or more application oriented:   
 [Study of Model Predictive Control for Path-Following Autonomous Ground Vehicle Control under Crosswind Effect](https://www.hindawi.com/journals/jcse/2016/6752671/)
 
 You can find an introduction to IPOPT here:  
