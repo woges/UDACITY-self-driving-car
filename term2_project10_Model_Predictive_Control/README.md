@@ -44,12 +44,13 @@ There are four main components in the MPC controller framework:
    - **ψ** car's heading direction
    - **v** car's velocity
    - **cte** cross-track error
-   - **epsi** orientation error
- The variables x, y, ψ and v are received from the simulator. The x, y position are in the map coordinates and are converted into the vehicle coordinate system.  
+   - **epsi** orientation error  
+  The variables x, y, ψ and v are received from the simulator. The x, y position are in the map coordinates and are converted into the vehicle coordinate system.  
  _Actuators_  
  There are two actuators here: 
    - **δ** - steering angle 
-   - **a** - throttle (which also includes negative acceleration - braking) These are obtained from the result of the solver and passed to the simulator.  
+   - **a** - throttle (which also includes negative acceleration - braking)
+ These are obtained from the result of the solver and passed to the simulator.  
  _Update equations_  
  The new state is obtained from the previous state by applying the kinematic model equations:
  
