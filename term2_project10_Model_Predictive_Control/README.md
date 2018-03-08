@@ -1,9 +1,12 @@
 # Model Predictive Control (MPC)
-Model predictive control (MPC) is an advanced method of process control which relies on dynamic models of the process. Differently from previously implemented PID controller, MPC controller has the ability to anticipate future events and can take control actions accordingly. Indeed, future time steps are taking into account while optimizing current time slot. Here a model predictive controller (MPC) for 2D vehicle trajectories is implemented in C++.
+[![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 
 ## Overview
 
+Model predictive control (MPC) is an advanced method of process control which relies on dynamic models of the process. Differently from previously implemented PID controller, MPC controller has the ability to anticipate future events and can take control actions accordingly. Indeed, future time steps are taking into account while optimizing current time slot. Here a model predictive controller (MPC) for 2D vehicle trajectories is implemented in C++.
+
 ![example01](./img/race_track_lake.png)
+
 The controller steers a car around a race track in the simulator linked below. The yellow line shows the reference trajectory, the green line shows the controller's projected trajectory based on the sequence of actuations computed by the optimizer.
 
 ## Dependencies
@@ -49,7 +52,7 @@ There are four main components in the MPC controller framework:
   
     The variables x, y, ψ and v are received from the simulator. The x, y position are in the map coordinates and are converted into the vehicle coordinate system.
 
-    _Actuators:_
+    _Actuators:_  
     There are two actuators here:
     - **δ** - steering angle
     - **a** - throttle (which also includes negative acceleration - braking)

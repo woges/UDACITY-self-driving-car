@@ -3,14 +3,16 @@
 
 <img src="./results/lines_solidWhiteCurve.jpg" width="480" alt="Combined Image" />
 
----
-
 ## Overview
 
 When we drive, we use our eyes to decide where to go.  The lines on the road that show us where the lanes are act as our constant reference for where to steer the vehicle.  Naturally, one of the first things we would like to do in developing a self-driving car is to automatically detect lane lines using an algorithm.
 
 In this project you will detect lane lines in images using Python and OpenCV.  OpenCV means "Open-Source Computer Vision", which is a package that has many useful tools for analyzing images.  
 
+## Dependencies
+
+If you have already installed all the necessary dependencies for the projects in term 1 you should be good to go! If not, you should install them to get started on this project => [Getting Started for Term 1](../term1_How_to_get_started). 
+ 
 ## Basic Build Instructions
 
 1. Clone or fork this repository.
