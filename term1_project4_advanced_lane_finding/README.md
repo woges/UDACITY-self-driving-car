@@ -116,11 +116,20 @@ The goal of this step is to transform the undistorted image to a "birds eye view
 
 The following image shows the original image with the rectangle source points on the left side and the undistorted and warped image with the destination points on the right side. As this is a straight lane the lines appear as parallel vertical lines in the result image.
 
-<p>
-  <img src="./img/ori_warped_01.png" width="400" align="left">
-  <img src="./img/ori_warped_02.png" width="400" align="right">
-</p>  
-
+<table style="width:100%">
+  <tr>
+    <th>
+      <p align="center">
+           <img src="./img/ori_warped_01.png" width="60%" height="60%">
+      </p>
+    </th>
+    <th>
+      <p align="center">
+           <img src="./img/ori_warped_02.png" width="60%" height="60%">
+      </p>
+    </th>
+  </tr>
+</table>
 
 Below an other example of a curved lane is shown, with a binary thresholded and warped image, as it is needed for the further steps:
 
