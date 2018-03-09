@@ -121,9 +121,8 @@ The following image shows the original image with the rectangle source points on
   <img src="./img/ori_warped_02.png" width="400" align="right">
 </p>  
 
-  
-Below an other example of a curved lane is shown, with a binary thresholded and warped image, as it is needed for the further steps:
 
+Below an other example of a curved lane is shown, with a binary thresholded and warped image, as it is needed for the further steps:
 
 <p align="center">
   <img src="./img/ori_warped_03.png" width="960">
