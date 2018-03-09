@@ -42,7 +42,7 @@ In this repository I will share the **source code** of all the projects of **[Ud
 
 | [Getting Started for Term 1](./term1_How_to_get_started)       | [![T1P1](./term1_project1_lane_finding/results/white_giphy.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 1:<br>Finding Lane Lines on the road**<br>[Code](./term1_project1_lane_finding)       | [![T1P2](./term1_project1_lane_finding/img/white_giphy.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 2:<br>Traffic Sign Classifier**<br>[Code](./term1_project1_lane_finding)       |
 | :---:         |     :---:      |          :---: |
-| [![T1P3](./term1_project1_lane_finding/img/white_giphy.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 3:<br>Behavioral Cloning**<br>[Code](./term1_project1_lane_finding)       | [![T1P4](./term1_project1_lane_finding/img/white_giphy.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 4:<br>Advanced Lane Finding**<br>[Code](./term1_project1_lane_finding)       |[![T1P5](./term1_project1_lane_finding/img/white_giphy.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>Project 5:<br>Vehicle Tracking <br>[Code](./term1_project1_lane_finding)|
+| [![T1P3](./term1_project1_lane_finding/img/white_giphy.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 3:<br>Behavioral Cloning**<br>[Code](./term1_project1_lane_finding)       | [![T1P4](./term1_project4_advanced_lane_finding/results/P4_adv_lane_lines_project_video.gif)](./term1_project4_advanced_lane_finding/results/P4_adv_lane_lines_project_video.webm)<br>**Project 4:<br>Advanced Lane Finding**<br>[Code](./term1_project4_advanced_lane_finding)       |[![T1P5](./term1_project1_lane_finding/img/white_giphy.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>Project 5:<br>Vehicle Tracking <br>[Code](./term1_project1_lane_finding)|
 
 ---  
 
@@ -71,10 +71,10 @@ Use a combination of cameras, software, and machine learning to find lane lines 
 
 
 #### [P4 - Advanced Lane Finding](project_4_advanced_lane_finding)
- - **Summary:** Write a software pipeline to identify the lane boundaries in a video from a front-facing camera on a car. Use distortion correction, image rectification, color transforms, and gradient thresholding. Identify lane curvature and vehicle displacement with means of perspective transform and polynomial fit. Overcame environmental challenges such as shadows and pavement changes.
- - **Keywords:** Python, OpenCV, Sobel Operator, Color Spaces  
+ - **Summary:** Write a software pipeline to identify the lane boundaries in a video from a front-facing camera on a car. Use distortion correction, image rectification, color transforms and gradient thresholding. Identify lane curvature and vehicle displacement with means of perspective transform and polynomial fit. Overcome environmental challenges such as shadows and pavement changes.
+ - **Keywords:** Python, OpenCV, Sobel Operator, Color Spaces, Polynomial Fit  
  
-#### [P5 - Vehicle Detection and Tracking](project_5_vehicle_detection)
+#### [P5 - Vehicle Detection and Tracking](term1_project4_advanced_lane_finding)
  - **Summary:** Create a vehicle detection and tracking pipeline with OpenCV. Use techniques like 'histogram of oriented gradients' (HOG) and train a classifier (e.g. support vector machines (SVM)) to identify cars. Implement the model in a pipeline. Use sliding windows to detect cars on video data from an automotive camera taken during highway driving. Use heat-map technique to combine overlapping detections and remove false positives.
  - **Keywords:** Python, Object Detection and Tracking, SVM, HOG, Sliding Window, Heatmap  
 

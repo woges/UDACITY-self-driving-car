@@ -102,4 +102,4 @@ No further updates nor contributions are requested.  This project is static.
 
 ## License
 
-Term1_project1_lane_finding results are released under the [MIT License](./LICENSE)
+Term3_capstone_project results are released under the [MIT License](./LICENSE)

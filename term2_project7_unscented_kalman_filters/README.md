@@ -215,4 +215,4 @@ No further updates nor contributions are requested.  This project is static.
 
 ## License
 
-Term1_project1_lane_finding results are released under the [MIT License](./LICENSE)
+Term2_project7_unscented_kalman_filters results are released under the [MIT License](./LICENSE)

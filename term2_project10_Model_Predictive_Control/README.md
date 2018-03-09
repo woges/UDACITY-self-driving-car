@@ -165,4 +165,4 @@ No further updates nor contributions are requested.  This project is static.
 
 ## License
 
-Term1_project1_lane_finding results are released under the [MIT License](./LICENSE)
+Term2_project10_Model_Predictive_Control results are released under the [MIT License](./LICENSE)

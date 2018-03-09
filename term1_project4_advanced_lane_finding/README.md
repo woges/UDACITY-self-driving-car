@@ -65,6 +65,11 @@ Once the camera is calibrated, we can use the camera matrix and distortion coeff
 
 Notice that if you compare each two images, especially around the edges, there are obvious differences between the original and undistorted image, indicating that distortion has been removed from the original image.
 
+To determine the curvature of the lane to predict the necessary steering angle for an autonomous car, we'll have to go through the following steps:
+  - detect the lane lines using some masking and thresholding techniques
+  - perform a perspective transform to get a birds eye view of the lane
+  - fit a polynomial to the lane lines
+
 ### Step 2: Create a thresholded binary image
 
 Correctly creating the binary image from the input frame is the very first step of the whole pipeline that will lead us to detect the lane. For this reason that is also one of the most important steps. If the binary image is bad, it's very difficult to recover and to obtain good results in the successive steps of the pipeline.
@@ -106,16 +111,14 @@ I used a combination of color and gradient thresholds to generate a binary image
   <img src="./img/threshold_03.png" width="960">
 </p>
 
-### Step 2: Perspective Transform
+### Step 3: Perspective Transform
 The goal of this step is to transform the undistorted image to a "birds eye view" of the road which focuses only on the lane lines and displays them in such a way that they appear to be relatively parallel to eachother (as opposed to the converging lines you would normally see). To achieve the perspective transformation the OpenCV functions `getPerspectiveTransform` and `warpPerspective` were applied which take a matrix of four source points on the undistorted image and remaps them to four destination points on the warped image. The source and destination points were selected manually by visualizing the locations of the lane lines on a series of test images.
 
 The following image shows the original image with the rectangle source points on the left side and the undistorted and warped image with the destination points on the right side. As this is a straight lane the lines appear as parallel vertical lines in the result image.
 
-<p align="left">
-  <img src="./img/ori_warped_01.png" width="480">
-</p>
-<p align="right">
-  <img src="./img/ori_warped_02.png" width="480">
+<p> >
+  <img src="./img/ori_warped_01.png" width="400" align="left">
+  <img src="./img/ori_warped_02.png" width="400" align="right">
 </p>
 
 Below an other example of a curved lane is shown, with a binary thresholded and warped image, as it is needed for the further steps:
@@ -124,37 +127,45 @@ Below an other example of a curved lane is shown, with a binary thresholded and 
   <img src="./img/ori_warped_03.png" width="480">
 </p>
 
-### Steps 4, 5 and 6: Fitting a polynomial to the lane lines, calculating vehicle position and radius of curvature:
-At this point I was able to use the combined binary image to isolate only the pixels belonging to lane lines. The next step was to fit a polynomial to each lane line, which was done by:
-- Identifying peaks in a histogram of the image to determine location of lane lines.
-- Identifying all non zero pixels around histogram peaks using the numpy function `numpy.nonzero()`.
-- Fitting a polynomial to each lane using the numpy function `numpy.polyfit()`.
+### Step 4: Fit a polynomial to the lane lines
+To meet the goal of transforming the lane line pixels in a curved function form, the pixels must be identified first. Here we use a histogram along the driveway in the lower half of the image to identify the most prominent regions in the x direction of the image where we can expect the lanes to be. The histogram below shows a situation where the left line is definitely visible and identifiable but the right lane is more or less covered by noise.
 
-After fitting the polynomials I was able to calculate the position of the vehicle with respect to center with the following calculations:
-- Calculated the average of the x intercepts from each of the two polynomials `position = (rightx_int+leftx_int)/2`
-- Calculated the distance from center by taking the absolute value of the vehicle position minus the halfway point along the horizontal axis `distance_from_center = abs(image_width/2 - position)`
-- If the horizontal position of the car was greater than `image_width/2` than the car was considered to be left of center, otherwise right of center.
-- Finally, the distance from center was converted from pixels to meters by multiplying the number of pixels by `3.7/700`.
+<p align="center">
+  <img src="./img/histogram.png" width="480">
+</p>
 
-Next I used the following code to calculate the radius of curvature for each lane line in meters:
-```
-ym_per_pix = 30./720 # meters per pixel in y dimension
-xm_per_pix = 3.7/700 # meteres per pixel in x dimension
-left_fit_cr = np.polyfit(lefty*ym_per_pix, leftx*xm_per_pix, 2)
-right_fit_cr = np.polyfit(righty*ym_per_pix, rightx*xm_per_pix, 2)
-left_curverad = ((1 + (2*left_fit_cr[0]*np.max(lefty) + left_fit_cr[1])**2)**1.5) \
-                             /np.absolute(2*left_fit_cr[0])
-right_curverad = ((1 + (2*right_fit_cr[0]*np.max(lefty) + right_fit_cr[1])**2)**1.5) \
-                                /np.absolute(2*right_fit_cr[0])
-```
-*Source:* http://www.intmath.com/applications-differentiation/8-radius-curvature.php
+In order to identify which pixels of a given binary image belong to lane-lines, there are (at least) two possibilities. If a brand new frame arises, for whom it was never identified where the lane-lines are, an exhaustive search on the frame must be performed. This search is implemented in `slide_win_poly()`: starting from the bottom of the image, we slide two windows towards the upper side of the image, deciding which pixels belong to which lane-line. As a starting point we use precisely the position of the maximum peaks in the histogram of the binary image as well as the knowledge of the roadway width when we are dealing with noisy data.
 
-The final radius of curvature was taken by average the left and right curve radiuses.
+On the other hand, if we're processing a video and we confidently identified lane-lines on the previous frame, we can limit our search to the neigborhood of the lane-lines we detected before. As  we're going at 30fps, the lines won't be so far away. This second approach is implemented in `nxt_win_poly()`.
+
+One way to calculate the curvature of a lane line, is to fit a 2nd degree polynomial to that line, and from this you can easily extract useful information. After identifying an complete array of line pixels a polynomial is fitted to each lane using the numpy function `numpy.polyfit()`.
+
+<p align="center">
+  <img src="./img/polynomial_approx_01.png" width="480">
+</p>
+
+<p align="center">
+  <img src="./img/polynomial_approx_02.png" width="480">
+</p>
+
+### Steps 5: Determine curvature of the lane and vehicle position with respect to center
+The offset from the lane center can be computed under the hypothesis that the camera is fixed and mounted in the midpoint of the car roof. In this case, we can approximate the car's deviation from the lane center as the distance between the center of the image and the midpoint at the bottom of the image of the two lane-lines detected.
+
+During the previous lane-line detection phase, a 2nd order polynomial is fitted to each lane-line. This function returns the 3 coefficients that describe the curve, namely the coefficients of both the 2nd and 1st order terms plus the bias. From this coefficients, following [this](http://www.intmath.com/applications-differentiation/8-radius-curvature.php) equation, we can compute the radius of curvature of the curve.
+
+Finally the pixel value for the distance from center and the curvature was converted from pixels to meters by multiplying the number of pixels by `3.7/700`. The final radius of curvature was taken by averaging the left and right curve radii.
+ 
+### Step 6: Warp the detected lane boundaries back onto the original image.
+The final step in processing the images was to plot the polynomials onto the warped image and fill the space between the polynomials to highlight the lane the car is actually in. After that another perspective trasformation was used to unwarp the image from birds eye back to its original perspective
 
 ### Step 7: Output visual display of the lane boundaries and numerical estimation of lane curvature and vehicle position.
-The final step in processing the images was to plot the polynomials on to the warped image, fill the space between the polynomials to highlight the lane that the car is in, use another perspective trasformation to unwarp the image from birds eye back to its original perspective, and print the distance from center and radius of curvature on to the final annotated image.
+Subsequently the distance from center and radius of curvature was printed to the final annotated image.
 
-![Filled Image](./images/filled.png)
+<p align="center">
+  <img src="./img/goal_image_01.png" width="480">
+</p>
+
+All other test images can be found in [./results/](./results/)
 
 ## Video Processing Pipeline:
 After establishing a pipeline to process still images, the final step was to expand the pipeline to process videos frame-by-frame, to simulate what it would be like to process an image stream in real time on an actual vehicle. 
@@ -169,24 +180,11 @@ In order to make the output smooth I chose to average the coefficients of the po
 
 |Project Video|Challenge Video|
 |-------------|-------------|
-|![Final Result Gif](./images/project_vid.gif)|![Challenge Video](./images/challenge.gif)|
-
-### Possible Limitations:
-The video pipeline developed in this project did a fairly robust job of detecting the lane lines in the test video provided for the project, which shows a road in basically ideal conditions, with fairly distinct lane lines, and on a clear day. It also did a decent job with the challenge video, although it did lose the lane lines momentarily when there was heavy shadow over the road from an overpass. 
-
-What I have learned from this project is that it is relatively easy to finetune a software pipeline to work well for consistent road and weather conditions, but what is challenging is finding a single combination which produces the same quality result in any condition. I have not yet tested the pipeline on additional video streams which could challenge the pipeline with varying lighting and weather conditions, road quality, faded lane lines, and different types of driving like lane shifts, passing, and exiting a highway. For further research I plan to record some additional video streams of my own driving in various conditions and continue to refine my pipeline to work in more varied environments.   
-
-<p align="center">
-  <img src="./results/Model_Predictive_Control.gif" width="600">
-</p>
+|![Final Result Gif](./results/P4_adv_lane_lines_project_video.gif)|![Challenge Video](./results/P4_adv_lane_lines_challenge_video.gif)|
 
 ## Results
 
-The resulting [videos](./results/Model_Predictive_Control.webm) are in the repo, if you are interested. 
-
-## Literature
-
-
+The resulting [videos](./results/) are in the repo, if you are interested. 
 
 ## Contributing
 
@@ -194,4 +192,4 @@ No further updates nor contributions are requested.  This project is static.
 
 ## License
 
-Term1_project1_lane_finding results are released under the [MIT License](./LICENSE)
+Term1_project4_advanced_lane_finding results are released under the [MIT License](./LICENSE)
