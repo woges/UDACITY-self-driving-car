@@ -5,7 +5,7 @@
 
 A lane detection and tracking program that uses a traditional (i.e. non-machine-learning) computer vision approach to detect lane lines is implemented here.
 
-![T1P4](./results/white_giphy.gif)
+![T1P4](./results/P4_adv_lane_lines_project_video.gif)
 
 ## Dependencies
 
@@ -76,28 +76,26 @@ Correctly creating the binary image from the input frame is the very first step 
 
 There are several threshold functions which could be used to generate a binary image and detect lane lines also under worse conditions like shadows and lower brightness. Here different function were used to manage this task.
 
-**1. Region of Interest**
+  **1. Region of Interest**  
   This defines a mask (polygonial shape) in the image where you normally expect the lanes to be. The rest of the image is set to black.
 
-**2. Sobel Operator**
+  **2. Sobel Operator**  
   With canny-edge detection we found pixels in the image that were likely to be part of a line in project 1 'lane finding'. Here we use the sobel operator as we know that the lines we are looking for are close to vertical.  Applying the sobel operator to an images is a way of taking the derivative of the image in the x or y direction. With the results of the sobel operation the gradient in x or y direction is calculated Afterwards a threshold is applied to identify pixels within a certain gradient range.
 
-**3. Magnitude of the gradient**
+  **3. Magnitude of the gradient**  
   The magnitude of the gradient is the square root of the sum of the squares in each direction, which ca´n also be thresholded.
 
-**4. Direction of the gradient**
+  **4. Direction of the gradient**  
   Another possibility to identify the lane lines more clearly is to select only lines with a certain orientation in the image. We can calculate the direction of the gradient by simply using the inverse tangent of the y gradient divided by the x gradient.
 
-**5. Color channel**
+  **5. Color channel**  
   Besides those options a simple threshold to the color channel can be applied.
 
-**6. Differnet Color spaces**
+  **6. Differnet Color spaces**  
   Also using different color channels or different color spaces can be very useful.
 
-**7. Combination of all above**
+  7. **Combination of all above**  
   A combination of different binary thresholds, to create one combination thresholded image does a great job of highlighting almost all of the white and yellow lane lines.
-
-I used a combination of color and gradient thresholds to generate a binary image. In order to detect the white lines, I found that [equalizing the histogram](http://docs.opencv.org/3.1.0/d5/daf/tutorial_py_histogram_equalization.html) of the input frame before thresholding works really well to highlight the actual lane lines. For the yellow lines, I employed a threshold on V channel in [HSV](http://docs.opencv.org/3.2.0/df/d9d/tutorial_py_colorspaces.html) color space. Furthermore, I also convolve the input frame with Sobel kernel to get an estimate of the gradients of the lines. Finally, I make use of [morphological closure](http://docs.opencv.org/3.0-beta/doc/py_tutorials/py_imgproc/py_morphological_ops/py_morphological_ops.html) to *fill the gaps* in my binary image. Here I show every substep and the final output:
 
 <p align="center">
   <img src="./img/threshold_01.png" width="960">
@@ -121,10 +119,12 @@ The following image shows the original image with the rectangle source points on
   <img src="./img/ori_warped_02.png" width="400" align="right">
 </p>
 
+
 Below an other example of a curved lane is shown, with a binary thresholded and warped image, as it is needed for the further steps:
 
+
 <p align="center">
-  <img src="./img/ori_warped_03.png" width="480">
+  <img src="./img/ori_warped_03.png" width="960">
 </p>
 
 ### Step 4: Fit a polynomial to the lane lines
@@ -151,7 +151,7 @@ One way to calculate the curvature of a lane line, is to fit a 2nd degree polyno
 ### Steps 5: Determine curvature of the lane and vehicle position with respect to center
 The offset from the lane center can be computed under the hypothesis that the camera is fixed and mounted in the midpoint of the car roof. In this case, we can approximate the car's deviation from the lane center as the distance between the center of the image and the midpoint at the bottom of the image of the two lane-lines detected.
 
-During the previous lane-line detection phase, a 2nd order polynomial is fitted to each lane-line. This function returns the 3 coefficients that describe the curve, namely the coefficients of both the 2nd and 1st order terms plus the bias. From this coefficients, following [this](http://www.intmath.com/applications-differentiation/8-radius-curvature.php) equation, we can compute the radius of curvature of the curve.
+During the previous lane-line detection phase, a 2nd order polynomial is fitted to each lane-line. This function returns the 3 coefficients that describe the curve, namely the coefficients of both the 2nd and 1st order terms plus the bias. From this coefficients, following [this equation](http://www.intmath.com/applications-differentiation/8-radius-curvature.php), we can compute the radius of curvature of the curve.
 
 Finally the pixel value for the distance from center and the curvature was converted from pixels to meters by multiplying the number of pixels by `3.7/700`. The final radius of curvature was taken by averaging the left and right curve radii.
  

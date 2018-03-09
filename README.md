@@ -70,11 +70,11 @@ Deep learning has become the most important frontier in both machine learning an
 Use a combination of cameras, software, and machine learning to find lane lines on difficult roads and to track vehicles. Start with calibrating cameras and manipulating images, and end by applying support vector machines and decision trees to extract information from video.  
 
 
-#### [P4 - Advanced Lane Finding](project_4_advanced_lane_finding)
+#### [P4 - Advanced Lane Finding](term1_project4_advanced_lane_finding)
  - **Summary:** Write a software pipeline to identify the lane boundaries in a video from a front-facing camera on a car. Use distortion correction, image rectification, color transforms and gradient thresholding. Identify lane curvature and vehicle displacement with means of perspective transform and polynomial fit. Overcome environmental challenges such as shadows and pavement changes.
  - **Keywords:** Python, OpenCV, Sobel Operator, Color Spaces, Polynomial Fit  
  
-#### [P5 - Vehicle Detection and Tracking](term1_project4_advanced_lane_finding)
+#### [P5 - Vehicle Detection and Tracking]()
  - **Summary:** Create a vehicle detection and tracking pipeline with OpenCV. Use techniques like 'histogram of oriented gradients' (HOG) and train a classifier (e.g. support vector machines (SVM)) to identify cars. Implement the model in a pipeline. Use sliding windows to detect cars on video data from an automotive camera taken during highway driving. Use heat-map technique to combine overlapping detections and remove false positives.
  - **Keywords:** Python, Object Detection and Tracking, SVM, HOG, Sliding Window, Heatmap  
 
