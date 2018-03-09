@@ -120,12 +120,12 @@ The following image shows the original image with the rectangle source points on
   <tr>
     <th>
       <p align="center">
-           <img src="./img/ori_warped_01.png" width="60%" height="60%">
+           <img src="./img/ori_warped_01.png" width="100%" height="100%">
       </p>
     </th>
     <th>
       <p align="center">
-           <img src="./img/ori_warped_02.png" width="60%" height="60%">
+           <img src="./img/ori_warped_02.png" width="100%" height="100%">
       </p>
     </th>
   </tr>
