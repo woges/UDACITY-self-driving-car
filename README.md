@@ -74,7 +74,7 @@ Use a combination of cameras, software, and machine learning to find lane lines 
  - **Summary:** Write a software pipeline to identify the lane boundaries in a video from a front-facing camera on a car. Use distortion correction, image rectification, color transforms and gradient thresholding. Identify lane curvature and vehicle displacement with means of perspective transform and polynomial fit. Overcome environmental challenges such as shadows and pavement changes.
  - **Keywords:** Python, OpenCV, Sobel Operator, Color Spaces, Polynomial Fit  
  
-#### [P5 - Vehicle Detection and Tracking](.(term1_project5_vehicle_detection)
+#### [P5 - Vehicle Detection and Tracking](./term1_project5_vehicle_detection)
  - **Summary:** Create a vehicle detection and tracking pipeline with OpenCV. Use techniques like 'histogram of oriented gradients' (HOG) and train a classifier (e.g. support vector machines (SVM)) to identify cars. Implement the model in a pipeline. Use sliding windows to detect cars on video data from an automotive camera taken during highway driving. Use heat-map technique to combine overlapping detections and remove false positives.
  - **Keywords:** Python, Object Detection and Tracking, Linear SVC, SVC, Logistic Regression, MLP Classifier, Ensemble Classifier (Ada Boost, Bagging), Grid Search, Hard Negativ Minig, HOG, Sliding Window, Heatmap, False Positives  
 
