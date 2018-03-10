@@ -5,10 +5,6 @@
 
 In this project a convolutional neural network is used to classify traffic signs. A model is trained so it can decode traffic signs from natural images by using the [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset). After training, the model will be tested on new images of traffic signs you can find on the web!
 
-<p align="center">
-  <img src="./results/p5_vehicle_detection.gif" width="480">
-</p>
-
 ## Dependencies
 
 CarND Starter Kit
@@ -56,19 +52,19 @@ Data set summary:
 The different classes are:
 
 <p align="center">
-  <img src="./img/traffic_sign_classes.PNG" width="480">
+  <img src="./img/traffic_sign_classes.png" width="480">
 </p>
 
 Here 12 random traffic signs are shown:
 
 <p align="center">
-  <img src="./img/traffic_sign_set.PNG" width="480">
+  <img src="./img/traffic_sign_set.png" width="480">
 </p>
 
 The count - distribution of all classes over their class ID is visualized in the following bar chart:
 
 <p align="center">
-  <img src="./img/distribution.PNG" width="480">
+  <img src="./img/distribution.png" width="480">
 </p>
 
 ### Training
@@ -82,7 +78,7 @@ The training and validation set was already split by using the pickle data sets 
 The convolutional neural network looks like this, with three convolutional layer, three fully connected layers, ReLU as activation function and Dropout for regularization:
 
 <p align="center">
-  <img src="./results/network.PNG" width="320">
+  <img src="./results/network.png" width="320">
 </p>
 
 The model was trained with a batch-size of 256 samples for 19 epochs. Early stopping to abort the training was used to avoid overfitting, when the accuracy did not make any notable progress after 2 epochs.
@@ -92,7 +88,7 @@ For the optimizer, the AdamOptimizer was used, which seemed to wrok a bit better
 Those plots show the validation accuracy over time:
 
 <p align="center">
-  <img src="./results/validation_history.PNG" width="480">
+  <img src="./results/validation_history.png" width="480">
 </p>
 
 ### Results
@@ -106,7 +102,7 @@ My final model results are:
 Here are 15 traffic signs that I found on the web:
 
 <p align="center">
-  <img src="./img/traffic_signs_web.PNG" width="960">
+  <img src="./img/traffic_signs_web.png" width="960">
 </p>
 
 They were resized to fit into the input layer (32x32x1). One image (15th) is not german traffic signs, so it is interesting to see, how the network deals with this image.
@@ -114,11 +110,11 @@ They were resized to fit into the input layer (32x32x1). One image (15th) is not
 Here are some results of the prediction:
 
 <p align="center">
-  <img src="./results/60kph.PNG" width="480">
+  <img src="./results/60kph.png" width="480">
 </p>
 
 <p align="center">
-  <img src="./results/no_entry.PNG" width="480">
+  <img src="./results/no_entry.png" width="480">
 </p>
 
 The test accuracy on the new test data is 86.7%, which tells us that the model was able to correctly guess 13 of the 15 traffic signs. That is much less than on the test set. But keep in mind that the number of images is very small so a failed prediction has a large impact on the accuracy calculated in percent.
@@ -126,7 +122,7 @@ The test accuracy on the new test data is 86.7%, which tells us that the model w
 For all test images except for the two "pedestrians", the network is really certain about its answer. However the selected signs are all relatively clear visible so the CNN should do well. On the contrary the two signs “pedestrians” are more difficult to classify both from the pictogram and the number of occurrence in the training set, which were only 210. 
 
 <p align="center">
-  <img src="./results/pedestrians.PNG" width="480">
+  <img src="./results/pedestrians.png" width="480">
 </p>
 
 It even correctly classified the stop sign, although it was no german traffic sign, but the color information is discarded so it looks like a german one. It failed to classify the 70 km/h speed limit sign, because that one differs a lot from the german version. In spite of augmenting those classes more than the others the CNN can't completly catch up starting with this handicap. 
