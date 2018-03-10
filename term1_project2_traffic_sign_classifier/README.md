@@ -64,7 +64,7 @@ Here 12 random traffic signs are shown:
 The count - distribution of all classes over their class ID is visualized in the following bar chart:
 
 <p align="center">
-  <img src="./img/distribution.png" width="480">
+  <img src="./img/distribution.png" width="720">
 </p>
 
 ### Training
@@ -78,7 +78,7 @@ The training and validation set was already split by using the pickle data sets 
 The convolutional neural network looks like this, with three convolutional layer, three fully connected layers, ReLU as activation function and Dropout for regularization:
 
 <p align="center">
-  <img src="./results/network.png" width="320">
+  <img src="./results/CNN_01.png" width="320">
 </p>
 
 The model was trained with a batch-size of 256 samples for 19 epochs. Early stopping to abort the training was used to avoid overfitting, when the accuracy did not make any notable progress after 2 epochs.
