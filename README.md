@@ -34,7 +34,11 @@ In this repository I will share the **source code** of all the projects of **[Ud
 --- 
 ## Table of Contents
 
+----  
+
 ### Term 1: Computer Vision and Deep Learning
+
+----  
 
 ![term1](./term1.jpg)
 
