@@ -132,7 +132,8 @@ Now to detect the position of a vehicle in a video frame, it is necessary to sel
     * As small vehicles appear more likely near the horizon, the area for the different scaled windows are resticted to different areas in y direction.
     * Keeping the aspect ratio in mind, we can crop also different x areas for the different sizes and positions of the windows
     * To be more robust in vehcile detection a 75% overlap is used
-2.  With defined window sizes, we will step across the image in a grid pattern. For each window we will: 
+2.  With defined window sizes, we will step across the image in a grid pattern. For each window we will:  
+
         * extract features for that window, 
         * scale extracted features to be fed to the classifier, 
         * predict whether the window contains a car using our trained Linear SVC classifier, 
