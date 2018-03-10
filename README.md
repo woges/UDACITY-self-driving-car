@@ -42,7 +42,7 @@ In this repository I will share the **source code** of all the projects of **[Ud
 
 | [Getting Started for Term 1](./term1_How_to_get_started)       | [![T1P1](./term1_project1_lane_finding/results/white_giphy.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 1:<br>Finding Lane Lines on the road**<br>[Code](./term1_project1_lane_finding)       | [![T1P2](./term1_project1_lane_finding/img/white_giphy.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 2:<br>Traffic Sign Classifier**<br>[Code](./term1_project1_lane_finding)       |
 | :---:         |     :---:      |          :---: |
-| [![T1P3](./term1_project1_lane_finding/img/white_giphy.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 3:<br>Behavioral Cloning**<br>[Code](./term1_project1_lane_finding)       | [![T1P4](./term1_project4_advanced_lane_finding/results/P4_adv_lane_lines_project_video.gif)](./term1_project4_advanced_lane_finding/results/P4_adv_lane_lines_project_video.webm)<br>**Project 4:<br>Advanced Lane Finding**<br>[Code](./term1_project4_advanced_lane_finding)       |[![T1P5](./term1_project1_lane_finding/img/white_giphy.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>Project 5:<br>Vehicle Tracking <br>[Code](./term1_project1_lane_finding)|
+| [![T1P3](./term1_project1_lane_finding/img/white_giphy.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 3:<br>Behavioral Cloning**<br>[Code](./term1_project1_lane_finding)       | [![T1P4](./term1_project4_advanced_lane_finding/results/P4_adv_lane_lines_project_video.gif)](./term1_project4_advanced_lane_finding/results/P4_adv_lane_lines_project_video.webm)<br>**Project 4:<br>Advanced Lane Finding**<br>[Code](./term1_project4_advanced_lane_finding)       |[![T1P5](./term1_project5_vehicle_detection/results/p5_vehicle_detection.gif)](./term1_project5_vehicle_detection/results/p5_vehicle_detection.mp4)<br>Project 5:<br>Vehicle Tracking <br>[Code](./term1_project5_vehicle_detection)|
 
 ---  
 
@@ -58,25 +58,25 @@ The program starts with a survey of how self-driving cars work and an immediatel
 Deep learning has become the most important frontier in both machine learning and autonomous vehicle development. Experts from NVIDIA and Uber ATG teach to build deep neural networks and train them with data from the real world and from the Udacity simulator.  
 
 
-#### [P2 - Traffic Sign Classification](term1_project2_traffic_sign_classifier)
+#### [P2 - Traffic Sign Classification](./term1_project2_traffic_sign_classifier)
  - **Summary:** Build and train a deep neural network to classify traffic signs, using TensorFlow. Experiment with different network architectures. Performe image pre-processing and validation to guard against overfitting.
- - **Keywords:** Python, Deep Learning, Convolutional Neural Networks, TensorFlow
+ - **Keywords:** Python, Deep Learning, Convolutional Neural Networks, TensorFlow, Overfitting, Generalisation
  
-#### [P3 - Behavioral Cloning](project_3_behavioral_cloning)
+#### [P3 - Behavioral Cloning](./project_3_behavioral_cloning)
  - **Summary:** Build and train a convolutional neural network for end-to-end driving in a simulator, using TensorFlow and Keras. Use optimization techniques such as , data augmentation and dropout to generalize the network for driving on multiple tracks.
- - **Keywords:** Python, Deep Learning, Keras, Convolutional Neural Networks
+ - **Keywords:** Python, Deep Learning, Keras, Convolutional Neural Networks, Generalisation
  
 #### **Computer Vision**  
 Use a combination of cameras, software, and machine learning to find lane lines on difficult roads and to track vehicles. Start with calibrating cameras and manipulating images, and end by applying support vector machines and decision trees to extract information from video.  
 
 
-#### [P4 - Advanced Lane Finding](term1_project4_advanced_lane_finding)
+#### [P4 - Advanced Lane Finding](./term1_project4_advanced_lane_finding)
  - **Summary:** Write a software pipeline to identify the lane boundaries in a video from a front-facing camera on a car. Use distortion correction, image rectification, color transforms and gradient thresholding. Identify lane curvature and vehicle displacement with means of perspective transform and polynomial fit. Overcome environmental challenges such as shadows and pavement changes.
  - **Keywords:** Python, OpenCV, Sobel Operator, Color Spaces, Polynomial Fit  
  
-#### [P5 - Vehicle Detection and Tracking]()
+#### [P5 - Vehicle Detection and Tracking](.(term1_project5_vehicle_detection)
  - **Summary:** Create a vehicle detection and tracking pipeline with OpenCV. Use techniques like 'histogram of oriented gradients' (HOG) and train a classifier (e.g. support vector machines (SVM)) to identify cars. Implement the model in a pipeline. Use sliding windows to detect cars on video data from an automotive camera taken during highway driving. Use heat-map technique to combine overlapping detections and remove false positives.
- - **Keywords:** Python, Object Detection and Tracking, SVM, HOG, Sliding Window, Heatmap  
+ - **Keywords:** Python, Object Detection and Tracking, Linear SVC, SVC, Logistic Regression, MLP Classifier, Ensemble Classifier (Ada Boost, Bagging), Grid Search, Hard Negativ Minig, HOG, Sliding Window, Heatmap, False Positives  
 
 
  ---  
