@@ -31,7 +31,7 @@ Some example images for testing the pipeline on single frames are located in the
 1. Clone or fork this repository.
 2. Launch the Jupyter notebook: `jupyter notebook P5_vehicle_detection.ipynb`
 3. Execute the code cells you are interested in.
-4. Launch the Jupyter notebook: `jupyter notebook P5_vehicle_detection_helpfunctions.ipynb`. Here are tools for preprocessing (e.g. augmentation) of the training images.
+4. Launch the Jupyter notebook: `jupyter notebook P5_vehicle_detection_helpfunctions.ipynb`. Here are tools for preprocessing (e.g. augmentation) of the training images.  
 Note that cells may depend on previous cells. The notebook explains clearly what each code cell does.
 
 ## Goal of this project
@@ -58,8 +58,7 @@ In the field of computer vision, a *features* is a compact representation that e
 Here are two example images, the first from the `vehicle` class and the second from the `non-vehicle` class:
   ![Vehicle_Non-vehicle](./out_images/001_Vehicle_nonVehicle.JPG)
   
-2. Use `skimage.feature.hog(training_image, [parameters=parameter_values])` to extract HOG features and HOG visualisation.
-    * Wrapped in function `get_hog_features`.
+2. Use `skimage.feature.hog(training_image, [parameters=parameter_values])` to extract HOG features and HOG visualisation. Wrapped in function `get_hog_features`.
     
 For the task of car detection I used *color histograms* and *spatial features* to encode the object visual appearence and HOG features to encode the object's *shape*. While the first two features are easy to understand and implement, HOG features can be a little bit trickier to master.
 
@@ -68,12 +67,12 @@ For the task of car detection I used *color histograms* and *spatial features* t
 HOG stands for *Histogram of Oriented Gradients* and refer to a powerful descriptor that has met with a wide success in the computer vision community, since its in 2005 with the main purpose of people detection. 
 
 <p align="center">
-  <img src="./out_images/002_HOG-channels_car.JPG" alt="hog" height="960">
+  <img src="./out_images/002_HOG-channels_car.JPG" alt="hog" width="960">
   <br>Representation of HOG descriptors for a car patch.
 </p>
 
 <p align="center">
-  <img src="./out_images/003_HOG-channels_nonvehicle.JPG" alt="hog" height="960">
+  <img src="./out_images/003_HOG-channels_nonvehicle.JPG" alt="hog" width="960">
   <br>Representation of HOG descriptors for a non-car patch.
 </p>
 
@@ -81,23 +80,24 @@ The bad news is, HOG come along with a *lot* of parameters to tune in order to w
 
 In order to select the right parameters, both the classifier accuracy and computational efficiency are to consider. After various attemps, the following parameters were choosen:
 
-![002_HOG_parameters](./out_images/002_HOG_parameters.JPG)
+<p align="center">
+  <img src="./out_images/003_HOG-002_HOG_parameters.JPG" alt="hog" width="640">
+  <br>HOG parameters.
+</p>
 
 Additionally to the HOG features other functions were added as well to make use also from color and spatial information in the images. The advantage is that by using e.g. the color information we are independent of the structure. Therefore, objects which appear in different aspects and orientations (as trained with the images dataset) will still be matched.
 
 #### Train a classifier using selected HOG features and colour features.
 
-
-######################
-Once decided which features to used, we can train a classifier on these. First to get a hugher training and validiation set, a augmentation of the existing images like shifting, rotating, zooming and shearing could be done. 
+Once we have decided which features to use, we can train a classifier on these. First to get a hugher training and validiation set, a augmentation of the existing images like shifting, rotating, zooming and shearing could be done. 
 
 <p align="center">
-  <img src="./out_images/004_car_augmented.JPG" alt="hog" height="960">
+  <img src="./out_images/004_car_augmented.JPG" alt="hog" width="960">
   <br>Representation of augmented vehicle images.
 </p>
 
 <p align="center">
-  <img src="./out_images/005_non_vehicle_augemented.JPG" alt="hog" height="960">
+  <img src="./out_images/005_non_vehicle_augemented.JPG" alt="hog" width="960">
   <br>Representation of augmented non-vehicle images.
 </p>
 
@@ -107,8 +107,8 @@ After that a training with a classifier of your choice could be done. In order t
   - Logistic Regression Classifier
   - Multi-layer Perception
   - linearSVC
-  - SVM with different kernels
-And two ensemble classifier:
+  - SVM with different kernels  
+And also two ensemble classifier:
   - Adaboost with decision tree
   - Bagging  with decision tree
 
@@ -116,7 +116,7 @@ To optimize each classifier before judging which would be the best to identify t
 As a final result the linearSVC was choosen with max_iter = 10 and C = 0.1 as a best pick as well as in speed and in accuracy.
 
 <p align="center">
-  <img src="./out_images/010_Linear_SVC_GRID_Search_002.JPG" alt="hog" height="960">
+  <img src="./out_images/010_Linear_SVC_GRID_Search_002.JPG" alt="hog" width="960">
   <br>Results of grid search with Linear SVC.
 </p>
 
@@ -132,27 +132,26 @@ Now to detect the position of a vehicle in a video frame, it is necessary to sel
     * As small vehicles appear more likely near the horizon, the area for the different scaled windows are resticted to different areas in y direction.
     * Keeping the aspect ratio in mind, we can crop also different x areas for the different sizes and positions of the windows
     * To be more robust in vehcile detection a 75% overlap is used
-2.  With defined window sizes, we will step across the image in a grid pattern:
-    * For each window, 
+2.  With defined window sizes, we will step across the image in a grid pattern. For each window we will: 
         * extract features for that window, 
         * scale extracted features to be fed to the classifier, 
         * predict whether the window contains a car using our trained Linear SVC classifier, 
         * and save the window if the classifier predicts there is a car in that window.
 
 <p align="center">
-  <img src="./out_images/012_car_detection_all_boxes.JPG" alt="hog" height="960">
+  <img src="./out_images/012_car_detection_all_boxes.JPG" alt="hog" width="960">
   <br>Sliding windows search grid.
 </p>
 
 Sample image for vehicle detection:
 
 <p align="center">
-  <img src="./out_images/014_car_detection_raw_boxes.JPG" alt="hog" height="960">
+  <img src="./out_images/014_car_detection_raw_boxes.JPG" alt="hog" width="960">
   <br>Car detection Raw Boxes.
 </p>
 
 <p align="center">
-  <img src="./out_images/013_car_detection_raw_boxes_001.JPG" alt="hog" height="960">
+  <img src="./out_images/013_car_detection_raw_boxes_001.JPG" alt="hog" width="960">
   <br>Car detection Raw Boxes with positive false.
 </p>
 
@@ -168,7 +167,7 @@ After that `scipy.ndimage.measurements.label()` is used to identify individual p
 Below are some examples showing the images with all positive detections. Then the resulting heatmap with a threshold of 2 windows at each position. Besides that the label image (the result of `scipy.ndimage.measurements.label()`) with the identified “vehicles”. On the right side the resulting images with  detected vehicles and tight bounding boxes drawn around are presented.
 
 <p align="center">
-  <img src="./out_images/015_Heatmap_001.JPG" alt="hog" height="960">
+  <img src="./out_images/015_Heatmap_001.JPG" alt="hog" width="960">
 </p>
 
 In this set one problem is clearly visible. There is no vehicle detected in the first row as heatmap threshold filters out the single remaining window in the raw window set. Therefore in the video pipeline a ring buffer is installed to save the predictions of the last n frames to bridge some frames with no detection.
@@ -176,7 +175,7 @@ In this set one problem is clearly visible. There is no vehicle detected in the 
 This set below shows how positive false detections are correctly filtered out. But the chosen size of all searching windows as well as positive false detections can lead to a larger bounding box (1st row)  which is undesirable. With having two 'gates' to eliminate positive false detections ( svc.desision_function and heatmap threshold) there are a lot of parameters to eliminate the remaining  positive false detections (3rd row).
 
 <p align="center">
-  <img src="./out_images/016_Heatmap_002.JPG" alt="hog" height="960">
+  <img src="./out_images/016_Heatmap_002.JPG" alt="hog" width="960">
 </p>
 
 ## Results
