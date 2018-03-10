@@ -155,7 +155,7 @@ Sample image for vehicle detection:
   <br>Car detection Raw Boxes with positive false.
 </p>
 
-As you can see we have to deal with:
+As you can see, we have to deal with:
 
   - multiple detections at (or nearly) the same position as well as with
   - positive false detections in the lower image. 
@@ -184,7 +184,7 @@ The resulting [video](./results/) is in the repo, if you are interested.
 
 ## Literature
 
-[Histograms of Oriented Gradients for Human Detection](./results/Dalal-cvpr05.pdf)
+[Histograms of Oriented Gradients for Human Detection](./rersources/Dalal-cvpr05.pdf)
 
 [Hard Negativ Mining](http://www.csc.kth.se/cvap/cvg/rg/materials/hossein_005_slides.pdf)
 
