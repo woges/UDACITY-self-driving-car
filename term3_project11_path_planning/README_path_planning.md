@@ -12,9 +12,10 @@ The process of path planning could be seen as the brain of an autonomous vehicle
 Therefore it receives information from localization, sensor fusion and uses map data (see image below). Finally the calculated trajectory is passed to the motion control to perform the desired behavior.
 
 <p align="center">
-  <img src="./results/01_overview.png" width="600">
+  <img src="./img/01_overview.png" width="600">
+  <br>Image: Udacity Self-Driving Car Nanodegree<br>
 </p>
-Image: Udacity Self-Driving Car Nanodegree
+
 
 ## Dependencies
 
@@ -52,73 +53,76 @@ The implementation of the path planner in this project is summarized in the foll
 
 Files in the Github src Folder:
 1. `main.cpp`: 
-  * data input and output
-  * control of the workflow
+    * data input and output
+    * control of the workflow
 2. `vehicle.cpp & vehicle.h`:
-  * initializes the vehicle class 
-  * sets all data for each telemetric dataset 
+    * initializes the vehicle class 
+    * sets all data for each telemetric dataset 
 3. `coordinates.cpp & coordinates.h`:
-  * all programs used for working with waypoints
-  * frenet coordinates
-  * XY coordinates
+    * all programs used for working with waypoints
+    * frenet coordinates
+    * XY coordinates
 4. `helper.cpp & helper.h`:
-  * all programs needed for traffic calculation
-  * behavioral planner
-  * path planning
+    * all programs needed for traffic calculation
+    * behavioral planner
+    * path planning
 5. `cost_functions.cpp & cost_functions.h`:
-  * all the cost functions are contained here 
+    * all the cost functions are contained here 
 6. `constants.h`:
-  * all constants used by the program
+    * all constants used by the program
 7. `json.h`:
-  * JSON version 2.1.1
+    * JSON version 2.1.1
 8. `spline.h`:
-  * simple cubic spline interpolation library without external dependencies
-  * (Copyright (C) 2011, 2014 Tino Kluge)
+    * simple cubic spline interpolation library without external dependencies
+    * (Copyright (C) 2011, 2014 Tino Kluge)
 
 ### Determine Ego Car Parameters and Construct Vehicle Object
 
 The following data is received from the simulator module at each update step (depending on the time lag caused by performing the path planning process):
 
-1. localization data of the own car, consisting of [x, y, s, d, yaw and speed]
-2. the remaining part of the previous trajectory [x, y]-coordinates
-3. sensor fusion data from all other cars, which drive in our direction, consisting of [ID,  x, y, vx, vy, s and d]
+  1. localization data of the own car, consisting of [x, y, s, d, yaw and speed]
+  2. the remaining part of the previous trajectory [x, y]-coordinates
+  3. sensor fusion data from all other cars, which drive in our direction, consisting of [ID,  x, y, vx, vy, s and d]
  
 In addition there is the 'world'-map, which consists of 181 waypoints forming our reference path around the highway loop. Each waypoint data-set comprises [ x, y, s, dx, dy].
 
 With this data additional values are calculated for the ego car like acceleration and the current data-set is fed to the vehicle class object. 
-With sensor fusion data, all other vehicles are sorted according to their lane and position to the ego car. A vector with data-sets of six cars (car ahead and behind for 3 lanes) is received as a result with additional information (function `Lane_Traffic` in `helper.cpp`). The data-set now comprises the following values [id, x, y, vx, vy, s, d, v, s-dist, lane, traffic ahead, acc] with
-    - v = velocity of this car 
-    - s-dist = distance form ego car 
-    - lane = current lane of this car
-    - traffic ahead = number of cars ahead form ego car in this lane
-    - acc = acceleration of this car
-    - 
+With sensor fusion data, all other vehicles are sorted according to their lane and position to the ego car. A vector with data-sets of six cars (car ahead and behind for 3 lanes) is received as a result with additional information (function `Lane_Traffic` in `helper.cpp`). The data-set now comprises the following values [id, x, y, vx, vy, s, d, v, s-dist, lane, traffic ahead, acc] with:  
+
+  - v = velocity of this car
+  - s-dist = distance form ego car 
+  - lane = current lane of this car
+  - traffic ahead = number of cars ahead form ego car in this lane
+  - acc = acceleration of this car
+ 
 If there is no car in front or behind in a lane, this data-set is filled with pseudo values which can be identified as 'no car' in further program steps.
 
 ### Behavior Planning Modul
 
 The behavior planner uses a so called Finite State Machine to solve the behavior planning problem and to decide which maneuver to do next. The behavior planner makes decisions based on a finite set of discrete states. In this case a Finite State Machine with 5 different states was chosen (*'Keep Lane'* (KL), *'Lane Change Left'* (LCL), *'Lane Change Right'* (LCR), *'Double Lane Change'* (DLC) and *'Changing Lane'* (CL)). It is initialized with the state 'Keep Lane'.  
-To decide which state to transit next, the Finite State Machine needs to handle the following input, like:
-    - current state
-    - localization data
-    - fusion data
-    - map 
-    - limitations (like speed, jerk..)
-    - predictions 
+To decide which state to transit next, the Finite State Machine needs to handle the following input, like: 
+
+  - current state
+  - localization data
+  - fusion data
+  - map 
+  - limitations (like speed, jerk..)
+  - predictions 
 
 <p align="center">
-  <img src="./results/02_overview.png" width="600">
+  <img src="./img/02_overview.png" width="600">
+  <br>Image: Udacity Self-Driving Car Nanodegree<br>
 </p>
-Image: Udacity Self-Driving Car Nanodegree
+
 
 ### Predicitons
 
 For each state we have to calculate the predictions where the ego car, as well as the six cars around it, will be in future. Therefore we cycle through all possible states and trajectories for those cars in the prediction step. Here a time-step of 0.5 second and a time horizon of in total 5 seconds is used. To simplify and speed up the prediction step, only a simple model for for the traffic around the ego car is used. The cars drive at a constant speed and are keeping their lanes. The performance of this prediction model proved to be sufficient for a working behavior module in this case. However the prediction step of the ego car was calculated with constant acceleration but a simple lane changing model of instantaneously changing lane (which will be the worst case for safety reasons).
 
 <p align="center">
-  <img src="./results/03_prediction.png" width="600">
+  <img src="./img/03_prediction.png" width="600">
+  <br>Image: Udacity Self-Driving Car Nanodegree<br>
 </p>
-Image: Udacity Self-Driving Car Nanodegree
 
 ### Cost Functions
 
@@ -134,7 +138,7 @@ The key part for choosing a proper transition is the design of reasonable cost-f
 As an example for the design of a cost-function, *the function for the distance from the car in front*, is shown in the following picture:
 
 <p align="center">
-  <img src="./results/04_cost_function.png" width="480">
+  <img src="./img/04_cost_function.png" width="480">
 </p>
 
 Below 15m (in this case also the collision margin) the value is 1. Distances greater than 15m generate values according to the function above. The value is a exponential decrease with values near 0 for cars being further than 100m away from the ego car.
@@ -163,9 +167,9 @@ The new trajectory starts with the remaining way-points of the previous path or 
 Taking the last two points of the previous path or the starting point as a reference 3 more evenly spaced points (e.g. 30m) in the target lane are added to a way-point-set. This set is transformed to the local car's coordinate system and a spline is calculated using the c++ cubic spline library from Tino Kluge. That creates really smooth trajectories without worrying about all the math behind. With this spline, the estimated target speed and the desired acceleration the next x,y way-points in the local coordinate system are calculated. Afterwards the way-point-set is transformed back to the global coordinate system and passed to the simulator.
 
 <p align="center">
-  <img src="./results/05_path_planning.png" width="960">
+  <img src="./img/05_path_planning.png" width="960">
+  <br>Image: Udacity Self-Driving Car Nanodegree<br>
 </p>
-Image: Udacity Self-Driving Car Nanodegree
 
 ## Results
 
@@ -177,7 +181,7 @@ The path planner project is one of the most interesting, complex and demanding o
 Nevertheless it was great fun to manage the program structure, tweaking all parameters and see the car running around with this impressive simulator.
 
 <p align="center">
-  <img src="./results/SDC_Path_Planning_Project.gif" width="960">
+  <img src="./results/SDC_Path_Planning_Project.gif" width="480">
 </p>
 
 The resulting [video](./results/SDC_Path_Planning_Project.mp4) is in the repo, if you are interested. 
