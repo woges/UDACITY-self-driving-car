@@ -107,8 +107,8 @@ def generator(img_path, img_meas, batch_size=BATCH_SIZE):
                     augmented_measurements.append(measurement)
                     augmented_images.append(cv2.flip(image,1))
                     augmented_measurements.append(measurement*-1.0)
-#                    augmented_images.append(augment_brightness_camera_images(image))
-#                    augmented_measurements.append(measurement)                   
+                    augmented_images.append(augment_brightness_camera_images(image))
+                    augmented_measurements.append(measurement)                   
             #### End  augmentation ##################################
             X_train = np.array(augmented_images)
             #### Start image trim ####################################

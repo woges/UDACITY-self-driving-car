@@ -125,8 +125,6 @@ For all test images except for the two "pedestrians", the network is really cert
   <img src="./results/pedestrians.png" width="480">
 </p>
 
-It even correctly classified the stop sign, although it was no german traffic sign, but the color information is discarded so it looks like a german one. It failed to classify the 70 km/h speed limit sign, because that one differs a lot from the german version. In spite of augmenting those classes more than the others the CNN can't completly catch up starting with this handicap. 
-
 ## Literature
 
 [A committee of NNs for Traffic Sign Classification](./rersources/A_committee_of_NN_for_Traffic_Sign_Classification.pdf)
