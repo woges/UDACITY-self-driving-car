@@ -127,17 +127,17 @@ Use a combination of cameras, software, and machine learning to find lane lines 
 
 ---  
 
-|[![T3P11](./term1_project1_lane_finding/img/white_giphy.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 11:<br>Path Planning Project**<br>[Code](./term1_project1_lane_finding)|[![T3P12](./term1_project1_lane_finding/img/white_giphy.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 12:<br>Advanced Deep Learning**<br>[Code](./term1_project1_lane_finding)|[![T3P13](./term1_project1_lane_finding/img/white_giphy.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 13:<br>Functional Safety**<br>[Code](./term1_project1_lane_finding)|
+|[Getting Started for Term 3](./term3_How_to_get_started)       |[![T3P11](./term3_project11_path_planning/results/SDC_Path_Planning_Project.gif)](./term3_project11_path_planning/results/SDC_Path_Planning_Project.mp4)<br>**Project 11:<br>Path Planning Project**<br>[Code](./term3_project11_path_planning)|[![T3P12](./term3_project12_semantic_segmentation/results/white_giphy.gif)](./term3_project12_semantic_segmentation/results/)<br>**Project 12:<br>Advanced Deep Learning**<br>[Code](./term3_project12_semantic_segmentation)|
 | :---:         |     :---:      |          :---: |
-|<br>**CAPSTONE PROJECT**<br>**System Integration**|[![T3P14](./term1_project1_lane_finding/img/white_giphy.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 14:<br>Programming a Real Self-Driving Car**<br>[Code](./term3_project14_capstone_project)||
+|[![T3P13](./term3_project13_functional_safety_plan/results/white_giphy.gif)](./term3_project13_functional_safety_plan/results/)<br>**Project 13:<br>Functional Safety**<br>[Code](./term3_project13_functional_safety_plan)|<br>**CAPSTONE PROJECT**<br>**System Integration**|[![T3P14](./term1_project1_lane_finding/img/white_giphy.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 14:<br>Programming a Real Self-Driving Car**<br>[Code](./term3_project14_capstone_project)|
 
 ---  
 
-#### [P11 - Path Planning](project_11_path_planning)
+#### [P11 - Path Planning](./term3_project11_path_planning)
 - **Summary:** The goal in this project is to build a path planner that is able to create smooth, safe trajectories for the car to follow. The highway track has other vehicles, all going different speeds, but approximately obeying the 50 MPH speed limit. The car transmits its location, along with its sensor fusion data, which estimates the location of all the vehicles on the same side of the road.
 - **Keywords:** C++, Path Planning
 
-#### [P12 - Road Segmentation](project_12_road_segmentation)
+#### [P12 - Road Segmentation](./term3_project12_semantic_segmentation)
 - **Summary:** Implement the road segmentation using a fully-convolutional network.
 - **Keywords:** Python, TensorFlow, Semantic Segmentation
 
