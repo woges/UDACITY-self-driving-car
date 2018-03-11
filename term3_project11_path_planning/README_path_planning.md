@@ -100,12 +100,13 @@ If there is no car in front or behind in a lane, this data-set is filled with ps
 
 The behavior planner uses a so called Finite State Machine to solve the behavior planning problem and to decide which maneuver to do next. The behavior planner makes decisions based on a finite set of discrete states. In this case a Finite State Machine with 5 different states was chosen (*'Keep Lane'* (KL), *'Lane Change Left'* (LCL), *'Lane Change Right'* (LCR), *'Double Lane Change'* (DLC) and *'Changing Lane'* (CL)). It is initialized with the state 'Keep Lane'.  
 To decide which state to transit next, the Finite State Machine needs to handle the following input, like:  
-    - current state
-    - localization data
-    - fusion data
-    - map
-    - limitations (like speed, jerk..)
-    - predictions
+
+   - current state
+   - localization data
+   - fusion data
+   - map
+   - limitations (like speed, jerk..)
+   - predictions
 
 <p align="center">
   <img src="./img/02_overview.png" width="600">
