@@ -46,7 +46,7 @@ In this repository I will share the **source code** of all the projects of **[Ud
 
 | [Getting Started for Term 1](./term1_How_to_get_started)       | [![T1P1](./term1_project1_lane_finding/results/white_giphy.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 1:<br>Finding Lane Lines on the road**<br>[Code](./term1_project1_lane_finding)       | ![T1P2](./term1_project2_traffic_sign_classifier/img/traffic_sign_02.jpg)<br>**Project 2:<br>Traffic Sign Classifier**<br>[Code](./term1_project2_traffic_sign_classifier)       |
 | :---:         |     :---:      |          :---: |
-| [![T1P3](./term1_project1_lane_finding/img/white_giphy.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 3:<br>Behavioral Cloning**<br>[Code](./term1_project1_lane_finding)       | [![T1P4](./term1_project4_advanced_lane_finding/results/P4_adv_lane_lines_project_video.gif)](./term1_project4_advanced_lane_finding/results/P4_adv_lane_lines_project_video.webm)<br>**Project 4:<br>Advanced Lane Finding**<br>[Code](./term1_project4_advanced_lane_finding)       |[![T1P5](./term1_project5_vehicle_detection/results/p5_vehicle_detection.gif)](./term1_project5_vehicle_detection/results/p5_vehicle_detection.mp4)<br>Project 5:<br>Vehicle Tracking <br>[Code](./term1_project5_vehicle_detection)|
+| [![T1P3](./term1_project3_behavioral_cloning/img/white_giphy.gif)](https://drive.google.com/open?id=1fBMSefw1EDetCwyycY5tPYXKwe1AOi4H)<br>**Project 3:<br>Behavioral Cloning**<br>[Code](./term1_project3_behavioral_cloning)       | [![T1P4](./term1_project4_advanced_lane_finding/results/P4_adv_lane_lines_project_video.gif)](./term1_project4_advanced_lane_finding/results/P4_adv_lane_lines_project_video.webm)<br>**Project 4:<br>Advanced Lane Finding**<br>[Code](./term1_project4_advanced_lane_finding)       |[![T1P5](./term1_project5_vehicle_detection/results/p5_vehicle_detection.gif)](./term1_project5_vehicle_detection/results/p5_vehicle_detection.mp4)<br>**Project 5:<br>Vehicle Tracking **<br>[Code](./term1_project5_vehicle_detection)|
 
 ---  
 
@@ -66,8 +66,8 @@ Deep learning has become the most important frontier in both machine learning an
  - **Summary:** Build and train a deep neural network to classify traffic signs, using TensorFlow. Experiment with different network architectures. Performe image pre-processing and validation to guard against overfitting.
  - **Keywords:** Python, Deep Learning, Convolutional Neural Networks, TensorFlow, Overfitting, Generalisation, Augmentation, Optimizer
  
-#### [P3 - Behavioral Cloning](./project_3_behavioral_cloning)
- - **Summary:** Build and train a convolutional neural network for end-to-end driving in a simulator, using TensorFlow and Keras. Use optimization techniques such as , data augmentation and dropout to generalize the network for driving on multiple tracks.
+#### [P3 - Behavioral Cloning](./term1_project3_behavioral_cloning)
+ - **Summary:** Build and train a convolutional neural network for end-to-end driving in a simulator, using TensorFlow and Keras. Use optimization techniques such as data augmentation and dropout to generalize the network for driving on multiple tracks.
  - **Keywords:** Python, Deep Learning, Keras, Convolutional Neural Networks, Generalisation
  
 #### **Computer Vision**  

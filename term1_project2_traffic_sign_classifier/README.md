@@ -110,7 +110,7 @@ They were resized to fit into the input layer (32x32x1). One image (15th) is not
 Here are some results of the prediction:
 
 <p align="center">
-  <img src="./results/60kph.png" width="480">
+  <img src="./results/60kph.png" width="580">
 </p>
 
 <p align="center">
