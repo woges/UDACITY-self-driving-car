@@ -84,7 +84,7 @@ Will run the video at 48 FPS. The default FPS is 60.
 
 Be careful: training images are loaded in BGR colorspace using cv2 while drive.py load images in RGB to predict the steering angles.
 
-### simulator
+### Simulator
 
 The simulator can be downloaded from [here](https://github.com/udacity/self-driving-car-sim). There are also [sample data](https://d17h27t6h515a5.cloudfront.net/topher/2016/December/584f6edd_data/data.zip) provided, that can optionally be used to help train the model.
 
@@ -175,7 +175,7 @@ Another possiblity to combat against the left bias is to flip the images around 
 Here are two examples of flipped images:
 
 <p align="center">
-  <img src="./results/Flipped_images.png" width="480">
+  <img src="./results/Flipped_images.png" width="960">
 </p>
 
 ##### Brightness changes
@@ -183,7 +183,7 @@ Here are two examples of flipped images:
 Another way to force the model to better generalise is to alienate the images and to add them to the training data. One  possibility is to change the brightness of the images and therefor improving the ability of the model to deal with different lightning conditions. Before being fed to the network, each image is converted to HSV and the value channel is multiplied element-wise by a random value in a certain range. The wider the range, the more different will be on average the augmented frames from the original ones.
 
 <p align="center">
-  <img src="./results/brightness_images.png" width="480">
+  <img src="./results/brightness_images.png" width="960">
 </p>  
 
 Finally with using the above mentioned data augmentation technics, the steering angle distribution looks more like a Gaussian distribution: 
@@ -196,7 +196,7 @@ Finally with using the above mentioned data augmentation technics, the steering 
 The images outputted by the simulator are 160 by 320 pixels with 3 color channels (RGB). Every frame is preprocessed by cropping the upper and lower part of the frame so that an images with 75  by 320 pixels remains. In this way we discard information (e.g. blue sky, trees or engine hood) that is probably useless for the task of predicting the steering direction. As an agvantage this speeds up the training which would be extremely slow on full sized images. The cropping operation of course also has to be added to the "drive.py" script, as it is crucial that the new data is preprocessed in the same way. Now our input frames look like these: 
 
 <p align="center">
-  <img src="./results/cropped_images.png" width="480">
+  <img src="./results/cropped_images.png" width="960">
 </p>  
 
 Finally a normalization of the images to get the pixel values evenly distributed around zero was introduced to get good conditioned data and utmost numerical stability.
@@ -211,7 +211,7 @@ As this is a typical image classification problem a convolutional neural was cho
 The model is inspired by [this Nvidia model](http://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf) where they trained a convolutional neural network for a similar type of problem. 
 
 <p align="center">
-  <img src="./results/CNN_002.png" width="480">
+  <img src="./results/CNN_002.png" width="240">
 </p>  
 
 Here three convolutional layers with 5x5 filter size and a stride of 2x2 each followed by a RELU activation layer to introduce nonlinearity was choosen. The next two layers consist of convolutional layers with 3x3 filter size and a stride of 1x1 based on the NVIDIA model also followed by a RELU activation layer. A filter depth between 32 and 100 was used. After that the flatten layer feds an output array of 1x6600 dimension to the first fully-connected layer which reduces the size to 240. This layer and the consecutive two fully-connected layers are each followed by a dropout layer to prevent the model from overfitting. Finally the last fully-connected layer outputs the steering angle prediction.
