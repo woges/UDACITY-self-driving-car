@@ -73,7 +73,7 @@ The training data set is very unbalanced, which means that there are sometimes o
 
 All images from the training, validation and testing set are normalize, so that the range of the data is between 0.0 and 1.0, corresponding to the RGB values 0 to 255.
 
-The training and validation set was already split by using the pickle data sets provided. Augmentation of the training set is created offline with various techniques like shifting, rotation, zomming, etc.
+The training and validation set was already split by using the pickle data sets provided. Augmentation of the training set is created offline with various techniques like shifting, rotation, zooming, etc.
 
 The convolutional neural network looks like this, with three convolutional layer, three fully connected layers, ReLU as activation function and Dropout for regularization:
 
@@ -83,7 +83,7 @@ The convolutional neural network looks like this, with three convolutional layer
 
 The model was trained with a batch-size of 256 samples for 19 epochs. Early stopping to abort the training was used to avoid overfitting, when the accuracy did not make any notable progress after 2 epochs.
 
-For the optimizer, the AdamOptimizer was used, which seemed to wrok a bit better than GradientDescent. A learning rate of 0.001 gave the best results. In addition to that, a dropout of 0.5 was doing quite fine.
+For the optimizer, the AdamOptimizer was used, which seemed to work a bit better than GradientDescent. A learning rate of 0.001 gave the best results. In addition to that, a dropout of 0.5 was doing quite fine.
 
 Those plots show the validation accuracy over time:
 

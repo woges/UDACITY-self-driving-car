@@ -1,208 +1,138 @@
-# Path Planning
+# Semantic Segmentation
 [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 
 ## Overview
 
-The process of path planning could be seen as the brain of an autonomous vehicle, which determines where to go and how to get there. The goal is to find a safe, legal, comfortable and efficient path from a starting point to a destination. The required algorithm consists of three steps:
-
-1. **prediction:** involves estimating what other vehicles on the road might do next
-2. **behavior:** requires the own vehicle to decide what maneuver to perform next
-3. **trajectory:** selects and calculates an actual path to follow based on the decision from behavior
-
-Therefore it receives information from localization, sensor fusion and uses map data (see image below). Finally the calculated trajectory is passed to the motion control to perform the desired behavior.
+In this project, a Fully Convolutional Network (FCN) to identify road pixels from images will be trained. We use the VGG16 network and added skip layers, 1x1 convolutions and upsampling to build the FCN. For training the Kitti Road Dataset is utilized.
 
 <p align="center">
-  <img src="./img/01_overview.png" width="480">
-  <br>Image: Udacity Self-Driving Car Nanodegree<br>
+  <img src="./results/um_000033.png" width="600">
 </p>
 
 ## Dependencies
 
-If you have already installed all the necessary dependencies for the projects in term 3 you should be good to go! If not, you should install them to get started on this project => [Getting Started for Term 3](../term3_How_to_get_started). 
+Make sure you have the following is installed:
+ - [Python 3](https://www.python.org/)
+ - [TensorFlow](https://www.tensorflow.org/)
+ - [NumPy](http://www.numpy.org/)
+ - [SciPy](https://www.scipy.org/)
 
-You can download the Term3 Simulator which contains the Path Planning Project from the [releases tab (https://github.com/udacity/self-driving-car-sim/releases).
+##### Dataset
+Download the [Kitti Road dataset](http://www.cvlibs.net/datasets/kitti/eval_road.php) from [here](http://www.cvlibs.net/download.php?file=data_road.zip).  Extract the dataset in the `data` folder.  This will create the folder `data_road` with all the training and test images.
  
 ## Basic Build Instructions
 
-1. Clone this repo.
-2. Make a build directory: `mkdir build && cd build`
-3. Compile: `cmake .. && make`
-   * On Windows, you may need to run: `cmake .. -G "Unix Makefiles" && make`
-4. Run it: `./path_planning`
+Run the following command to run the project:
+```
+python main.py
+```
+**Note** If running this in Jupyter Notebook system messages, such as those regarding test status, may appear in the terminal rather than the notebook.
 
-Once you launched the executable, simply run the simulator app and select the Path Planning simulation.
+The way it is set up in this repo, using a GTX 1060 it takes about 10-15 minutes to train.
 
-## Goal of this project
+## Tips
 
-The goal for this project is to design a path planner module which is able to drive a car around a virtual 3 lane highway with a lot of traffic around. The highway is a loop with a length of 6946m and the car should be able to drive at least one complete round of about 4.32miles, change lanes to pass slower moving traffic and must not hit any other car. Our vehicle should try to get as close to the speed limit of 50mph as possible, but must not exceed this speed limit. For comfort reasons a maximal acceleration of 10m/s² and a jerk of 10m/s³ must not be exceeded. Therefore a smooth and safe trajectory is needed. Besides changing lanes it should also keep inside its lane.
+- The link for the frozen `VGG16` model is hardcoded into `helper.py`.  The model can be found [here](https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/vgg.zip)
+- The model is not vanilla `VGG16`, but a fully convolutional version, which already contains the 1x1 convolutions to replace the fully connected layers.  
+- The original FCN-8s was trained in stages. The authors later uploaded a version that was trained all at once to their GitHub repo. The version in the GitHub repo has one important difference: The outputs of pooling layers 3 and 4 are scaled before they are fed into the 1x1 convolutions. As a result, the model learns much better with the scaling layers included. The model may not converge substantially faster, but may reach a higher IoU and accuracy. 
+- When adding l2-regularization, setting a regularizer in the arguments of the `tf.layers` is not enough. Regularization loss terms must be manually added to your loss function. otherwise regularization is not implemented.
 
-### Path Planning Process
+## Initialization and Tests
 
-The implementation of the path planner in this project is summarized in the following steps:
-1. From localization data determine ego car parameters
-2. From sensor fusion data determine the traffic around the car, sort it by lane and find the closest cars ahead and behind
-3. Start Behavior Planner using a Finite-state Machine
-4. For each state generate predictions for several time-steps into future for the ego car as well as for the traffic around it
-5. Determine the behavior by means of cost-functions which estimate the best state in future
-6. Start Path Planning with determination of the position and velocity of the ahead car 50 * 0,02s in future for the chosen state
-7. Calculate vehicle speed depending on ahead cars speed and distance
-8. Produce new smooth trajectory using spline function and the map data
+When run, the project invokes some tests around building block functions that 
+help ensure tensors of the right size and description are being used. Once the tests are complete, the code checks for the existance of a base trained VGG16 model. If it is not found locally it downloads it. Once it is available, it is used as the basis for being reconnected with skip layers and recapping the model with an alternative top end for semantic segmentation.  
 
-### File structure
+## Setting up the Neural Network with VGG16
 
-Files in the Github src Folder:
-1. `main.cpp`: 
-    * data input and output
-    * control of the workflow
-2. `vehicle.cpp & vehicle.h`:
-    * initializes the vehicle class 
-    * sets all data for each telemetric dataset 
-3. `coordinates.cpp & coordinates.h`:
-    * all programs used for working with waypoints
-    * frenet coordinates
-    * XY coordinates
-4. `helper.cpp & helper.h`:
-    * all programs needed for traffic calculation
-    * behavioral planner
-    * path planning
-5. `cost_functions.cpp & cost_functions.h`:
-    * all the cost functions are contained here 
-6. `constants.h`:
-    * all constants used by the program
-7. `json.h`:
-    * JSON version 2.1.1
-8. `spline.h`:
-    * simple cubic spline interpolation library without external dependencies
-    * (Copyright (C) 2011, 2014 Tino Kluge)
-
-### Determine Ego Car Parameters and Construct Vehicle Object
-
-The following data is received from the simulator module at each update step (depending on the time lag caused by performing the path planning process):
-
-  1. localization data of the own car, consisting of [x, y, s, d, yaw and speed]
-  2. the remaining part of the previous trajectory [x, y]-coordinates
-  3. sensor fusion data from all other cars, which drive in our direction, consisting of [ID,  x, y, vx, vy, s and d]
- 
-In addition there is the 'world'-map, which consists of 181 waypoints forming our reference path around the highway loop. Each waypoint data-set comprises [ x, y, s, dx, dy].
-
-With this data additional values are calculated for the ego car like acceleration and the current data-set is fed to the vehicle class object. 
-With sensor fusion data, all other vehicles are sorted according to their lane and position to the ego car. A vector with data-sets of six cars (car ahead and behind for 3 lanes) is received as a result with additional information (function `Lane_Traffic` in `helper.cpp`). The data-set now comprises the following values [id, x, y, vx, vy, s, d, v, s-dist, lane, traffic ahead, acc] with:  
-
-  - v = velocity of this car
-  - s-dist = distance form ego car 
-  - lane = current lane of this car
-  - traffic ahead = number of cars ahead form ego car in this lane
-  - acc = acceleration of this car
- 
-If there is no car in front or behind in a lane, this data-set is filled with pseudo values which can be identified as 'no car' in further program steps.
-
-### Behavior Planning Modul
-
-The behavior planner uses a so called Finite State Machine to solve the behavior planning problem and to decide which maneuver to do next. The behavior planner makes decisions based on a finite set of discrete states. In this case a Finite State Machine with 5 different states was chosen (*'Keep Lane'* (KL), *'Lane Change Left'* (LCL), *'Lane Change Right'* (LCR), *'Double Lane Change'* (DLC) and *'Changing Lane'* (CL)). It is initialized with the state 'Keep Lane'.  
-To decide which state to transit next, the Finite State Machine needs to handle the following input, like:  
-
-   - current state
-   - localization data
-   - fusion data
-   - map
-   - limitations (like speed, jerk..)
-   - predictions
+VGG16 is a good start for an image semantic segmentation mechanism.  Simply
+replacing the classifier with an alternative classifier based on flattened 
+image logits is a good start.  However, this tends to not have as good 
+performance in terms of resolution as we would desire.  The reason for this is 
+the structure of the model with the reduction of resolution.  One way of 
+improve this performance is to merge the outputs of the layers, scaled to 
+the right resolution.  This works by producing cummulative layer activations
+and the ability, due to the convolutional kernels, to spread this activation
+locally to neighboring pixels.  This change in layer connectivity is called
+`skip layers` and the result is more accurate segmentation, somewhat like 
+the so-called `U net`. This implementation is based on the 2015 paper [Fully Convolutional Networks for Semantic Segmentation](https://arxiv.org/abs/1605.06211) from UC Berkeley. 
 
 <p align="center">
-  <img src="./img/02_overview.png" width="600">
-  <br>Image: Udacity Self-Driving Car Nanodegree<br>
+  <img src="./img/fcnn_architecture.png" width="960">
 </p>
 
+Here we are focusing on layers 3, 4 and 7. First, each of these layers have a 1x1 convolution layer added. Next, layers 7 and 4 are merged, with layer 7 being upsampled using the `conv2d_transpose()` function. The result of this cummulative layer was added to layer 3, the cummulative layer being upsampled first.  The final result is upsampled again.  What this basically accomplishes is creating a skip-layer encoder-decoder network. The critical part, the encoder, is the pre-trained VGG16 model, and it is our task to train the smaller decoder aspect to accomplish the semantic segmentation that we 
+are trying to achieve.
 
-### Predictions
+## Optimization
 
-For each state we have to calculate the predictions where the ego car, as well as the six cars around it, will be in future. Therefore we cycle through all possible states and trajectories for those cars in the prediction step. Here a time-step of 0.5 second and a time horizon of in total 5 seconds is used. To simplify and speed up the prediction step, only a simple model for for the traffic around the ego car is used. The cars drive at a constant speed and are keeping their lanes. The performance of this prediction model proved to be sufficient for a working behavior module in this case. However the prediction step of the ego car was calculated with constant acceleration but a simple lane changing model of instantaneously changing lane (which will be the worst case for safety reasons).
+The network is trained using cross entropy loss as the metric to minimize. The
+way this is accomplished is essentially to flatten both the logits from the last decoder layer into a single dimensional label vector. The cross entropy
+loss is computed against the correct label image, itself also flattened. The Adam-Optimizer is used to minimize this, because it's a good choice for most deep learning projects.
+As for the framework, TensorFlow is used. Unfortunately, the TensorFlow intersection over union function is not one that is compatible with minimization, so it wasn't used.
 
-<p align="center">
-  <img src="./img/03_prediction.png" width="600">
-  <br>Image: Udacity Self-Driving Car Nanodegree<br>
-</p>
+## Training 
 
-### Cost Functions
+The network has been trained on an Amazon p2.xlarge GPU instance with around 11GB of graphic memory. The basic training process is simply going through the defined epochs, batching and training. The loss reported is an average over the returned losses for all batches in an epoch. Once the training is complete, the test images are processed using the provided helper function. The model, the metadata and the graph definition are also saved in the process. The benefit is that an optimizer on the graph for use in faster inference applications could be used later.
 
-The key part for choosing a proper transition is the design of reasonable cost-functions. Here we want to penalize and reward the right things. Therefore we sum up the costs derived from different cost-functions, designed for different purposes. In this case the following cost-functions are used:
+## Hyperparameter Selection
 
-  1. **lane cost:** cost for not being in the middle lane
-  2. **cost for speed of car in front:** we prefer to stay in the lane with cars at a higher speed
-  3. **cost for traffic ahead:** we prefer to stay in a lane with less traffic ahead
-  4. **cost for collisions:** collisions are extreme expensive (only calculated for lane changes to check if it's feasible to do a lane change)
-  5. **cost for being below safety buffer threshold:** being below the safety buffer threshold is expensive
-  6. **cost for distance from car in front:** we prefer situations with cars in front of us which are far away form us
+The hyperparameters have been determined with a random search strategy:
 
-As an example for the design of a cost-function, *the function for the distance from the car in front*, is shown in the following picture:
+ * Learning rate = 0.000055
+ * Dropout = 0.89
+ * Epochs = 43
+ * Batch size = 5
 
-<p align="center">
-  <img src="./img/04_cost_function.png" width="480">
-</p>
-
-Below 15m (in this case also the collision margin) the value is 1. Distances greater than 15m generate values according to the function above. The value is a exponential decrease with values near 0 for cars being further than 100m away from the ego car.
-
-To tweak and balance the cost judgment a set of weights is introduced which can be tuned to get the desired result. The cost summation for all time-steps for all different states are gained as a result. After that the trajectory with the lowest cost is selected. 
-
-As a double lane change in just one step would introduce a high jerk as well as being more unsafe, it is divided into two steps. To force the car to make only one lane change, which hasn't the lowest cost as otherwise it would have been chosen before, we only check if it is feasible to go to that lane. In the next update step the behavior planner identifies the solution with the lowest cost again. Most likely it will be the target lane of the double lane change. But if anything around happened in the meantime, it can also lead to another preferred state and thus gives an additional safety check.
-
-### Path Planning Modul
-
-Now in the last part of the path planning module, a new trajectory has to be generated, depending on the decision made in the behavior module. As only x,y coordinates are passed to the simulator the velocity is also incorporated in this data as the simulator assumes a constant time-step size of 0.02 seconds. Therefore for each new x,y coordinate the correct velocity has to be estimated.
-
-#### Velocity Calculation
-
-To adapt the speed of our car to the traffic and the circumstances we can differentiate between 3 cases. 
-
-  1. If the next car ahead is more than 60m away or there is no car in front of us we can use the maximal acceleration and set the goal to the speed limit of 50mph. 
-  2. If the car in front of us is less than 60m but more than 30m away, a speed target is calculated so that it is more to the speed limit for distances closer to 60m and more to the speed of the car in front of us as the distance is closer to 30m. In almost the same manner the possible acceleration is determined to ensure a smooth velocity change. 
-  3. If the car in front of us is less than 30m away we should be able to break with maximal deceleration and adjust our speed to the car in front of us. As for the project result there is no difference in having a collision or changing acceleration with a value of more than 10m/s², there will be no emergency break to avoid collisions while staying in the lane. This occurs sometimes when  another car changes to our lane suddenly and the time to react is too short.
-
-If the speed of the ego car is higher than the target speed, it will decelerate other wise accelerate, until we hit the target.
-
-#### Trajectory Planning
-
-The new trajectory starts with the remaining way-points of the previous path or when there are only very few points left with the current car position. Lacking points are calculated as follows:
-Taking the last two points of the previous path or the starting point as a reference 3 more evenly spaced points (e.g. 30m) in the target lane are added to a way-point-set. This set is transformed to the local car's coordinate system and a spline is calculated using the c++ cubic spline library from Tino Kluge. That creates really smooth trajectories without worrying about all the math behind. With this spline, the estimated target speed and the desired acceleration the next x,y way-points in the local coordinate system are calculated. Afterwards the way-point-set is transformed back to the global coordinate system and passed to the simulator.
-
-<p align="center">
-  <img src="./img/05_path_planning.png" width="960">
-  <br>Image: Udacity Self-Driving Car Nanodegree<br>
-</p>
+This batch size seemed to facilitate a better generalization and more rapid reduction than with a larger batch sizes. The final loss value is at around 0.03.
 
 ## Results
 
+The results are *surprisingly good*.  The image at the top is some of the output. Of the hundreds of test images, there are only very few that do not have fairly adequate road coverage. Places where it seems to fail most include:
+
+ * Small regions, such as between cars or around bicycles
+ * Wide expanses of road with poorly defined boundaries
+ * Road forks with dominant lane lines
+ * Very different lighting conditions
+
+Surprisingly, it works very well at distinguishing between roads and intersecting railroad tracks. This is probably related to why it does not segment the road at intersections with dominant lane lines as well, as the high contrast parallel lines have few examples in the training set.
+
+Example images:
+
 <p align="center">
-  <img src="./results/38p3_miles.GIF" width="960">
+  <img src="./results/umm_000033.png" width="600">
 </p>
 
-The path planner project is one of the most interesting, complex and demanding ones. This solution works quite well but not incident-free as you can see in the picture above. After running for more than 38 miles a certain incident happened. There seems to be a lot of room to make things perfect, like using different trajectories along with Naive Bayes for the prediction of the position of all the cars around us. Another point is that a planned path always gets executed in its entirety, i.e. the initiation of a new maneuver is only possible after the last path point of the current path the car is following. This obviously leads to a trade-off between longer planning horizons and timely reaction to sudden changes in the environment.
-Nevertheless it was great fun to manage the program structure, tweaking all parameters and see the car running around with this impressive simulator.
-
 <p align="center">
-  <img src="./results/SDC_Path_Planning_Project.gif" width="480">
+  <img src="./results/umm_000077.png" width="600">
 </p>
 
-The resulting [video](./results/SDC_Path_Planning_Project.mp4) is in the repo, if you are interested. 
+<p align="center">
+  <img src="./results/uu_000020.png" width="600">
+</p>
+
+<p align="center">
+  <img src="./results/uu_000085.png" width="600">
+</p>
+
+All images are found in the [runs directory](./runs/1509812541.5957403/) in this repo, if you are interested.
 
 ## Literature
 
-[Practical Search Techniques in Path Planning for Autonomous Driving](./resources/dolgov_gpp_stair08.pdf)
+[Fully Convolutional Networks for Semantic Segmentation](https://arxiv.org/abs/1605.06211)
 
-[A Path Planning and Obstacle Avoidance Algorithm for an Autonomous Robotic Vehicle](./resources/Thesis_Ghangrekar.pdf)
+[Convolutional Patch Networks with Spatial Prior for Road Detection](./resources/Convolutional_Patch_Networks_with_Spatial_Prior_for_Road_Detection.pdf)
 
-## Editor Settings
+[A guide to convolution arithmetic for deep learning](./resources/A_guide_to_convolution_arithmetic_for_deep.pdf)
 
-We've purposefully kept editor configuration files out of this repo in order to
-keep it as simple and environment agnostic as possible. However, we recommend
-using the following settings:
+[Learning Affordance for Direct Perception in Autonomous Driving](./resources/Learning_Affordance_for_Direct_Perception_in_Autonomous_Driving.pdf)
 
-* indent using spaces
-* set tab width to 2 spaces (keeps the matrices in source code aligned)
+[Convolution Arithmetic Tutorial](http://deeplearning.net/software/theano/tutorial/conv_arithmetic.html)
 
-## Code Style
+[Semantic Segmentation Deep-Learning](http://blog.qure.ai/notes/semantic-segmentation-deep-learning-review)
 
-Please (do your best to) stick to [Google's C++ style guide](https://google.github.io/styleguide/cppguide.html).
+[Transpose Convolution in Tensorflow](http://cv-tricks.com/image-segmentation/transpose-convolution-in-tensorflow/)
+
+[Intersection over Union IoU](https://www.pyimagesearch.com/2016/11/07/intersection-over-union-iou-for-object-detection/)
 
 ## Contributing
 
@@ -210,4 +140,4 @@ No further updates nor contributions are requested.  This project is static.
 
 ## License
 
-Term3_project11_path_planning results are released under the [MIT License](./LICENSE)
+Term3_project12_semantic_segmentation results are released under the [MIT License](./LICENSE)

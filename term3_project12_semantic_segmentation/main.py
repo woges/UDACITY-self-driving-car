@@ -33,7 +33,6 @@ def load_vgg(sess, vgg_path):
     :param vgg_path: Path to vgg folder, containing "variables/" and "saved_model.pb"
     :return: Tuple of Tensors from VGG model (image_input, keep_prob, layer3_out, layer4_out, layer7_out)
     """
-    # TODO: Implement function
     #   Use tf.saved_model.loader.load to load the model and weights
     
     ###get_tensor_by_name
@@ -69,7 +68,7 @@ def layers(vgg_layer3_out, vgg_layer4_out, vgg_layer7_out, num_classes, keep_pro
     :param num_classes: Number of classes to classify
     :return: The Tensor for the last layer of output
     """
-    # TODO: Implement function
+    #Implement function
     layer7_1x1 = tf.layers.conv2d(
                     inputs=vgg_layer7_out, 
                     filters=num_classes,
@@ -138,9 +137,6 @@ def optimize(nn_last_layer, correct_label, learning_rate_, num_classes):
     :param num_classes: Number of classes to classify
     :return: Tuple of (logits, train_op, cross_entropy_loss)
     """
-    # TODO: Implement function
-
-    ###
     with tf.name_scope("logits"):
         logits_ = tf.reshape(nn_last_layer, (-1, num_classes))
     labels_ = tf.reshape(correct_label, (-1, num_classes))
@@ -176,7 +172,6 @@ def train_nn(sess, epochs, batch_size, get_batches_fn, train_op,
     :param keep_prob: TF Placeholder for dropout keep probability
     :param learning_rate: TF Placeholder for learning rate
     """
-    # TODO: Implement function
     #start Tensorboard
     tb_file = './TB/' + time.strftime("%Y%m%d_%H%M%S")
     writer = tf.summary.FileWriter(tb_file)
@@ -245,7 +240,7 @@ def run():
         # OPTIONAL: Augment Images for better results
         #  https://datascience.stackexchange.com/questions/5224/how-to-prepare-augment-images-for-neural-network
 
-        # TODO: Build NN using load_vgg, layers, and optimize function
+        #Build NN using load_vgg, layers, and optimize function
 
         ###
         correct_label = tf.placeholder(tf.float32, shape = [None, None, None, NUM_CLASSES])
@@ -256,7 +251,7 @@ def run():
         final_layer = layers(layer3_out, layer4_out, layer7_out, NUM_CLASSES, keep_prob)
         logits, train_op, cross_entropy_loss = optimize(final_layer, correct_label, learning_rate, NUM_CLASSES)
         ###
-        # TODO: Train NN using the train_nn function
+        #Train NN using the train_nn function
 
         print("sess.run")
         if(TRAIN):
@@ -279,7 +274,7 @@ def run():
                 saver.save(sess, save_file)
                 performance_records[(gr_epochs, gr_batch_size, gr_keep_prob, gr_learning_rate)] = loss_mean
                 print("gr_epochs: ", gr_epochs, "  gr_batch_size: ", gr_batch_size, "  gr_keep_prob: ", gr_keep_prob, "  gr_learning_rate: ", gr_learning_rate,  "  loss_mean: ", loss_mean)
-        # TODO: Save inference data using helper.save_inference_samples
+        # Save inference data using helper.save_inference_samples
         #  helper.save_inference_samples(runs_dir, data_dir, sess, image_shape, logits, keep_prob, input_image)
         if(TEST):
             saver = tf.train.Saver()

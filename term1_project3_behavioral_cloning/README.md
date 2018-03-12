@@ -120,7 +120,7 @@ The steps of this project are the following:
 
 ## Data Collection Strategy
 
-Data for this task can be gathered with the Udacity simulator itself. Indeed, when the simulator is set to *training mode*, the car is controlled by the human though the keyboard, and steering directions and image data is collected through three forward facing cameras cameras mounted on the vehicle.
+Data for this task can be gathered with the Udacity simulator itself. Indeed, when the simulator is set to *training mode*, the car is controlled by the human though the keyboard, and steering directions and image data is collected through three forward facing cameras mounted on the vehicle.
 
 <p align="center">
   <img src="./results/l_c_r_images.png" width="960">
@@ -138,21 +138,21 @@ In **controlled driving** the aim was to maintain the vehicle close to the cente
   <img src="./results/steering_angle_ori.png" width="480">
 </p>
 
-It is obvious that a significant portion of the data os just driving on a straight road with steering angles around 0°. This is not sufficient for successfully train a neural network, which should be able to recover back to the center once it has driven the car to the shoulder. The second item is that the data is biased to minus steering angles as the track is mostly bending to the left. This makes it difficult for the neural network to successfully manage right hand bends. Therefore an additional round but clockwise was collected additionally.
+It is obvious that a significant portion of the data is just driving on a straight road with steering angles around 0°. This is not sufficient for successfully train a neural network, which should be able to recover back to the center once it has driven the car to the shoulder. The second item is that the data is biased to minus steering angles as the track is mostly bending to the left. This makes it difficult for the neural network to successfully manage right hand bends. Therefore an additional round but clockwise was collected additionally.
 
-Next there is **recovery driving**. Here special manoevers are driven e.g. segments which started from the outside of the lane (on either side) and recorded the vehicle driving back towards the center of the lane. Inevitably there will be times when the car drifts beyond the images recorded from the side cameras in **controlled driving** and it must make a larger steering  correction back towards center. The recovery images trained the car to make this correction when it finds itself drifting towards the curb/lane lines on either side of the road. 
+Next there is **recovery driving**. Here special manoeuvre are driven e.g. segments which started from the outside of the lane (on either side) and recorded the vehicle driving back towards the center of the lane. Inevitably there will be times when the car drifts beyond the images recorded from the side cameras in **controlled driving** and it must make a larger steering  correction back towards center. The recovery images trained the car to make this correction when it finds itself drifting towards the curb/lane lines on either side of the road. 
 
 <p align="center">
   <img src="./results/data_collection_recovery.gif" width="480">
 </p>
 
-In the end the data set consists of the following driving maneuvers:
+In the end the data set consists of the following driving manoeuvre:
 
   - 1 loop, centered driving, counter-clockwise  direction
   - 1 loop, centered driving, clock-wise direction
-  - Additional manouvers for recovering to center
-  - Additional manouvers for driving smooth in curves
-  - Additional manouvers for critical waypoints
+  - Additional manoeuvre for recovering to center
+  - Additional manoeuvre for driving smooth in curves
+  - Additional manoeuvre for critical waypoints
 
 As a result the steering angle distribution looks as follows:
 
@@ -203,7 +203,7 @@ Finally a normalization of the images to get the pixel values evenly distributed
 
 ### Splitting Data
 
-After doing all the mentioned driving manoevers the data set comprises around 15.000 images. With all augmentation technics like flipping it increased to nearly 30.000  images. The data set was split into a randomly selected training set (80%) and a validation set (the remaining 20%) to monitor the performance of the neural network and to ensure that the model was not overfitting. There is no need to split off a test set as the model testing is done by running the simulator in autonomous mode on the tracks. 
+After doing all the mentioned driving manoeuvre the data set comprises around 15.000 images. With all augmentation technics like flipping it increased to nearly 30.000  images. The data set was split into a randomly selected training set (80%) and a validation set (the remaining 20%) to monitor the performance of the neural network and to ensure that the model was not overfitting. There is no need to split off a test set as the model testing is done by running the simulator in autonomous mode on the tracks. 
 
 ## Model Architectur
 

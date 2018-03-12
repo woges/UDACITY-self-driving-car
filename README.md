@@ -12,7 +12,7 @@ Self-driving cars represent one of the most significant advances in modern histo
   - transport will be delivered as a service from companies who own fleets of self-driving vehicles 
   - transportation will become more tightly integrated and packaged into many services  
   - premium vehicle services will be available
-  - beeing able to avoid crashes will change the vehicle body construction radically 
+  - being able to avoid crashes will change the vehicle body construction radically 
   - interior equipment will focus even more on comfort
   - emotion (max. speed, acceleration, handling, exterior design ..) might almost entirely leave transportation  
   - are parking lots or parking spaces in town centers necessary anymore?  
@@ -46,7 +46,7 @@ In this repository I will share the **source code** of all the projects of **[Ud
 
 | [Getting Started for Term 1](./term1_How_to_get_started)       | [![T1P1](./term1_project1_lane_finding/results/white_giphy.gif)](./term1_project1_lane_finding/results/white.webm)<br>**Project 1:<br>Finding Lane Lines on the road**<br>[Code](./term1_project1_lane_finding)       | ![T1P2](./term1_project2_traffic_sign_classifier/img/traffic_sign_02.jpg)<br>**Project 2:<br>Traffic Sign Classifier**<br>[Code](./term1_project2_traffic_sign_classifier)       |
 | :---:         |     :---:      |          :---: |
-| [![T1P3](./term1_project3_behavioral_cloning/results/p3_behavioral_cloning_21s.gif)](./term1_project3_behavioral_cloning/results/p3_behavioral_cloning.webm)<br>**Project 3:<br>Behavioral Cloning**<br>[Code](./term1_project3_behavioral_cloning)       | [![T1P4](./term1_project4_advanced_lane_finding/results/P4_adv_lane_lines_project_video.gif)](./term1_project4_advanced_lane_finding/results/P4_adv_lane_lines_project_video.webm)<br>**Project 4:<br>Advanced Lane Finding**<br>[Code](./term1_project4_advanced_lane_finding)       |[![T1P5](./term1_project5_vehicle_detection/results/p5_vehicle_detection.gif)](./term1_project5_vehicle_detection/results/p5_vehicle_detection.mp4)<br>**Project 5:<br>Vehicle Tracking **<br>[Code](./term1_project5_vehicle_detection)|
+| [![T1P3](./term1_project3_behavioral_cloning/results/p3_behavioral_cloning_21s.gif)](./term1_project3_behavioral_cloning/results/p3_behavioral_cloning.webm)<br>**Project 3:<br>Behavioral Cloning**<br>[Code](./term1_project3_behavioral_cloning)       | [![T1P4](./term1_project4_advanced_lane_finding/results/P4_adv_lane_lines_project_video.gif)](./term1_project4_advanced_lane_finding/results/P4_adv_lane_lines_project_video.webm)<br>**Project 4:<br>Advanced Lane Finding**<br>[Code](./term1_project4_advanced_lane_finding)       |[![T1P5](./term1_project5_vehicle_detection/results/p5_vehicle_detection.gif)](./term1_project5_vehicle_detection/results/p5_vehicle_detection.mp4)<br>**Project 5:<br>Vehicle Tracking**<br>[Code](./term1_project5_vehicle_detection)|
 
 ---  
 
@@ -129,7 +129,7 @@ Use a combination of cameras, software, and machine learning to find lane lines 
 
 |[Getting Started for Term 3](./term3_How_to_get_started)       |[![T3P11](./term3_project11_path_planning/results/SDC_Path_Planning_Project.gif)](./term3_project11_path_planning/results/SDC_Path_Planning_Project.mp4)<br>**Project 11:<br>Path Planning Project**<br>[Code](./term3_project11_path_planning)|[![T3P12](./term3_project12_semantic_segmentation/results/white_giphy.gif)](./term3_project12_semantic_segmentation/results/)<br>**Project 12:<br>Advanced Deep Learning**<br>[Code](./term3_project12_semantic_segmentation)|
 | :---:         |     :---:      |          :---: |
-|[![T3P13](./term3_project13_functional_safety_plan/results/white_giphy.gif)](./term3_project13_functional_safety_plan/results/)<br>**Project 13:<br>Functional Safety**<br>[Code](./term3_project13_functional_safety_plan)|<br>**CAPSTONE PROJECT**<br>**System Integration**|[![T3P14](./term3_project14_capstone_project/results/system_integration_project.gif)](./term3_project14_capstone_project/results/system_integration_project.mp4)<br>**Project 14:<br>Programming a Real Self-Driving Car**<br>[Code](./term3_project14_capstone_project)|
+|[![T3P13](./term3_project13_functional_safety_plan/results/uu_000020.png)](./term3_project13_functional_safety_plan/results/)<br>**Project 13:<br>Functional Safety**<br>[Code](./term3_project13_functional_safety_plan)|<br>**CAPSTONE PROJECT**<br>**System Integration**|[![T3P14](./term3_project14_capstone_project/results/system_integration_project.gif)](./term3_project14_capstone_project/results/system_integration_project.mp4)<br>**Project 14:<br>Programming a Real Self-Driving Car**<br>[Code](./term3_project14_capstone_project)|
 
 ---  
 
