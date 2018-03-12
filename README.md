@@ -127,7 +127,7 @@ Use a combination of cameras, software, and machine learning to find lane lines 
 
 ---  
 
-|[Getting Started for Term 3](./term3_How_to_get_started)       |[![T3P11](./term3_project11_path_planning/results/SDC_Path_Planning_Project.gif)](./term3_project11_path_planning/results/SDC_Path_Planning_Project.mp4)<br>**Project 11:<br>Path Planning Project**<br>[Code](./term3_project11_path_planning)|[![T3P12](./term3_project12_semantic_segmentation/results/umm_000033.png)](./term3_project12_semantic_segmentation/results/)<br>**Project 12:<br>Advanced Deep Learning**<br>[Code](./term3_project12_semantic_segmentation)|
+|[Getting Started for Term 3](./term3_How_to_get_started)       |[![T3P11](./term3_project11_path_planning/results/SDC_Path_Planning_Project.gif)](./term3_project11_path_planning/results/SDC_Path_Planning_Project.mp4)<br>**Project 11:<br>Path Planning Project**<br>[Code](./term3_project11_path_planning)|[![T3P12](./term3_project12_semantic_segmentation/results/umm_000033.png)](./term3_project12_semantic_segmentation/results/)<br>**Project 12:<br>Semantic Segmentation**<br>[Code](./term3_project12_semantic_segmentation)|
 | :---:         |     :---:      |          :---: |
 |[![T3P13](./term3_project13_functional_safety_plan/results/uu_000020.png)](./term3_project13_functional_safety_plan/results/)<br>**Project 13:<br>Functional Safety**<br>[Code](./term3_project13_functional_safety_plan)|<br>**CAPSTONE PROJECT**<br>**System Integration**|[![T3P14](./term3_project14_capstone_project/results/system_integration_project_320.gif)](./term3_project14_capstone_project/results/system_integration_project.mp4)<br>**Project 14:<br>Programming a Real Self-Driving Car**<br>[Code](./term3_project14_capstone_project)|
 
