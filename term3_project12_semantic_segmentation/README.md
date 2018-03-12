@@ -99,7 +99,7 @@ Surprisingly, it works very well at distinguishing between roads and intersectin
 Example images:
 
 <p align="center">
-  <img src="./results/umm_000033.png" width="600">
+  <img src="./results/umm_000016.png" width="600">
 </p>
 
 <p align="center">
