@@ -116,7 +116,7 @@ To decide which state to transit next, the Finite State Machine needs to handle 
 
 ### Predictions
 
-For each state we have to calculate the predictions where the ego car, as well as the six cars around it, will be in future. Therefore we cycle through all possible states and trajectories for those cars in the prediction step. Here a time-step of 0.5 second and a time horizon of in total 5 seconds is used. To simplify and speed up the prediction step, only a simple model for for the traffic around the ego car is used. The cars drive at a constant speed and are keeping their lanes. The performance of this prediction model proved to be sufficient for a working behavior module in this case. However the prediction step of the ego car was calculated with constant acceleration but a simple lane changing model of instantaneously changing lane (which will be the worst case for safety reasons).
+For each state we have to calculate the predictions where the ego car, as well as the six cars around it, will be in future. Therefore we cycle through all possible states and trajectories for those cars in the prediction step. Here a time-step of 0.5 second and a time horizon of in total 5 seconds is used. To simplify and speed up the prediction step, only a simple model for the traffic around the ego car is used. The cars drive at a constant speed and are keeping their lanes. The performance of this prediction model proved to be sufficient for a working behavior module in this case. However the prediction step of the ego car was calculated with constant acceleration but a simple lane changing model of instantaneously changing lane (which will be the worst case for safety reasons).
 
 <p align="center">
   <img src="./img/03_prediction.png" width="600">

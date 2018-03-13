@@ -59,7 +59,7 @@ Files in the Github src Folder:
 2. UKF.cpp:
   * initializes the Unscented Kalman filter
   * defines the predict and update functions
-  * calls the predict funciton
+  * calls the predict function
   * calls the update function for either the lidar or radar sensor measurement
 3. tools.cpp
   * function to calculate RMSE
@@ -68,14 +68,14 @@ Files in the Github src Folder:
 
 **Initializing the Unscented Kalman Filter**
 
-The initial values for the state variables will affect the Kalman filter's performance. Both the:
-  * state vector x and 
+The initial values for the state variables will affect the Kalman filter's performance. Both:
+  * the state vector x and 
   * the state covariance matrix P
 need to be initialized for the unscented Kalman filter to work properly.
 
 The state vector x contains x=[px,py,v,ψ,ψ˙]. You won't know where the bicycle is until you receive the first sensor measurement. Once the first sensor measurement arrives, px and py could be initialized.
 For the other variables in the state vector x, you can try different initialization values to see what works best.
-One strategie to initialize the state covariance matrix P is to start with the identity matrix.
+One strategy to initialize the state covariance matrix P is to start with the identity matrix.
 
 **Process Noise**  
 
@@ -170,7 +170,7 @@ What you see here in orange are the NIS values of the three dimensional radar me
 This is how the NIS values of the laser measurements look like. Be aware that the 95% line is at a different level in this case because the laser measurement is a two dimensional vector. 
 Both diagrams show that the UKF is consistent, it means it provides a realistic covariance metrics. 
 
-What really impressive is, how precise the UKF can estimate the orientation of the bicycle. None of our sensors is able to directly observe the orientation, but we still get a precise estimate. 
+What is really impressive, is how precise the UKF can estimate the orientation of the bicycle. None of our sensors is able to directly observe the orientation, but we still get a precise estimate. 
 
 <img src="./results/yaw_060.png" width="980" alt="Combined Image" />
 

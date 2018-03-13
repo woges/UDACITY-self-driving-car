@@ -3,9 +3,9 @@
 
 ## Overview
 
-The overarching theme in this module is how to find what you're looking for in images. You need to explore colors and gradients to see how you can locate and classify objects in images. Image classification is tricky. And it becomes even trickier when you don't know exactly where in an image your objects of interest will appear or what size they'll be or even how many of them you might find. Here we'll focus on the task of detecting vehicles and images taken from a camera mounted on the front of a car. But the same principles apply to pedestrian detection, or traffic sign detection, or identifying any object you might be looking for in an image. 
+The overarching theme in this module is how to find what you're looking for in images. You need to explore colours and gradients to see how you can locate and classify objects in images. Image classification is tricky. And it becomes even trickier when you don't know exactly where in an image your objects of interest will appear or what size they'll be or even how many of them you might find. Here we'll focus on the task of detecting vehicles and images taken from a camera mounted on the front of a car. But the same principles apply to pedestrian detection, or traffic sign detection, or identifying any object you might be looking for in an image. 
 
-Object detection and tracking (traditional computer vision techniques) is a central theme in computer vision. Knowing where other vehicles are on the road and being able to anticipate where they're heading next is essentiall in a self-driving car. When we look at the world through our own eyes, we're constantly performing classification tasks with our brain. Much the same way as we do with our own eyes as we drive, reliable object detection and classification are essential in the case of self- riving cars to be to determine things like how far away they are, which way they're going, and how fast they're moving.
+Object detection and tracking (traditional computer vision techniques) is a central theme in computer vision. Knowing where other vehicles are on the road and being able to anticipate where they're heading next is essential in a self-driving car. When we look at the world through our own eyes, we're constantly performing classification tasks with our brain. Much the same way as we do with our own eyes as we drive, reliable object detection and classification are essential in the case of self- riving cars to be to determine things like how far away they are, which way they're going, and how fast they're moving.
 
 Here both techniques are important:
 
@@ -41,7 +41,7 @@ The goal of the project was to develop a pipeline to reliably detect cars in a g
 The steps of this project are the following:
 
 * Perform a Histogram of Oriented Gradients (HOG) feature extraction on a labeled training set of images and train a classifier Linear SVM classifier
-* Optionally, you can also apply a color transform and append binned color features, as well as histograms of color, to your HOG feature vector. 
+* Optionally, you can also apply a colour transform and append binned colour features, as well as histograms of colour, to your HOG feature vector. 
 * For those first two steps don't forget to normalize the features and randomize a selection for training and testing.
 * Implement a sliding-window technique and use the trained classifier to search for vehicles in images.
 * Run the pipeline on a video stream and create a heat map of recurring detections frame by frame to reject outliers and follow detected vehicles.
@@ -60,11 +60,11 @@ Here are two example images, the first from the `vehicle` class and the second f
   
 2. Use `skimage.feature.hog(training_image, [parameters=parameter_values])` to extract HOG features and HOG visualisation. Wrapped in function `get_hog_features`.
     
-For the task of car detection I used *color histograms* and *spatial features* to encode the object visual appearence and HOG features to encode the object's *shape*. While the first two features are easy to understand and implement, HOG features can be a little bit trickier to master.
+For the task of car detection I used *colour histograms* and *spatial features* to encode the object visual appearence and HOG features to encode the object's *shape*. While the first two features are easy to understand and implement, HOG features can be a little bit trickier to master.
 
 #### Choose HOG parameters.
 
-HOG stands for *Histogram of Oriented Gradients* and refer to a powerful descriptor that has met with a wide success in the computer vision community, since its in 2005 with the main purpose of people detection. 
+HOG stands for *Histogram of Oriented Gradients* and refer to a powerful descriptor that has met with a wide success in the computer vision community, since its introduction in 2005 with the main purpose of people detection. 
 
 <p align="center">
   <img src="./out_images/002_HOG-channels_car.JPG" alt="hog" width="960">
@@ -85,11 +85,11 @@ In order to select the right parameters, both the classifier accuracy and comput
   <br>HOG parameters.
 </p>
 
-Additionally to the HOG features other functions were added as well to make use also from color and spatial information in the images. The advantage is that by using e.g. the color information we are independent of the structure. Therefore, objects which appear in different aspects and orientations (as trained with the images dataset) will still be matched.
+Additionally to the HOG features other functions were added as well to make use also from colour and spatial information in the images. The advantage is that by using e.g. the colour information we are independent of the structure. Therefore, objects which appear in different aspects and orientations (as trained with the images dataset) will still be matched.
 
 #### Train a classifier using selected HOG features and colour features.
 
-Once we have decided which features to use, we can train a classifier on these. First to get a hugher training and validiation set, a augmentation of the existing images like shifting, rotating, zooming and shearing could be done. 
+Once we have decided which features to use, we can train a classifier on these. First to get a hugher training and validation set, an augmentation of the existing images like shifting, rotating, zooming and shearing could be done. 
 
 <p align="center">
   <img src="./out_images/004_car_augmented.JPG" alt="hog" width="960">
@@ -101,7 +101,7 @@ Once we have decided which features to use, we can train a classifier on these. 
   <br>Representation of augmented non-vehicle images.
 </p>
 
-After that, for each image in the databases `vehicle` and `non-vehicle` a feature vector is extracted. The data is split into shuffled training, validation and test sets so that these sets are composed as the set of car and non-car features (labels are given accordingly). Furthermore, feature vectors are standardize in order to have all the features in a similar range and ease training.
+After that, for each image in the databases `vehicle` and `non-vehicle` a feature vector is extracted. The data is split into shuffled training, validation and test sets so that these sets are composed as the set of car and non-car features (labels are given accordingly). Furthermore, feature vectors are standardized in order to have all the features in a similar range and ease training.
 
 After that a training with a classifier of your choice could be done. In order to have an idea of the classifier performance, we can make a prediction on the test set. Here the following classifier were examined:
   - Logistic Regression Classifier

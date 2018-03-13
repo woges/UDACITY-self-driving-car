@@ -85,7 +85,7 @@ There are several threshold functions which could be used to generate a binary i
   With canny-edge detection we found pixels in the image that were likely to be part of a line in project 1 'lane finding'. Here we use the sobel operator as we know that the lines we are looking for are close to vertical.  Applying the sobel operator to an images is a way of taking the derivative of the image in the x or y direction. With the results of the sobel operation the gradient in x or y direction is calculated Afterwards a threshold is applied to identify pixels within a certain gradient range.
 
   3. **Magnitude of the gradient**  
-  The magnitude of the gradient is the square root of the sum of the squares in each direction, which ca´n also be thresholded.
+  The magnitude of the gradient is the square root of the sum of the squares in each direction, which can´t also be thresholded.
 
   4. **Direction of the gradient**  
   Another possibility to identify the lane lines more clearly is to select only lines with a certain orientation in the image. We can calculate the direction of the gradient by simply using the inverse tangent of the y gradient divided by the x gradient.
@@ -96,7 +96,7 @@ There are several threshold functions which could be used to generate a binary i
   6. **Differnet Color spaces**  
   Also using different color channels or different color spaces can be very useful.
 
-  7. **Combination of all above**  
+  7. **Combination of all thresholds**  
   A combination of different binary thresholds, to create one combination thresholded image does a great job of highlighting almost all of the white and yellow lane lines.
 
 <p align="center">
@@ -146,7 +146,7 @@ To meet the goal of transforming the lane line pixels in a curved function form,
 
 In order to identify which pixels of a given binary image belong to lane-lines, there are (at least) two possibilities. If a brand new frame arises, for whom it was never identified where the lane-lines are, an exhaustive search on the frame must be performed. This search is implemented in `slide_win_poly()`: starting from the bottom of the image, we slide two windows towards the upper side of the image, deciding which pixels belong to which lane-line. As a starting point we use precisely the position of the maximum peaks in the histogram of the binary image as well as the knowledge of the roadway width when we are dealing with noisy data.
 
-On the other hand, if we're processing a video and we confidently identified lane-lines on the previous frame, we can limit our search to the neigborhood of the lane-lines we detected before. As  we're going at 30fps, the lines won't be so far away. This second approach is implemented in `nxt_win_poly()`.
+On the other hand, if we're processing a video and we confidently identified lane-lines on the previous frame, we can limit our search to the neighborhood of the lane-lines we detected before. As  we're going at 30fps, the lines won't be so far away. This second approach is implemented in `nxt_win_poly()`.
 
 One way to calculate the curvature of a lane line, is to fit a 2nd degree polynomial to that line, and from this you can easily extract useful information. After identifying an complete array of line pixels a polynomial is fitted to each lane using the numpy function `numpy.polyfit()`.
 
@@ -180,11 +180,11 @@ All other test images can be found in [./results/](./results/)
 ## Video Processing Pipeline:
 After establishing a pipeline to process still images, the final step was to expand the pipeline to process videos frame-by-frame, to simulate what it would be like to process an image stream in real time on an actual vehicle. 
 
-My goal in developing a video processing pipeline was to create as smooth of an output as possible. To achieve this, I created a class for each of the left and right lane lines and stored features of each lane for averaging across frames.
+My goal in developing a video processing pipeline was to create an output as smooth as possible. To achieve this, I created a class for each of the left and right lane lines and stored features of each lane for averaging across frames.
 
 The video pipeline first checks whether or not the lane was detected in the previous frame. If it was, then it only checks for lane pixels in close proximity to the polynomial calculated in the previous frame. This way, the pipeline does not need to scan the entire image, and the pixels detected have a high confidence of belonging to the lane line because they are based on the location of the lane in the previous frame. 
 
-If at any time, the pipeline fails to detect lane pixels based on the the previous frame, it will go back in to blind search mode and scan the entire binary image for nonzero pixels to represent the lanes.
+If at any time, the pipeline fails to detect lane pixels based on the previous frame, it will go back in to blind search mode and scan the entire binary image for nonzero pixels to represent the lanes.
 
 In order to make the output smooth I chose to average the coefficients of the polynomials for each lane line over a span of 10 frames. The gif below is the result of my pipeline running on the test video provided for the project, as well as an  optional challenge video which presented additional challenges to the lane detection pipeline.
 

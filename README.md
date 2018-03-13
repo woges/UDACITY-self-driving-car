@@ -129,18 +129,21 @@ Use a combination of cameras, software, and machine learning to find lane lines 
 
 |[Getting Started for Term 3](./term3_How_to_get_started)       |[![T3P11](./term3_project11_path_planning/results/SDC_Path_Planning_Project.gif)](./term3_project11_path_planning/results/SDC_Path_Planning_Project.mp4)<br>**Project 11:<br>Path Planning Project**<br>[Code](./term3_project11_path_planning)|[![T3P12](./term3_project12_semantic_segmentation/results/umm_000033.png)](./term3_project12_semantic_segmentation/results/)<br>**Project 12:<br>Semantic Segmentation**<br>[Code](./term3_project12_semantic_segmentation)|
 | :---:         |     :---:      |          :---: |
-|[![T3P13](./term3_project13_functional_safety_plan/results/uu_000020.png)](./term3_project13_functional_safety_plan/results/)<br>**Project 13:<br>Functional Safety**<br>[Code](./term3_project13_functional_safety_plan)|<br>**CAPSTONE PROJECT**<br>**System Integration**|[![T3P14](./term3_project14_capstone_project/results/system_integration_project_320.gif)](./term3_project14_capstone_project/results/system_integration_project.mp4)<br>**Project 14:<br>Programming a Real Self-Driving Car**<br>[Code](./term3_project14_capstone_project)|
+|![T3P13](./term3_project13_functional_safety_plan/results/uu_000020.png)<br>**Project 13:<br>Functional Safety**<br>[Code](./term3_project13_functional_safety_plan)|<br>**CAPSTONE PROJECT**<br>**System Integration**|[![T3P14](./term3_project14_capstone_project/results/system_integration_project_320.gif)](./term3_project14_capstone_project/results/system_integration_project.mp4)<br>**Project 14:<br>Programming a Real Self-Driving Car**<br>[Code](./term3_project14_capstone_project)|
 
 ---  
 
 #### [P11 - Path Planning](./term3_project11_path_planning)
 - **Summary:** The goal in this project is to build a path planner that is able to create smooth, safe trajectories for the car to follow. The highway track has other vehicles, all going different speeds, but approximately obeying the 50 MPH speed limit. The car transmits its location, along with its sensor fusion data, which estimates the location of all the vehicles on the same side of the road.
-- **Keywords:** C++, Path Planning
+- **Keywords:** C++,  Behavior Planning, Predictions, Cost Functions, Path Planning, Trajectory Planning
 
 #### [P12 - Road Segmentation](./term3_project12_semantic_segmentation)
 - **Summary:** Implement the road segmentation using a fully-convolutional network.
 - **Keywords:** Python, TensorFlow, Semantic Segmentation
 
+#### [P13 - Functionl Safety Plan](./term3_project13_functional_safety_plan)
+- **Summary:** Construct part of a safety case for a lane departure warning feature. This starts with the hazard analysis and risk assessment, and further documentation for functional and technical safety concepts have to be created.
+- **Keywords:** Safety Plan, Hazard Analysis and Risk Assessment, Functional Safety Concept, Technical Safety Concept, Software Requirements
 
 #### [CAPSTONE PROJECT - Programming a Real Self-Driving Car](./term3_project14_capstone_project)
 - **Summary:** Programm a real driving car.
