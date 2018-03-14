@@ -82,7 +82,8 @@ establish lines of communication with them. In addition to allowing nodes to loc
 Nodes can also share data with one another by passing messages over what are called topics. A topic is simply a named bus which you can think of as a pipe between nodes through which messages flow. In order to send a message on a topic, a node must publish to it. Likewise, to receive a message on a topic, a node must subscribe to it. 
 
 Passing messages over topics between publishers and subscribers is useful but it's not a one size fits all communications solution. There are times when a request response pattern is useful. For these types of interactions, ROS provides what are called services.
-Like topics, services allow the passing of messages between nodes. However, unlike topics, a service is not a bus and there are no publishers or subscribers associated with them. Instead, nodes interacting via services do so on a one to one basis using a request and response messages.  
+
+Like topics, services allow the passing of messages between nodes. However, unlike topics, a service is not a bus and there are no publishers or subscribers associated with them. Instead, nodes, which are interacting via services on a one to one basis, are using a request and response messages.  
 
 <p align="center">
   <img src="./img/services.png" width="480">
@@ -125,12 +126,13 @@ TensorFlow team also provides sample config files on their repo for setting up a
 The advantage of the second model is a higher accuracy at the risk of being to slow for a real time application in a self driving car. The first model is less accurate but pretty much faster. In the end this did the job.
 
 To train the models the num_classes were adjusted to 4, all path for the model checkpoint, the train and test data files as well as the label map. An important thing is to reduce the max detections per class to 50 or less. In terms of other configurations like the learning rate, batch size and many more, their default settings were used.
-The data_augmentation_option is very interesting. A full list of options can be found [here](https://github.com/tensorflow/models/blob/a4944a57ad2811e1f6a7a87589a9fc8a776e8d3c/object_detection/builders/preprocessor_builder.py) (see PREPROCESSING_FUNCTION_MAP). Augmentation was used and included the following random transformations:
-  ● RGB to Gray
-  ● Width/Height shift
-  ● Brightness
-  ● Horizontal image flip
-  ● Crop
+The data_augmentation_option is very interesting. A full list of options can be found [here](https://github.com/tensorflow/models/blob/a4944a57ad2811e1f6a7a87589a9fc8a776e8d3c/object_detection/builders/preprocessor_builder.py) (see PREPROCESSING_FUNCTION_MAP). Augmentation was used and included the following random transformations:  
+
+  - RGB to Gray  
+  - Width/Height shift
+  - Brightness
+  - Horizontal image flip
+  - Crop
 
 With the trained models the detection and classifications was really good. Here some examples of classifications with the ssd_mobilenet_v1_coco:
 
