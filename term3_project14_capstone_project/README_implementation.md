@@ -15,7 +15,7 @@ Carla the Udacity self-driving car has 4 major subsystems:
 
   - Sensor subsystem, which constists of the hardware components that gather data about the environment. This subsystem includes lidar, radar and even GPS sensors mouted on the car.
 
-|![camera](./img/camera.png) | ![lidar](./img/lidar.png)|
+| ![camera](./img/camera.png) | ![lidar](./img/lidar.png)|
 | :---:         |     :---:      |
 
   - Perception subsystem, consists of software to process sensor data.
@@ -93,12 +93,12 @@ Thankfully due to the recent advancements in Deep Learning and the ease of use o
 
 But first we have to gather our training data. The simulator images look something like this:
 
-|![r00000059](./train/r00000059.png)|![y00000042](./train/y00000042.png) |![g00003403](./train/g00003403.png) |
+|![jetzt](r00000059.jpg) | ![y00000042](./train/y00000042.jpg) |![g00003403](./train/g00003403.jpg) |
 | :---:         |     :---:      |     :---:      |
 
 While the images from the test lot look something like this:
 
-|![r2000187](./train/r2000187.png)|![y3000788](./train/y3000788.png) |![g1000064](./train/g1000064.png) |
+|![r2000187](./train/r2000187.jpg)|![y3000788](./train/y3000788.jpg) |![g1000064](./train/g1000064.jpg) |
 | :---:         |     :---:      |     :---:      |
 
 The training data was a combination of simulator images and Udacity track images so that the classifier would be able to generalize and manage also the real test track. The total number of training features used was 3730.
