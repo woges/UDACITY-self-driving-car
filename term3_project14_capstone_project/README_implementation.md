@@ -15,11 +15,7 @@ Carla the Udacity self-driving car has 4 major subsystems:
 
   - Sensor subsystem, which constists of the hardware components that gather data about the environment. This subsystem includes lidar, radar and even GPS sensors mouted on the car.
 
-|<p align="center">
-  <img src="./img/camera.png" width="480">
-</p> | <p align="center">
-  <img src="./img/lidar.png" width="480">
-</p>|
+|[camera](./img/camera.png) | [lidar](./img/lidar.png)|
 | :---:         |     :---:      |
 
   - Perception subsystem, consists of software to process sensor data.
@@ -97,24 +93,12 @@ Thankfully due to the recent advancements in Deep Learning and the ease of use o
 
 But first we have to gather our training data. The simulator images look something like this:
 
-| <p align="center">
-  <img src="./train/r00000059.jpg" width="320">
-</p> | <p align="center">
-  <img src="./train/y00000042.jpg" width="320">
-</p> | <p align="center">
-  <img src="./train/g00003403.jpg" width="320">
-</p> |
+|[r00000059](./train/r00000059.png)|[y00000042](./train/y00000042.png) |[g00003403](./train/g00003403.png) |
 | :---:         |     :---:      |     :---:      |
 
 While the images from the test lot look something like this:
 
-| <p align="center">
-  <img src="./train/r2000187.jpg" width="320">
-</p> | <p align="center">
-  <img src="./train/y3000788.jpg" width="320">
-</p> | <p align="center">
-  <img src="./train/g1000064.jpg" width="320">
-</p> |
+|[r2000187](./train/r2000187.png)|[y3000788](./train/y3000788.png) |[g1000064](./train/g1000064.png) |
 | :---:         |     :---:      |     :---:      |
 
 The training data was a combination of simulator images and Udacity track images so that the classifier would be able to generalize and manage also the real test track. The total number of training features used was 3730.
@@ -143,26 +127,14 @@ The data_augmentation_option is very interesting. A full list of options can be 
   ● Horizontal image flip
   ● Crop
 
-With the trained models the detection and classifications was really good:
+With the trained models the detection and classifications was really good. Here some examples of classifications with the ssd_mobilenet_v1_coco:
 
-| <p align="center">
-  <img src="./results/sim_red.png" width="320">
-</p> | <p align="center">
-  <img src="./results/sim_yellow.png" width="320">
-</p> | <p align="center">
-  <img src="./results/sim_green.png" width="320">
-</p> |
+|[sim_red](./results/sim_red.png)|[sim_yellow](./results/sim_yellow.png) |[sim_green](./results/sim_green.png) |
 | :---:         |     :---:      |     :---:      |
 
 While the images from the test lot are classified as follows:
 
-| <p align="center">
-  <img src="./results/site_red.png" width="320">
-</p> | <p align="center">
-  <img src="./results/site_yellow.png" width="320">
-</p> | <p align="center">
-  <img src="./results/site_green.png" width="320">
-</p> |
+|[site_red](./results/site_red.png)|[site_yellow](./results/site_yellow.png) |[site_green](./results/site_green.png) |
 | :---:         |     :---:      |     :---:      |
 
 The ROS traffic light detector is implemented in node `tl_detector` in classes `TLDetector` and `TLClassifier`. `TLDetector` is responsible for finding a nearest traffic light position and calls `TLClassifier.get_classification` with the current camera image. `TLClassifier` uses the SSD MobileNet model to classify the traffic light color (red, yellow, green, none). If at least 2 consecutive images were classified as red then `TLDetector` publishes the traffic light waypoint index in the `/traffic_waypoint` topic.
