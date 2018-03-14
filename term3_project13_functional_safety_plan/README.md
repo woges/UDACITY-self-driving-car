@@ -20,7 +20,7 @@ Goal of this project is to create an example safety case for a lane assistance s
 As a result of this project, following reports were created that document the functional safety of a lane assistance system:
 
   - [Safety Plan](./results/01_SafetyPlan_LaneAssistance.pdf)
-  - [Hazard Analysis and Risk Assessment](./results/02_HazardAnalysisAndRiskAssessment.ods)
+  - [Hazard Analysis and Risk Assessment](./results/02_HazardAnalysisAndRiskAssessment.pdf)
   - [Functional Safety Concept](./results/03_FunctionalSafetyConcept_LaneAssistance.pdf)
   - [Technical Safety Concept](./results/04_TechnicalSafetyConcept_LaneAssistance.pdf)
   - [Software Safety Requirements and Architecture](./results/05_SoftwareRequirementsAndArchitecture_LaneAssistance.pdf)

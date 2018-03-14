@@ -22,7 +22,7 @@ Download link:
 
 ---
 
-Further information about our implementation can be found [here](../term3_project14_capstone_project/).
+**Further information about our implementation can be found [here](../term3_project14_capstone_project/).**
 
 ---
 
