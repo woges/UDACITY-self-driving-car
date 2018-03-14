@@ -93,7 +93,7 @@ Thankfully due to the recent advancements in Deep Learning and the ease of use o
 
 But first we have to gather our training data. The simulator images look something like this:
 
-|![jetzt](r00000059.jpg) | ![y00000042](./train/y00000042.jpg) |![g00003403](./train/g00003403.jpg) |
+|![r00000059](./train/r00000059.jpg) | ![y00000042](./train/y00000042.jpg) |![g00003403](./train/g00003403.jpg) |
 | :---:         |     :---:      |     :---:      |
 
 While the images from the test lot look something like this:
