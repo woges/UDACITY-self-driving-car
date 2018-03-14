@@ -18,6 +18,7 @@ Carla the Udacity self-driving car has 4 major subsystems:
 
 | ![camera](./img/camera.png) | ![lidar](./img/lidar.png)|
 | :---:         |     :---:      |
+
 Image: Udacity Self-Driving Car Nanodegree  
 
   - Perception subsystem, consists of software to process sensor data.
