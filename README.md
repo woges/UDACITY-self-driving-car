@@ -129,7 +129,7 @@ Use a combination of cameras, software, and machine learning to find lane lines 
 
 |[Getting Started for Term 3](./term3_How_to_get_started)       |[![T3P11](./term3_project11_path_planning/results/SDC_Path_Planning_Project.gif)](./term3_project11_path_planning/results/SDC_Path_Planning_Project.mp4)<br>**Project 11:<br>Path Planning Project**<br>[Code](./term3_project11_path_planning)|[![T3P12](./term3_project12_semantic_segmentation/results/umm_000033.png)](./term3_project12_semantic_segmentation/results/)<br>**Project 12:<br>Semantic Segmentation**<br>[Code](./term3_project12_semantic_segmentation)|
 | :---:         |     :---:      |          :---: |
-|![T3P13](./term3_project13_functional_safety_plan/results/uu_000020.png)<br>**Project 13:<br>Functional Safety**<br>[Code](./term3_project13_functional_safety_plan)|<br>**CAPSTONE PROJECT**<br>**System Integration**|[![T3P14](./term3_project14_capstone_project/results/system_integration_project_320.gif)](./term3_project14_capstone_project/results/system_integration_project.mp4)<br>**Project 14:<br>Programming a Real Self-Driving Car**<br>[Code](./term3_project14_capstone_project)|
+|![T3P13](./term3_project13_functional_safety_plan/img/Full_V_Model.PNG)<br>**Project 13:<br>Functional Safety**<br>[Code](./term3_project13_functional_safety_plan)|<br>**CAPSTONE PROJECT**<br>**System Integration**[Introduction](./term3_project14_capstone_project)|[![T3P14](./term3_project14_capstone_project/results/system_integration_project_320.gif)](./term3_project14_capstone_project/results/system_integration_project.mp4)<br>**Project 14:<br>Programming a Real Self-Driving Car**<br>[Code](./term3_project14_capstone_project)|
 
 ---  
 
@@ -145,7 +145,7 @@ Use a combination of cameras, software, and machine learning to find lane lines 
 - **Summary:** Construct part of a safety case for a lane departure warning feature. This starts with the hazard analysis and risk assessment, and further documentation for functional and technical safety concepts have to be created.
 - **Keywords:** Safety Plan, Hazard Analysis and Risk Assessment, Functional Safety Concept, Technical Safety Concept, Software Requirements
 
-#### [CAPSTONE PROJECT - Programming a Real Self-Driving Car](./term3_project14_capstone_project)
+#### [P14 - CAPSTONE PROJECT - Programming a Real Self-Driving Car](./term3_project14_capstone_project)
 - **Summary:** Programm a real driving car.
 - **Keywords:** C++, ROS, CNN, Path Planning, Simulator & Real Car
  
@@ -153,6 +153,7 @@ Use a combination of cameras, software, and machine learning to find lane lines 
   <img src="https://cdn-images-1.medium.com/max/800/1*dRJ1tz6N3MqO1iCFzlhxZg.jpeg" width="400">
 </p>
 Image: Udacity Self-Driving Car Nanodegree  
+
 
 ## Contributing
 
