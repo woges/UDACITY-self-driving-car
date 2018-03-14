@@ -146,7 +146,7 @@ Use a combination of cameras, software, and machine learning to find lane lines 
 - **Keywords:** Safety Plan, Hazard Analysis and Risk Assessment, Functional Safety Concept, Technical Safety Concept, Software Requirements
 
 #### [P14 - CAPSTONE PROJECT - Programming a Real Self-Driving Car](./term3_project14_capstone_project)
-- **Summary:** Programm a real driving car.
+- **Summary:** Programming a Real Self-Driving Car.
 - **Keywords:** C++, ROS, CNN, Path Planning, Simulator & Real Car
 
 ---
