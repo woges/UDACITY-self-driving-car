@@ -18,7 +18,7 @@ Self-driving cars represent one of the most significant advances in modern histo
   - are parking lots or parking spaces in town centers necessary anymore?  
   - traffic flow will be better regulated
   - infrastructure utilization will be optimized
-  - hugh amount of data will be collected and used
+  - a hugh amount of data will be collected and used
   - hacking of vehicles will be a serious issue
   - ...  
 
@@ -41,8 +41,6 @@ In this repository I will share the **source code** of all the projects of **[Ud
 ----  
 
 ![term1](./term1.jpg)
-
-----  
 
 | [Getting Started for Term 1](./term1_How_to_get_started)       | [![T1P1](./term1_project1_lane_finding/results/white_giphy.gif)](./term1_project1_lane_finding/results/white.webm)<br>**Project 1:<br>Finding Lane Lines on the road**<br>[Code](./term1_project1_lane_finding)       | ![T1P2](./term1_project2_traffic_sign_classifier/img/traffic_sign_02.jpg)<br>**Project 2:<br>Traffic Sign Classifier**<br>[Code](./term1_project2_traffic_sign_classifier)       |
 | :---:         |     :---:      |          :---: |
@@ -85,7 +83,7 @@ Use a combination of cameras, software, and machine learning to find lane lines 
 
  ---  
 
-### Term 2: Sensor fusion and localization control
+### Term 2: Sensor Fusion, Localization and Control
 
  ---  
 
@@ -99,7 +97,7 @@ Use a combination of cameras, software, and machine learning to find lane lines 
 
 
 #### [P6 - Extended Kalman Filter](./term2_project6_extended_kalman_filters)
- - **Summary:** Implement the extended Kalman filter in C++. Simulated lidar and radar measurements are used to detect a bicycle that travels around your vehicle. Use Kalman filter, lidar measurements and radar measurements  to track the bicycle's position and velocity.
+ - **Summary:** Implement the extended Kalman filter in C++. Simulated lidar and radar measurements are used to track a bicycle's position and velocity that travels around your vehicle.
  - **Keywords:** C++, Kalman Filter, CV motion model, Sensor fusion, Lidar, Radar
 
 #### [P7 - Unscented Kalman Filter](./term2_project7_unscented_kalman_filters)
@@ -115,17 +113,17 @@ Use a combination of cameras, software, and machine learning to find lane lines 
  - **Keywords:** C++, PID Controller
  
 #### [P10 - Model Predictive Control](./term2_project10_Model_Predictive_Control)
-- **Summary:** Implement an MPC controller for keeping the car on track by appropriately adjusting the steering angle. Differently from previously implemented PID controller, MPC controller has the ability to anticipate future events and can take control actions accordingly. Indeed, future time steps are taking into account while optimizing current time slot.
+- **Summary:** Implement a  MPC controller for keeping the car on track by appropriately adjusting the steering angle. Differently from previously implemented PID controller, MPC controller has the ability to anticipate future events and can take control actions accordingly. Indeed, future time steps are taking into account while optimizing current time slot.
 - **Keywords:** C++, Model Predictive Control (MPC)
 
 
 ---  
 
-### Term 3: Path Planning Concentration
-
-![term3](./term3.jpg)
+### Term 3: Path Planning, Concentration and System Integration
 
 ---  
+
+![term3](./term3.jpg)
 
 |[Getting Started for Term 3](./term3_How_to_get_started)       |[![T3P11](./term3_project11_path_planning/results/SDC_Path_Planning_Project.gif)](./term3_project11_path_planning/results/SDC_Path_Planning_Project.mp4)<br>**Project 11:<br>Path Planning Project**<br>[Code](./term3_project11_path_planning)|[![T3P12](./term3_project12_semantic_segmentation/results/umm_000033.png)](./term3_project12_semantic_segmentation/results/)<br>**Project 12:<br>Semantic Segmentation**<br>[Code](./term3_project12_semantic_segmentation)|
 | :---:         |     :---:      |          :---: |
@@ -146,8 +144,8 @@ Use a combination of cameras, software, and machine learning to find lane lines 
 - **Keywords:** Safety Plan, Hazard Analysis and Risk Assessment, Functional Safety Concept, Technical Safety Concept, Software Requirements
 
 #### [P14 - CAPSTONE PROJECT - Programming a Real Self-Driving Car](./term3_project14_capstone_project)
-- **Summary:** Programming a Real Self-Driving Car.
-- **Keywords:** C++, ROS, CNN, Path Planning, Simulator & Real Car
+- **Summary:** Programming a Real Self-Driving Car which should stay on a track and stop at traffic lights, if necessary.
+- **Keywords:** C++, ROS, CNN, Traffic Light Classification, Path Planning, Simulator & Real Car
 
 ---
 
