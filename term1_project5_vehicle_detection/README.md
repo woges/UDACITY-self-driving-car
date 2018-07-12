@@ -3,9 +3,9 @@
 
 ## Overview
 
-The overarching theme in this module is how to find what you're looking for in images. You need to explore colours and gradients to see how you can locate and classify objects in images. Image classification is tricky. And it becomes even trickier when you don't know exactly where in an image your objects of interest will appear or what size they'll be or even how many of them you might find. Here we'll focus on the task of detecting vehicles and images taken from a camera mounted on the front of a car. But the same principles apply to pedestrian detection, or traffic sign detection, or identifying any object you might be looking for in an image. 
+The overarching theme in this module is how to find what you're looking for in images. You need to explore colours and gradients to see how you can locate and classify objects in images. Image classification is tricky. And it becomes even trickier when you don't know exactly where in an image your objects of interest will appear or what size they'll be or even how many of them you might find. Here we'll focus on the task of detecting vehicles in images taken from a camera mounted on the front of a car. But the same principles apply to pedestrian detection, or traffic sign detection, or identifying any object you might be looking for in an image. 
 
-Object detection and tracking (traditional computer vision techniques) is a central theme in computer vision. Knowing where other vehicles are on the road and being able to anticipate where they're heading next is essential in a self-driving car. When we look at the world through our own eyes, we're constantly performing classification tasks with our brain. Much the same way as we do with our own eyes as we drive, reliable object detection and classification are essential in the case of self- riving cars to be to determine things like how far away they are, which way they're going, and how fast they're moving.
+Object detection and tracking (traditional computer vision techniques) is a central theme in computer vision. Knowing where other vehicles are on the road and being able to anticipate where they're heading next is essential in a self-driving car. When we look at the world through our own eyes, we're constantly performing classification tasks with our brain. Much the same way as we do with our own eyes as we drive, reliable object detection and classification is essential in the case of self-driving cars to determine things like how far away they are, which way they're going, and how fast they're moving.
 
 Here both techniques are important:
 
@@ -40,7 +40,7 @@ The goal of the project was to develop a pipeline to reliably detect cars in a g
 
 The steps of this project are the following:
 
-* Perform a Histogram of Oriented Gradients (HOG) feature extraction on a labeled training set of images and train a classifier Linear SVM classifier
+* Perform a Histogram of Oriented Gradients (HOG) feature extraction on a labeled training set of images and train a classifier
 * Optionally, you can also apply a colour transform and append binned colour features, as well as histograms of colour, to your HOG feature vector. 
 * For those first two steps don't forget to normalize the features and randomize a selection for training and testing.
 * Implement a sliding-window technique and use the trained classifier to search for vehicles in images.
@@ -64,7 +64,7 @@ For the task of car detection I used *colour histograms* and *spatial features* 
 
 #### Choose HOG parameters.
 
-HOG stands for *Histogram of Oriented Gradients* and refer to a powerful descriptor that has met with a wide success in the computer vision community, since its introduction in 2005 with the main purpose of people detection. 
+HOG stands for *Histogram of Oriented Gradients* and refers to a powerful descriptor that has met with a wide success in the computer vision community, since its introduction in 2005 with the main purpose of people detection. 
 
 <p align="center">
   <img src="./out_images/002_HOG-channels_car.JPG" alt="hog" width="960">
@@ -81,7 +81,7 @@ The bad news is, HOG come along with a *lot* of parameters to tune in order to w
 In order to select the right parameters, both the classifier accuracy and computational efficiency are to consider. After various attemps, the following parameters were choosen:
 
 <p align="center">
-  <img src="./out_images/003_HOG-002_HOG_parameters.JPG" alt="hog" width="640">
+  <img src="./out_images/002_HOG_parameters.JPG" alt="hog" width="640">
   <br>HOG parameters.
 </p>
 
